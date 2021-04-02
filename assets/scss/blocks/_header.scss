@@ -1,51 +1,43 @@
 .header {
-
-  background-color: transparent;
+  height: 70px;
   position: absolute;
+  top: 0;
   left: 0;
   right: 0;
-  padding: 23px 0 8px 0;
-  z-index: 5;
-
-  &--static {
-    background-color: $main-color;
-    position: relative;
-  }
-
-  &__languages {
-
-  }
+  background-color: $primary-black;
 
   &__container {
     @extend %container;
+    height: 100%;
     display: flex;
     align-items: center;
+    justify-content: space-between;
   }
 
-  &__logo {
-    margin-top: -15px;
-    margin-right: 20px;
-    cursor: pointer;
+  &__items {
+    display: flex;
+    align-items: center;
+    @include text-style(1.6rem, 500, $white-color);
   }
 
-  &__burger {
-    margin-right: auto;
-    cursor: pointer;
+  &__location {
+    display: flex;
+    align-items: center;
+
+    margin-right: 30px;
+
+    svg {
+      fill: $white-color;
+      margin-right: 6px;
+    }
   }
 
-  @include respond(tab-land) {
+  &__lang-box {
+    text-transform: uppercase;
+    margin-right: 30px;
+  }
 
-    &__logo {
-      margin-right: auto;
-    }
-
-    &__burger {
-      margin-right: unset;
-    }
-
-    &__languages {
-      display: none !important;
-    }
-
+  &__user-box {
+    margin-right: 30px;
   }
 }

@@ -12,7 +12,10 @@
 @import "abstracts/animations";
 
 // blocks
+@import "blocks/container";
+@import "blocks/header";
 
+@import "blocks/footer";
 
 html, body {
   font-size: 62.5%;

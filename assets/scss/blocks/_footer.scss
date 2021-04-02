@@ -1,75 +1,84 @@
 .footer {
-  background-image: url("../assets/img/footer-bg.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  padding: 85px 0 80px;
+  $e: &;
+  background-color: #1D1D1D;
 
   &__container {
     @extend %container;
   }
 
-  &__row {
+  &__main {
+    padding: 100px 0;
     display: flex;
     align-items: flex-start;
-    justify-content: space-between;
-    flex-wrap: wrap;
-  }
-
-  &__logo {
-    margin-top: -32px;
-    cursor: pointer;
-  }
-
-  &__links {
-    &:first-child {
-      margin-right: 60px;
-    }
-  }
-
-  &__link-group {
-    display: flex;
-    align-items: flex-start;
-  }
-
-  &__link {
-    display: block;
-    @include text-style(1.8rem, 400, rgba(#f2f2f2, .8));
-
-    &:not(:last-child) {
-      margin-bottom: 25px;
-    }
+    position: relative;
   }
 
   &__contacts {
+    position: relative;
+    margin-right: 162px;
 
+    &:after {
+      content: '';
+      position: absolute;
+      top: 20px;
+      right: -31px;
+      height: 200px;
+      width: 1px;
+      background-color: $accent-color;
+      border-radius: 10px;
+    }
   }
 
-  &__contact {
+  &__row {
     display: flex;
-    align-items: flex-start;
-    @include text-style(1.8rem, 400, #e0e8eb);
-    line-height: 21px;
+    align-items: center;
 
-    svg {
-      margin-right: 16px;
+    &--start {
+      align-items: flex-start;
     }
 
     &:not(:last-child) {
       margin-bottom: 30px;
     }
+  }
 
-    &:first-child {
-      font-weight: 700;
+  &__icon {
+    fill: $accent-color;
+    margin-right: 12px;
+  }
+
+  &__phone-box {
+
+  }
+
+  &__phone {
+    display: flex;
+    align-items: center;
+
+    &:not(:last-child) {
+      margin-bottom: 12px;
     }
+
+    #{$e}__light-text {
+      margin-left: 12px;
+    }
+  }
+
+  &__text,
+  &__text:link,
+  &__text:visited {
+    display: block;
+    @include text-style(1.6rem, 500, $white-color);
+  }
+
+  &__light-text {
+    @include text-style(1.2rem, 500, #9A9A9A);
   }
 
   &__socials {
     display: flex;
     align-items: center;
-
-    &--mobile {
-      display: none;
-    }
+    margin-top: 40px;
   }
 
   &__social {
@@ -78,66 +87,43 @@
     }
   }
 
-  @include respond(tab-land) {
-    &__contacts {
-      margin: 30px 0;
+  &__links {
+    & > * {
+      &:not(:last-child) {
+        margin-bottom: 12px;
+      }
     }
   }
 
-  @include respond(phone) {
-    &__logo {
-      margin-top: -32px;
-      margin-bottom: 40px;
-    }
+  &__pattern {
+    position: absolute;
+    width: 508px;
+    height: 464px;
+    top: 12px;
+    right: -97px;
+    background-image: url("../assets/img/footer-pattern.png");
+    background-repeat: no-repeat;
+    background-position-x: 0;
+    background-position-y: 0;
+    padding: 135px 0 0 24px;
 
-    &__row {
-      display: block;
-    }
-
-    &__socials {
-      margin-bottom: 40px;
-
-      &--desktop {
-        display: none;
-      }
-
-      &--mobile {
-        display: flex;
+    #{$e}__text {
+      margin-left: 112px;
+      line-height: 19px;
+      span {
+        font-weight: 600;
       }
     }
+  }
 
-    &__link {
-      @include text-style(1.4rem, 400, rgba(#f2f2f2, .8));
+  &__logo {
+    margin-bottom: 12px;
+  }
 
-      &:not(:last-child) {
-        margin-bottom: 25px;
-      }
-
-      &--shrink0 {
-        white-space: nowrap;
-      }
-    }
-
-    &__contacts {
-      margin: 40px 0 0;
-    }
-
-    &__contact {
-      @include text-style(1.4rem, 700, #e0e8eb);
-      line-height: 16px;
-      align-items: center;
-
-      br {
-        display: none;
-      }
-
-      svg {
-        margin-right: 12px;
-      }
-
-      &:not(:last-child) {
-        margin-bottom: 30px;
-      }
-    }
+  &__copyrights {
+    padding: 15px 0;
+    text-align: center;
+    @include text-style(1.6rem, 400, $primary-black);
+    background-color: $accent-color;
   }
 }
