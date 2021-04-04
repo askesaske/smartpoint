@@ -1,0 +1,74 @@
+.about-section {
+  padding: 120px;
+  background-color: $white-color;
+
+  &__container {
+    @extend %container;
+  }
+
+  &__heading {
+    margin-bottom: 60px;
+  }
+
+  &__row {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  &__title {
+    @include text-style(2.2rem, 500, $primary-black);
+    line-height: 25.89px;
+    margin-right: 83px;
+    white-space: nowrap;
+
+    span {
+      @include text-style(4rem, 500, $primary-black);
+      line-height: 47px;
+    }
+  }
+
+  &__info {
+    position: relative;
+  }
+
+  &__text {
+    position: relative;
+    z-index: 2;
+    @include text-style(1.6rem, 400, $primary-black);
+    line-height: 18.5px;
+    margin-bottom: 50px;
+  }
+
+  &__btn {
+    position: relative;
+    z-index: 2;
+    margin-bottom: 50px;
+  }
+
+  &__number-box {
+    position: relative;
+    z-index: 2;
+    @include text-style(1.6rem, 400, $primary-black);
+    line-height: 18.5px;
+    span {
+      @include text-style(6rem, 600, $accent-color);
+      line-height: 71.5px;
+      margin-bottom: 6px;
+    }
+
+    &:not(:last-child) {
+      margin-right: 140px;
+    }
+  }
+
+  &__bg {
+    position: absolute;
+    left: 125px;
+    top: -20px;
+    z-index: 1;
+  }
+
+  &__benefits {
+    margin-top: 120px;
+  }
+}

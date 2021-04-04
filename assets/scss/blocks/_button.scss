@@ -1,0 +1,24 @@
+.button {
+  width: 285px;
+  height: 50px;
+  background: $main-color;
+  box-shadow: 0 10px 20px rgba(38, 49, 100, 0.15);
+  border-radius: 5px;
+
+  @include text-style(1.6rem, 600, $accent-color);
+
+  transition: .1s;
+
+  &:hover {
+    background-color: #354489;
+  }
+
+  &[disabled] {
+    background-color: #E4E4E5;
+    color: #999999;
+  }
+
+  &:focus {
+    background-color: #4256B0;
+  }
+}

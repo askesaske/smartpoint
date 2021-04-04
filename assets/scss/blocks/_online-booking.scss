@@ -1,0 +1,40 @@
+.online-booking {
+  padding: 120px 0;
+  background-color: #1D1D1D;
+
+  &__container {
+    @extend %container;
+  }
+
+  &__heading {
+    margin-bottom: 94px;
+  }
+
+  &__tabs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 60px;
+  }
+
+  &__tab {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 183px;
+    height: 50px;
+    box-shadow: 0 10px 20px rgba(191, 191, 191, 0.15);
+    border-radius: 5px;
+    background-color: $accent-color;
+    @include text-style(1.6rem, 600, $main-color);
+    cursor: pointer;
+
+    &--active {
+      background-color: $white-color;
+    }
+
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+  }
+}

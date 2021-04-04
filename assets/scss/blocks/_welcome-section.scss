@@ -1,0 +1,62 @@
+.welcome-section {
+  height: 100vh;
+  background-image: url("../assets/img/welcome-section-bg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+
+  &__container {
+    @extend %container;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__pentagon {
+    position: relative;
+    margin-bottom: 70px;
+  }
+
+  &__text {
+    @include text-style(3.2rem, 700, $accent-color);
+    line-height: 38px;
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+    text-transform: uppercase;
+  }
+
+  &__scroll-box {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__scroll {
+
+  }
+
+  &__scroll-line {
+    position: absolute;
+    left: 50%;
+    top: 4px;
+    transform: translateX(-50%);
+  }
+
+  &__scroll-text {
+    @include text-style(1.2rem, 600, $accent-color);
+    text-transform: uppercase;
+    margin-top: 12px;
+  }
+}

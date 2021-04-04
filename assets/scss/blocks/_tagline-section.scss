@@ -1,0 +1,39 @@
+.tagline-section {
+  padding: 120px 0;
+  background-color: #F1F1F1;
+
+  &__container {
+    @extend %container;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__text {
+    @include text-style(6rem, 500, $main-color);
+    line-height: 70.62px;
+    text-align: center;
+    margin-bottom: 50px;
+    position: relative;
+    z-index: 2;
+
+    span {
+      position: relative;
+      z-index: 2;
+
+      &:before {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        left: -9px;
+        top: 41px;
+        width: 102%;
+        height: 35px;
+        background-color: $accent-color;
+      }
+    }
+  }
+
+  &__btn {}
+}

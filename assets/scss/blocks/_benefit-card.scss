@@ -1,0 +1,19 @@
+.benefit-card {
+  background: $accent-color;
+  box-shadow: 0 10px 30px rgba(255, 241, 53, 0.15);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 285px;
+  width: 285px;
+
+  &__icon {
+    margin-bottom: 26px;
+  }
+
+  &__name {
+    @include text-style(2.2rem, 600, $main-color);
+  }
+}

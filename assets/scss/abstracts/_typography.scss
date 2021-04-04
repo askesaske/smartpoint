@@ -1,0 +1,45 @@
+.heading-blue {
+  $e: &;
+
+  text-align: center;
+  position: relative;
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+
+  &__bg {
+    @include text-style(13rem, 700, transparent);
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: rgba(#343434, .05);
+  }
+
+  &__text {
+    @include text-style(6rem, 700, $main-color);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.heading-white {
+  text-align: center;
+  position: relative;
+  text-transform: uppercase;
+  white-space: nowrap;
+
+  &__bg {
+    @include text-style(13rem, 700, transparent);
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: rgba($white-color, .05);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__text {
+    @include text-style(6rem, 700, $white-color);
+
+  }
+}
