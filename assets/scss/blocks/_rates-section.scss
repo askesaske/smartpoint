@@ -1,0 +1,120 @@
+.rates-section {
+  padding: 120px 0;
+  background: #F1F1F1;
+
+  &__container {
+    @extend %container;
+  }
+
+  &__heading {
+    margin-bottom: 60px;
+  }
+
+  &__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &--start {
+      align-items: flex-start;
+      justify-content: flex-start;
+    }
+
+    &--mb8 {
+      margin-bottom: 8px;
+    }
+  }
+
+  &__list {
+    position: relative;
+    width: 590px;
+  }
+
+  &__item {
+    border-bottom: 1px solid #263164;
+    padding-bottom: 30px;
+    position: relative;
+    z-index: 2;
+
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__title {
+    @include text-style(2.2rem, 600, $primary-black);
+
+    &--mb12 {
+      margin-bottom: 12px;
+    }
+  }
+
+  &__checkbox {
+    width: 30px;
+    height: 30px;
+    position: relative;
+    border-radius: 50%;
+    border: 1px solid $main-color;
+
+    &--checked {
+      &:after {
+        content: '';
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: $accent-color;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+
+  &__text {
+    @include text-style(1.6rem, 400, $primary-black);
+    line-height: 18.5px;
+    span {
+      font-weight: 500;
+    }
+  }
+
+  &__bg {
+    width: 600px;
+    position: absolute;
+    right: 111px;
+    top: 87px;
+  }
+
+  &__info {
+    width: 560px;
+    background: $white-color;
+    box-shadow: 0 10px 20px rgba(138, 149, 158, 0.15);
+    border-radius: 5px;
+    padding: 50px;
+  }
+
+  &__info-header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  &__info-body {
+    margin-bottom: 70px;
+
+    & > * {
+      &:not(:last-child) {
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  &__icon {
+    margin-right: 30px;
+  }
+
+  &__btn {
+    display: block;
+    margin: 0 auto;
+  }
+}

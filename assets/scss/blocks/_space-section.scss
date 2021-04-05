@@ -1,0 +1,80 @@
+.space-section {
+  padding: 120px 0;
+  background-color: #1D1D1D;
+
+  &__heading {
+    margin-bottom: 82px;
+  }
+
+  &__container {
+    @extend %container;
+  }
+
+  &__wrapper {
+
+  }
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__info {
+    padding-top: 37px;
+    width: 662px;
+    position: relative;
+  }
+
+  &__item {
+    display: flex;
+    align-items: flex-start;
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__name {
+    @include text-style(2.2rem, 600, $accent-color);
+    min-width: 183px;
+    flex-wrap: nowrap;
+    margin-right: 40px;
+  }
+
+  &__desc {
+
+  }
+
+  &__title {
+    @include text-style(1.6rem, 500, $white-color);
+    line-height: 19px;
+    margin-bottom: 6px;
+  }
+
+  &__subtitle {
+    @include text-style(1.6rem, 400, rgba($white-color, .6));
+    line-height: 19px;
+  }
+
+  &__controls {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+  }
+
+  &__index {
+    @include text-style(3.6rem, 400, $accent-color);
+    margin-right: 30px;
+  }
+
+  &__prev {
+    cursor: pointer;
+    margin-right: 30px;
+  }
+
+  &__next {
+    cursor: pointer;
+    transform: rotate(180deg);
+  }
+}

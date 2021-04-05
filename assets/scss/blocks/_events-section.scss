@@ -1,0 +1,98 @@
+.events-section {
+  padding: 120px 0;
+  background-color: $white-color;
+  position: relative;
+
+  &__bg {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+
+  &__container {
+    @extend %container;
+    position: relative;
+    z-index: 2;
+  }
+
+  &__heading {
+    margin-bottom: 60px;
+  }
+
+  &__btn-group {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 40px;
+  }
+
+  &__btn {
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+  }
+
+  &__list {
+
+  }
+
+  &__row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    &:not(:last-child) {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__date {
+    @include text-style(3.6rem, 700, transparent);
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: $main-color;
+  }
+
+  &__main {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  &__img-box {
+    width: 488px;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+
+    margin-right: 20px;
+  }
+
+  &__tag {
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 12px 20px;
+    background-color: $accent-color;
+    @include text-style(1.6rem, 500, $main-color);
+    border-bottom-right-radius: 5px;
+  }
+
+  &__info {
+    width: 387px;
+  }
+
+  &__title {
+    @include text-style(3.6rem, 600, $primary-black);
+    line-height: 42px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+  }
+
+  &__subtitle {
+    @include text-style(1.5rem, 500, $main-color);
+
+    span {
+      font-weight: 600;
+      color: $primary-black;
+    }
+  }
+}

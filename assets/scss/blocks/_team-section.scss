@@ -1,0 +1,78 @@
+.team-section {
+  padding: 120px 0;
+  background-color: #1D1D1D;
+
+  &__heading {
+    margin-bottom: 100px;
+  }
+
+  &__container {
+    @extend %container;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__img {
+    height: 277px;
+  }
+
+  &__info {
+    width: 100%;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: $accent-color;
+    text-align: center;
+  }
+
+  &__name {
+    @include text-style(2.2rem, 600, $main-color);
+    margin-bottom: 12px;
+  }
+
+  &__occupation {
+    @include text-style(1.6rem, 400, $main-color);
+  }
+
+  &__swiper-container {
+    padding-bottom: 60px;
+  }
+
+  &__next {
+    right: 0px;
+    bottom: 0;
+    width: 40px;
+    height: 40px;
+    top: unset;
+    margin: unset;
+
+    &:after {
+      content: '';
+      width: 40px;
+      height: 40px;
+      background-image: url("../assets/img/icons/slider-arrow-yellow.svg");
+    }
+  }
+
+  &__prev {
+    left: unset;
+    right: 70px;
+    bottom: 0;
+    width: 40px;
+    height: 40px;
+    transform: rotate(180deg);
+    top: unset;
+    margin: unset;
+
+    &:after {
+      content: '';
+      width: 40px;
+      height: 40px;
+      background-image: url("../assets/img/icons/slider-arrow-yellow.svg");
+    }
+  }
+}

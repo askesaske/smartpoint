@@ -1,0 +1,39 @@
+.inst-section {
+  padding: 120px 0;
+
+  &__list {
+    position: relative;
+    height: 375px;
+    display: flex;
+    overflow: hidden;
+  }
+
+  &__item:not(:nth-child(1)) {
+    position: relative;
+    flex-grow: 1;
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      max-width: unset;
+    }
+  }
+
+  &__item {
+    position: relative;
+
+    &:hover {
+      img {
+        transition: all .2s;
+        left: calc(100% - 375px);
+      }
+    }
+  }
+
+
+
+  &__img {
+
+  }
+}
