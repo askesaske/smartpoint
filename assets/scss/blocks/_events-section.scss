@@ -3,6 +3,8 @@
   background-color: $white-color;
   position: relative;
 
+  $e: &;
+
   &__bg {
     position: absolute;
     bottom: 0;
@@ -44,12 +46,25 @@
     &:not(:last-child) {
       margin-bottom: 40px;
     }
+
+    &:hover {
+      #{$e}__date {
+        color: $main-color;
+      }
+
+      #{$e}__img-box {
+        transform: rotate(-2deg);
+      }
+    }
+
+
   }
 
   &__date {
     @include text-style(3.6rem, 700, transparent);
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: $main-color;
+    transition: all .2s;
   }
 
   &__main {
@@ -62,8 +77,10 @@
     border-radius: 5px;
     overflow: hidden;
     position: relative;
+    transition: all .2s;
 
     margin-right: 20px;
+
   }
 
   &__tag {

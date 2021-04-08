@@ -1,10 +1,49 @@
 <template>
   <div>
-    <Header />
-    <Nuxt />
-    <Footer />
+    <Header/>
+    <main class="main" :class="sideBarState ? 'main--sidebar-open' : ''">
+      <div class="sidebar" :class="sideBarState ? 'sidebar--open' : ''">
+        <svg class="sidebar__close" width="16" height="16" @click="closeSideBar">
+          <use href="../assets/img/icons.svg#close"></use>
+        </svg>
+
+        <div class="sidebar__heading">
+          Меню
+        </div>
+
+        <div class="sidebar__list">
+          <a href="#" class="sidebar__link">О нас</a>
+          <a href="#" class="sidebar__link">Комьюнити</a>
+          <a href="#" class="sidebar__link">Онлайн бронирование</a>
+          <a href="#" class="sidebar__link">Тарифы</a>
+          <a href="#" class="sidebar__link">Мероприятия</a>
+          <a href="#" class="sidebar__link">Пространство</a>
+          <a href="#" class="sidebar__link">Новости</a>
+          <a href="#" class="sidebar__link">Наша галерея</a>
+          <a href="#" class="sidebar__link">Наша команда</a>
+        </div>
+
+      </div>
+      <Nuxt/>
+    </main>
+    <Footer/>
   </div>
 </template>
+
+<script>
+export default {
+  computed: {
+    sideBarState() {
+      return this.$store.state.sideBarState
+    }
+  },
+  methods: {
+    closeSideBar() {
+      this.$store.commit('closeSideBar')
+    },
+  },
+}
+</script>
 
 <style lang="scss">
 @import '../node_modules/swiper/swiper-bundle.css';

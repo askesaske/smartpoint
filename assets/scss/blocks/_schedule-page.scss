@@ -1,0 +1,137 @@
+.schedule-page {
+  padding-top: 70px;
+  padding-bottom: 120px;
+  position: relative;
+
+  $e: &;
+
+  &__bg {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+  }
+
+  &__container {
+    @extend %container;
+    position: relative;
+    z-index: 2;
+  }
+
+  &__heading {
+    position: relative;
+    z-index: 2;
+  }
+
+  &__btn {
+    display: block;
+    margin: 20px 0 40px auto;
+  }
+
+  &__wrapper {
+
+  }
+
+  &__month-box {
+    &:not(:last-child) {
+      margin-bottom: 60px;
+    }
+
+    &:nth-child(even) {
+      #{$e}__row {
+        flex-direction: row-reverse;
+      }
+    }
+  }
+
+  &__title {
+    @include text-style(2.2rem, 600, $main-color);
+    padding-bottom: 10px;
+    border-bottom: 1px solid #FFED00;
+    margin-bottom: 60px;
+  }
+
+  &__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__list {
+    width: 590px;
+    max-height: 370px;
+    overflow-y: auto;
+    padding-right: 16px;
+
+    &::-webkit-scrollbar-track {
+      -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .2);
+      border-radius: 5px;
+      background-color: #eaebf0;
+    }
+
+    &::-webkit-scrollbar {
+      width: 8px;
+      background-color: #eaebf0;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius: 5px;
+      background-color: $main-color;
+    }
+  }
+
+  &__item {
+    padding-left: 62px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #DEDEDE;
+
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__date {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    text-transform: uppercase;
+    @include text-style(1.6rem, 500, $primary-black);
+
+    margin-bottom: 12px;
+
+    span {
+      font-weight: 600;
+    }
+
+    &:before {
+      content: '';
+      width: 50px;
+      height: 1px;
+      background-color: #FFED00;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: calc(100% + 12px);
+    }
+  }
+
+  &__name {
+    @include text-style(1.6rem, 600, $primary-black);
+    line-height: 19px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  &__desc {
+    @include text-style(1.6rem, 600, $primary-black);
+  }
+
+  &__img {
+
+    &--gray {
+      filter: grayscale(100%);
+    }
+  }
+}

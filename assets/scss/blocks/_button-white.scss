@@ -1,14 +1,13 @@
 .button-white {
   height: 50px;
   padding: 0 40px;
-  border: 1px solid $primary-black;
+  border: 1px solid $main-color;
   box-sizing: border-box;
-  filter: drop-shadow(0px 10px 20px rgba(255, 241, 53, 0.15));
+  //filter: drop-shadow(0px 10px 20px rgba(255, 241, 53, 0.15));
   background-color: $white-color;
-  color: $primary-black;
   border-radius: 5px;
 
-  @include text-style(1.6rem, 500, $primary-black);
+  @include text-style(1.6rem, 500, $main-color);
 
   transition: .1s;
 

@@ -1,5 +1,6 @@
 <template>
-  <main class="main">
+  <div>
+
     <section class="main__section welcome-section">
       <div class="welcome-section__container">
         <div class="welcome-section__pentagon">
@@ -17,7 +18,7 @@
         <img src="../assets/img/smartpoint-heading.png" alt="" class="welcome-section__heading">
 
 
-        <div class="welcome-section__scroll-box">
+        <div class="welcome-section__scroll-box" v-scroll-to="{el:'#tagline', duration: 700,}">
           <svg class="welcome-section__scroll" width="14" height="34">
             <use href="../assets/img/icons.svg#scroll"></use>
           </svg>
@@ -30,10 +31,11 @@
             Листайте вниз
           </div>
         </div>
+
       </div>
     </section>
 
-    <section class="main__section tagline-section">
+    <section class="main__section tagline-section" id="tagline">
 
       <div class="tagline-section__container">
         <div class="tagline-section__text">
@@ -93,38 +95,88 @@
           <h4 class="benefits__title">Преимущества</h4>
 
           <div class="benefits__cards">
+
             <div class="benefits__card benefit-card">
-              <svg class="benefit-card__icon" width="80" height="80">
-                <use href="../assets/img/icons.svg#community"></use>
-              </svg>
-              <div class="benefit-card__name">
-                Сообщество
+              <div class="benefit-card__side benefit-card__side--front">
+                <svg class="benefit-card__icon" width="80" height="80">
+                  <use href="../assets/img/icons.svg#community"></use>
+                </svg>
+                <div class="benefit-card__name">
+                  Сообщество
+                </div>
+              </div>
+
+              <div class="benefit-card__side benefit-card__side--back">
+                <div class="benefit-card__title">Спорт и развитие</div>
+                <div class="benefit-card__desc">
+                  В SmArt.Point много креативных личностей, создающих деловые и культурные ценности для общества.
+                  Общение между резидентами, бесплатный доступ к библеотеке
+                  и игровой зоне
+                </div>
               </div>
             </div>
+
             <div class="benefits__card benefit-card">
-              <svg class="benefit-card__icon" width="80" height="80">
-                <use href="../assets/img/icons.svg#virtual-office"></use>
-              </svg>
-              <div class="benefit-card__name">
-                Виртуальный офис
+              <div class="benefit-card__side benefit-card__side--front">
+                <svg class="benefit-card__icon" width="80" height="80">
+                  <use href="../assets/img/icons.svg#virtual-office"></use>
+                </svg>
+                <div class="benefit-card__name">
+                  Виртуальный офис
+                </div>
+              </div>
+
+              <div class="benefit-card__side benefit-card__side--back">
+                <div class="benefit-card__title">Виртуальный офис</div>
+                <div class="benefit-card__desc">
+                  Специальные пакеты для компаний и фрилансеров, которым не требуется постоянный офис, но в тоже время
+                  нужно презентабельное место для встреч
+                  и юридический адрес
+                </div>
               </div>
             </div>
+
             <div class="benefits__card benefit-card">
-              <svg class="benefit-card__icon" width="80" height="80">
-                <use href="../assets/img/icons.svg#clock-24"></use>
-              </svg>
-              <div class="benefit-card__name">
-                Доступность 24/7
+              <div class="benefit-card__side benefit-card__side--front">
+                <svg class="benefit-card__icon" width="80" height="80">
+                  <use href="../assets/img/icons.svg#clock-24"></use>
+                </svg>
+                <div class="benefit-card__name">
+                  Доступность 24/7
+                </div>
+              </div>
+
+              <div class="benefit-card__side benefit-card__side--back">
+                <div class="benefit-card__title">Доступность 24/7</div>
+                <div class="benefit-card__desc">
+                  Офисы, индивидуальное рабочее место, ресепшн, высокоскоростной интернет, принт-зона, специальные
+                  пакеты для сотрудников
+                  в командировке, включая размещение, длительное использование докеров и т.д.
+                </div>
               </div>
             </div>
+
             <div class="benefits__card benefit-card">
-              <svg class="benefit-card__icon" width="80" height="80">
-                <use href="../assets/img/icons.svg#sport"></use>
-              </svg>
-              <div class="benefit-card__name">
-                Спорт и развитие
+              <div class="benefit-card__side benefit-card__side--front">
+                <svg class="benefit-card__icon" width="80" height="80">
+                  <use href="../assets/img/icons.svg#sport"></use>
+                </svg>
+                <div class="benefit-card__name">
+                  Спорт и развитие
+                </div>
+              </div>
+
+              <div class="benefit-card__side benefit-card__side--back">
+                <div class="benefit-card__title">Спорт и развитие</div>
+                <div class="benefit-card__desc">
+                  Инвестируйте в здоровье
+                  и в профессиональное развитие. Возможность проведения спортивных тренировки, курсов по йоге
+                  и регулярные тренинги по повышению квалификации
+                  и мастер классы
+                </div>
               </div>
             </div>
+
           </div>
         </div>
       </div>
@@ -179,117 +231,9 @@
       </div>
     </section>
 
-    <section class="main__section online-booking">
-      <h2 class="online-booking__heading heading-white">
-        <div class="heading-white__bg">Онлайн бронирование</div>
-        <div class="heading-white__text">Онлайн бронирование</div>
-      </h2>
-      <div class="online-booking__container">
-        <div class="online-booking__tabs">
-          <div class="online-booking__tab"
-               @click="chooseSm('sm1')"
-               :class="sm1 ? 'online-booking__tab--active' : ''">
-            Smart Point 1
-          </div>
-          <div class="online-booking__tab"
-               @click="chooseSm('sm2')"
-               :class="sm2 ? 'online-booking__tab--active' : ''">
-            Smart Point 2
-          </div>
-          <div class="online-booking__tab"
-               @click="chooseSm('sm3')"
-               :class="sm3 ? 'online-booking__tab--active' : ''">
-            Smart Point 3
-          </div>
-        </div>
+    <booking-section></booking-section>
 
-        <div class="online-booking__content">
-          <div class="online-booking__item" v-show="sm1">
-            <img src="../assets/img/structure.png" alt="" class="online-booking_img">
-          </div>
-          <div class="online-booking__item" v-show="sm2">
-            <img src="../assets/img/structure.png" alt="" class="online-booking_img">
-          </div>
-          <div class="online-booking__item" v-show="sm3">
-            <img src="../assets/img/structure.png" alt="" class="online-booking_img">
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="main__section rates-section">
-      <div class="rates-section__container">
-        <h2 class="rates-section__heading heading-blue">
-          <div class="heading-blue__bg">Тарифы</div>
-          <div class="heading-blue__text">Тарифы</div>
-        </h2>
-
-        <div class="rates-section__row">
-          <div class="rates-section__list">
-            <div class="rates-section__item" v-for="i in 4">
-              <div class="rates-section__row rates-section__row--mb8">
-                <div class="rates-section__title">50 000 тг</div>
-                <div class="rates-section__checkbox rates-section__checkbox--checked"></div>
-              </div>
-              <div class="rates-section__text">
-                Коворкинг на месяц
-              </div>
-            </div>
-            <img src="../assets/img/about-section-bg.png" alt="" class="rates-section__bg">
-          </div>
-
-          <div class="rates-section__info">
-            <div class="rates-section__info-header">
-              <div class="rates-section__title rates-section__title--mb12">50 000 тг</div>
-              <div class="rates-section__text">
-                Количество посещений: <span>Месяц</span>
-              </div>
-            </div>
-
-            <div class="rates-section__info-body">
-              <div class="rates-section__row rates-section__row--start">
-                <svg class="rates-section__icon" width="20" height="20">
-                  <use href="../assets/img/icons.svg#gift"></use>
-                </svg>
-                <div class="rates-section__text">Бонус для бронирования</div>
-                <div class="rates-section__text">6 000 KZT</div>
-              </div>
-
-              <div class="rates-section__row rates-section__row--start">
-                <svg class="rates-section__icon" width="20" height="20">
-                  <use href="../assets/img/icons.svg#printer"></use>
-                </svg>
-                <div class="rates-section__text">Бонус для печати</div>
-                <div class="rates-section__text">500 KZT</div>
-              </div>
-
-              <div class="rates-section__row rates-section__row--start">
-                <svg class="rates-section__icon" width="20" height="20">
-                  <use href="../assets/img/icons.svg#dumbbell"></use>
-                </svg>
-                <div class="rates-section__text">Спортивная зона/Душевые</div>
-              </div>
-
-              <div class="rates-section__row rates-section__row--start">
-                <svg class="rates-section__icon" width="20" height="20">
-                  <use href="../assets/img/icons.svg#home"></use>
-                </svg>
-                <div class="rates-section__text">Wi-Fi, ресепшн, мягкая зона, телефонные переговорки</div>
-              </div>
-
-              <div class="rates-section__row rates-section__row--start">
-                <svg class="rates-section__icon" width="20" height="20">
-                  <use href="../assets/img/icons.svg#calendar"></use>
-                </svg>
-                <div class="rates-section__text">Бесплатное посещение мероприятий “SmArt.Point”</div>
-              </div>
-            </div>
-
-            <button class="rates-section__btn button">Купить</button>
-          </div>
-        </div>
-      </div>
-    </section>
+    <rates-section></rates-section>
 
     <section class="main__section events-section">
       <img src="../assets/img/events-bg.png" alt="" class="events-section__bg">
@@ -372,91 +316,7 @@
       </div>
     </section>
 
-    <section class="main__section space-section">
-      <h2 class="space-section__heading heading-white">
-        <div class="heading-white__bg">Пространство</div>
-        <div class="heading-white__text">Пространство</div>
-      </h2>
-
-      <div class="space-section__container">
-        <div class="space-section__wrapper">
-
-          <div class="space-section__row">
-
-            <div class="space-section__info">
-
-              <div class="space-section__item">
-                <div class="space-section__name">Название</div>
-                <div class="space-section__desc">
-                  <div class="space-section__title">Deep Purple</div>
-                  <div class="space-section__subtitle">
-                    Конференц зал отлично подходит для деловых встреч, семинаров или
-                    конференций.
-                  </div>
-                </div>
-              </div>
-
-              <div class="space-section__item">
-                <div class="space-section__name">Тип</div>
-                <div class="space-section__desc">
-                  <div class="space-section__title">Конференц зал</div>
-                  <div class="space-section__subtitle">
-                    Мебелированные конференц залы с возможностью почасовой аренды, прекрасно подходят для проведения
-                    деловых встреч и переговоров.
-                  </div>
-                </div>
-              </div>
-
-              <div class="space-section__item">
-                <div class="space-section__name">Площадь</div>
-                <div class="space-section__desc">
-                  <div class="space-section__title">52 м²</div>
-                </div>
-              </div>
-
-              <div class="space-section__item">
-                <div class="space-section__name">Оборудование</div>
-                <div class="space-section__desc">
-                  <div class="space-section__title">Проектор, интерактивная доска</div>
-                </div>
-              </div>
-
-              <div class="space-section__item">
-                <div class="space-section__name">Вместимость</div>
-                <div class="space-section__desc">
-                  <div class="space-section__title">
-                    Максимальная вместительность 35 чел.
-                    Рекомендуем для встречи 20 чел.
-                  </div>
-                </div>
-              </div>
-
-              <div class="space-section__item">
-                <div class="space-section__name">Цена</div>
-                <div class="space-section__desc">
-                  <div class="space-section__title">8 000 KZT/ч.</div>
-                </div>
-              </div>
-
-              <div class="space-section__controls">
-                <div class="space-section__index">1 / 8</div>
-                <svg class="space-section__prev" width="40" height="40">
-                  <use href="../assets/img/icons.svg#arrow-left"></use>
-                </svg>
-                <svg class="space-section__next" width="40" height="40">
-                  <use href="../assets/img/icons.svg#arrow-left"></use>
-                </svg>
-              </div>
-
-            </div>
-
-            <img src="../assets/img/deep-purple.png" alt="" class="space-section__img">
-
-          </div>
-
-        </div>
-      </div>
-    </section>
+    <space-section></space-section>
 
     <section class="main__section news-section">
       <div class="news-section__container">
@@ -544,62 +404,7 @@
       </div>
     </section>
 
-    <section class="main__section gallery-section">
-      <div class="gallery-section__container">
-        <h2 class="news-section__heading heading-blue">
-          <div class="heading-blue__bg">Галерея</div>
-          <div class="heading-blue__text">Галерея</div>
-        </h2>
-
-        <div class="gallery-section__list">
-
-          <div class="gallery-section__item">
-            <img src="../assets/img/gallery-1.png" alt="" class="gallery-section__img">
-
-            <div class="gallery-section__magnifier">
-              <svg width="16" height="16">
-                <use href="../assets/img/icons.svg#magnifier"></use>
-              </svg>
-            </div>
-          </div>
-
-          <div class="gallery-section__item">
-            <img src="../assets/img/gallery-2.png" alt="" class="gallery-section__img">
-
-            <div class="gallery-section__magnifier">
-              <svg width="16" height="16">
-                <use href="../assets/img/icons.svg#magnifier"></use>
-              </svg>
-            </div>
-          </div>
-
-          <div class="gallery-section__item">
-            <img src="../assets/img/gallery-3.png" alt="" class="gallery-section__img">
-
-            <div class="gallery-section__magnifier">
-              <svg width="16" height="16">
-                <use href="../assets/img/icons.svg#magnifier"></use>
-              </svg>
-            </div>
-          </div>
-
-          <div class="gallery-section__item">
-            <img src="../assets/img/gallery-4.png" alt="" class="gallery-section__img">
-
-            <div class="gallery-section__magnifier">
-              <svg width="16" height="16">
-                <use href="../assets/img/icons.svg#magnifier"></use>
-              </svg>
-            </div>
-          </div>
-
-          <div class="gallery-section__more">
-            Смотреть все
-          </div>
-
-        </div>
-      </div>
-    </section>
+    <gallery-section></gallery-section>
 
     <section class="main__section team-section">
       <h2 class="team-section__heading heading-white">
@@ -615,6 +420,34 @@
             <div class="swiper-wrapper">
 
               <div class="swiper-slide team-section__item">
+
+                <svg class="team-section__icon team-section__icon--star1" width="23" height="23">
+                  <use href="../assets/img/icons.svg#star"></use>
+                </svg>
+
+                <svg class="team-section__icon team-section__icon--star2" width="23" height="23">
+                  <use href="../assets/img/icons.svg#star"></use>
+                </svg>
+
+                <svg class="team-section__icon team-section__icon--star3" width="23" height="23">
+                  <use href="../assets/img/icons.svg#star"></use>
+                </svg>
+
+                <svg class="team-section__icon team-section__icon--hexagon1" width="24" height="29">
+                  <use href="../assets/img/icons.svg#hexagon"></use>
+                </svg>
+
+                <svg class="team-section__icon team-section__icon--hexagon-lg" width="62" height="76">
+                  <use href="../assets/img/icons.svg#hexagon-lg"></use>
+                </svg>
+
+                <svg class="team-section__icon team-section__icon--lightning" width="47" height="102">
+                  <use href="../assets/img/icons.svg#lightning"></use>
+                </svg>
+
+                <svg class="team-section__icon team-section__icon--crown" width="60" height="60">
+                  <use href="../assets/img/icons.svg#crown"></use>
+                </svg>
 
                 <img src="../assets/img/member-1.png" alt="" class="team-section__img">
 
@@ -668,64 +501,39 @@
       </div>
     </section>
 
-    <section class="main__section inst-section">
-      <div class="inst-section__container">
+    <inst-section></inst-section>
 
-        <div class="inst-section__list">
-          <div class="inst-section__item">
-            <img src="../assets/img/inst-1.png" alt="" class="inst-section__img">
-          </div>
-          <div class="inst-section__item">
-            <img src="../assets/img/inst-2.png" alt="" class="inst-section__img">
-          </div>
-          <div class="inst-section__item">
-            <img src="../assets/img/inst-1.png" alt="" class="inst-section__img">
-          </div>
-          <div class="inst-section__item">
-            <img src="../assets/img/inst-2.png" alt="" class="inst-section__img">
-          </div>
-          <div class="inst-section__item">
-            <img src="../assets/img/inst-1.png" alt="" class="inst-section__img">
-          </div>
-          <div class="inst-section__item">
-            <img src="../assets/img/inst-2.png" alt="" class="inst-section__img">
-          </div>
-        </div>
-
-      </div>
-    </section>
-  </main>
+  </div>
 </template>
 
 <script>
 import Swiper, {Navigation} from 'swiper';
+import SpaceSection from "@/components/SpaceSection";
+import BookingSection from "@/components/BookingSection";
+import RatesSection from "@/components/RatesSection";
+import GallerySection from "@/components/GallerySection";
+import InstSection from "@/components/InstSection";
 
 Swiper.use([Navigation]);
 
 export default {
+  components: {
+    SpaceSection,
+    BookingSection,
+    RatesSection,
+    GallerySection,
+    InstSection
+  },
   data() {
     return {
-      sm1: true,
-      sm2: false,
-      sm3: false,
+
     };
   },
+  computed: {
+
+  },
   methods: {
-    chooseSm(sm) {
-      if (sm === 'sm1') {
-        this.sm1 = true;
-        this.sm2 = false;
-        this.sm3 = false;
-      } else if (sm === 'sm2') {
-        this.sm1 = false;
-        this.sm2 = true;
-        this.sm3 = false;
-      } else if (sm === 'sm3') {
-        this.sm1 = false;
-        this.sm2 = false;
-        this.sm3 = true;
-      }
-    }
+
   },
   mounted() {
     var swiper1 = new Swiper('.community-section__swiper-container', {

@@ -13,6 +13,7 @@
 
 // blocks
 @import "blocks/container";
+@import "blocks/main";
 @import "blocks/header";
 @import "blocks/welcome-section";
 @import "blocks/tagline-section";
@@ -30,6 +31,11 @@
 @import "blocks/gallery-section";
 @import "blocks/team-section";
 @import "blocks/inst-section";
+@import "blocks/sidebar";
+@import "blocks/vgs";
+@import "blocks/schedule-page";
+@import "blocks/heading-fluid";
+@import "blocks/path-box";
 @import "blocks/footer";
 
 html, body {

@@ -20,8 +20,9 @@
   }
 
   &__info {
-    padding-top: 37px;
+    margin-top: 37px;
     width: 662px;
+    height: 600px;
     position: relative;
   }
 
@@ -31,6 +32,12 @@
     &:not(:last-child) {
       margin-bottom: 20px;
     }
+  }
+
+  &__items {
+    position: absolute;
+    left: 0;
+    top: 0;
   }
 
   &__name {
@@ -76,5 +83,17 @@
   &__next {
     cursor: pointer;
     transform: rotate(180deg);
+  }
+
+  &__img-box {
+    position: relative;
+    height: 600px;
+    width: 488px;
+  }
+
+  &__img {
+    position: absolute;
+    right: 0;
+    top: 0;
   }
 }

@@ -15,10 +15,13 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding-top: 35px;
   }
 
   &__img {
     height: 277px;
+    position: relative;
+    z-index: 2;
   }
 
   &__info {
@@ -73,6 +76,46 @@
       width: 40px;
       height: 40px;
       background-image: url("../assets/img/icons/slider-arrow-yellow.svg");
+    }
+  }
+
+  &__icon {
+    position: absolute;
+
+    &--star1 {
+      top: 40px;
+      left: 75px;
+    }
+
+    &--star2 {
+      top: 0;
+      left: 125px;
+    }
+
+    &--star3 {
+      top: 235px;
+      right: 35px;
+    }
+
+    &--hexagon1 {
+      top: 215px;
+      left: 40px;
+    }
+
+    &--hexagon-lg {
+      top: 135px;
+      right: 60px;
+    }
+
+    &--lightning {
+      right: 38px;
+      top: 0;
+    }
+
+    &--crown {
+      z-index: 3;
+      top: 0;
+      left: 168px;
     }
   }
 }

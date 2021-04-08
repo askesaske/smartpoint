@@ -7,6 +7,39 @@
   z-index: 100;
   background-color: transparent;
 
+  transition: all .2s;
+
+  $e: &;
+
+  &--sidebar-open {
+    right: 400px;
+    left: -400px;
+  }
+
+  &--static {
+    background-color: $accent-color;
+
+    #{$e}__items {
+      color: $main-color;
+    }
+
+    #{$e}__location {
+      svg {
+        fill: $main-color;
+      }
+    }
+
+    #{$e}__user-box {
+      svg {
+        fill: $main-color;
+      }
+    }
+
+    #{$e}__burger {
+      fill: $main-color;
+    }
+  }
+
   &__container {
     @extend %container;
     height: 100%;
@@ -24,21 +57,66 @@
   &__location {
     display: flex;
     align-items: center;
+    position: relative;
+    cursor: pointer;
 
     margin-right: 30px;
 
     svg {
       fill: $white-color;
-      margin-right: 6px;
+      margin-right: 10px;
     }
   }
 
   &__lang-box {
-    text-transform: uppercase;
+    position: relative;
+    cursor: pointer;
     margin-right: 30px;
   }
 
+  &__lang-dropdown {
+    text-transform: uppercase;
+    background-color: $white-color;
+    border-radius: 5px;
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    p {
+      padding: 10px;
+      color: $primary-black;
+
+      &:first-child {
+        border-bottom: 1px solid $primary-black;
+      }
+    }
+  }
+
   &__user-box {
+    svg {
+      fill: $white-color;
+    }
+
     margin-right: 30px;
+  }
+
+  &__burger {
+    cursor: pointer;
+    fill: $white-color;
+  }
+
+  &__location-dropdown {
+    background-color: $white-color;
+    border-radius: 5px;
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    p {
+      padding: 12px 10px;
+      color: $primary-black;
+
+      &:first-child {
+        border-bottom: 1px solid $primary-black;
+      }
+    }
   }
 }

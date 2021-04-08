@@ -1,13 +1,11 @@
 .benefit-card {
-  background: $accent-color;
-  box-shadow: 0 10px 30px rgba(255, 241, 53, 0.15);
-  border-radius: 5px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 285px;
   width: 285px;
+  height: 285px;
+
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+
+  position: relative;
 
   &__icon {
     margin-bottom: 26px;
@@ -15,5 +13,65 @@
 
   &__name {
     @include text-style(2.2rem, 600, $main-color);
+  }
+
+  &__title {
+    position: relative;
+    @include text-style(2.2rem, 600, $main-color);
+    line-height: 26.25px;
+    margin-bottom: 26px;
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: calc(100% + 6px);
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 1px;
+      background-color: $main-color;
+    }
+  }
+
+  &__desc {
+    @include text-style(1.6rem, 400, $primary-black);
+    line-height: 18.5px;
+  }
+
+  &__side {
+    border-radius: 5px;
+    height: 285px;
+    backface-visibility: hidden;
+    overflow: hidden;
+    transition: all .8s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    &--front {
+      background-color: $accent-color;
+      box-shadow: 0 10px 30px rgba(255, 241, 53, 0.15);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &--back {
+      transform: rotateY(180deg);
+      padding: 40px 20px;
+      background: $white-color;
+      box-shadow: 0 10px 20px rgba(138, 149, 158, 0.25);
+      text-align: center;
+    }
+  }
+
+  &:hover &__side--front {
+    transform: rotateY(-180deg);
+  }
+
+  &:hover &__side--back {
+    transform: rotateY(0deg);
   }
 }

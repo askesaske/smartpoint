@@ -18,10 +18,17 @@
   &__pentagon {
     position: relative;
     margin-bottom: 70px;
+
+    svg {
+      animation-name: rotate;
+      animation-duration: 5s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+    }
   }
 
   &__text {
-    @include text-style(3.2rem, 700, $accent-color);
+    @include text-style(3.6rem, 700, $accent-color);
     line-height: 38px;
     text-align: center;
     position: absolute;
@@ -30,6 +37,11 @@
     transform: translate(-50%, -50%);
     white-space: nowrap;
     text-transform: uppercase;
+
+    animation-name: scale;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in-out;
   }
 
   &__scroll-box {
@@ -41,6 +53,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
   }
 
   &__scroll {
@@ -52,6 +65,11 @@
     left: 50%;
     top: 4px;
     transform: translateX(-50%);
+
+    animation-name: scrollLine;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
   }
 
   &__scroll-text {

@@ -1,0 +1,25 @@
+.path-box {
+  display: flex;
+  align-items: center;
+
+  &__link {
+    @include text-style(1.4rem, 600, $main-color);
+    position: relative;
+
+    &:not(:last-child) {
+      color: #9A9A9A;
+      margin-right: 30px;
+
+      &:after {
+        content: '';
+        position: absolute;
+        width: 6px;
+        height: 10px;
+        background-image: url("../assets/img/icons/path-chevron.svg");
+        top: 50%;
+        transform: translateY(-50%);
+        left: calc(100% + 12px);
+      }
+    }
+  }
+}
