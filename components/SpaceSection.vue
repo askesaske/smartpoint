@@ -1,5 +1,5 @@
 <template>
-  <section class="main__section space-section">
+  <section class="main__section space-section" id="space">
     <h2 class="space-section__heading heading-white">
       <div class="heading-white__bg">Пространство</div>
       <div class="heading-white__text">Пространство</div>

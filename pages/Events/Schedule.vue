@@ -14,7 +14,7 @@
 
     <div class="schedule-page__container">
 
-      <button class="schedule-page__btn button-white">Архив</button>
+      <nuxt-link to="/Events/Archive/" tag="button" class="schedule-page__btn button-white">Архив</nuxt-link>
 
       <div class="schedule-page__wrapper">
 
@@ -26,7 +26,7 @@
 
             <div class="schedule-page__list">
 
-              <div class="schedule-page__item">
+              <nuxt-link to="/Events/1" tag="div" class="schedule-page__item">
 
                 <div class="schedule-page__date">
                   <p>март 5</p>
@@ -41,7 +41,7 @@
                   Спикер: Карина Сыздыкова
                 </div>
 
-              </div>
+              </nuxt-link>
 
               <div class="schedule-page__item">
 
@@ -123,6 +123,6 @@
 
     </div>
 
-    <img src="../../assets/img/schedule-bg.png" alt="" class="schedule-page__bg">
+    <img src="../../assets/img/mountain-bg.png" alt="" class="schedule-page__bg">
   </div>
 </template>

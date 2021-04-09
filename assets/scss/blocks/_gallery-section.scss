@@ -67,6 +67,11 @@
     @include text-style(1.6rem, 500, $main-color);
     right: 0;
     top: 208px;
+    cursor: pointer;
+
+    &:hover {
+      color: $accent-color;
+    }
   }
 
   &__magnifier {

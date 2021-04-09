@@ -17,11 +17,13 @@
   }
 
   &__gallery {
-    bottom: 80px !important;
+    bottom: 170px !important;
+    display: flex;
+    justify-content: center;
 
     &__container {
-      //display: flex !important;
-      //justify-content: center !important;
+      width: unset !important;
+      display: inline-block !important;
 
       &__img {
         border-radius: 0 !important;

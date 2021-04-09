@@ -11,17 +11,36 @@
           Меню
         </div>
 
-        <div class="sidebar__list">
-          <a href="#" class="sidebar__link">О нас</a>
-          <a href="#" class="sidebar__link">Комьюнити</a>
-          <a href="#" class="sidebar__link">Онлайн бронирование</a>
-          <a href="#" class="sidebar__link">Тарифы</a>
-          <a href="#" class="sidebar__link">Мероприятия</a>
-          <a href="#" class="sidebar__link">Пространство</a>
-          <a href="#" class="sidebar__link">Новости</a>
-          <a href="#" class="sidebar__link">Наша галерея</a>
-          <a href="#" class="sidebar__link">Наша команда</a>
+        <div class="sidebar__list" v-if="this.$route.path === '/'">
+          <nuxt-link tag="a"
+                     to="/"
+                     class="sidebar__link"
+                     @click.native="closeSideBar"
+                     v-scroll-to="{el: link.sectionId, duration: 700,}"
+                     v-for="link in links"
+                     :key="link.id">
+            {{ link.title }}
+          </nuxt-link>
         </div>
+
+        <div class="sidebar__list" v-else>
+          <nuxt-link tag="a"
+                     :to="{ path: '/', hash: link.sectionId }"
+                     class="sidebar__link"
+                     @click.native="closeSideBar"
+                     v-for="link in links"
+                     :key="link.id">
+            {{ link.title }}
+          </nuxt-link>
+        </div>
+
+        <!--          <nuxt-link tag="a" to="/" class="sidebar__link" @click.native="closeSideBar">Онлайн бронирование</nuxt-link>-->
+        <!--          <nuxt-link tag="a" to="/" class="sidebar__link" @click.native="closeSideBar">Тарифы</nuxt-link>-->
+        <!--          <nuxt-link tag="a" to="/" class="sidebar__link" @click.native="closeSideBar">Мероприятия</nuxt-link>-->
+        <!--          <nuxt-link tag="a" to="/" class="sidebar__link" @click.native="closeSideBar">Пространство</nuxt-link>-->
+        <!--          <nuxt-link tag="a" to="/" class="sidebar__link" @click.native="closeSideBar">Новости</nuxt-link>-->
+        <!--          <nuxt-link tag="a" to="/Gallery" class="sidebar__link" @click.native="closeSideBar">Наша галерея</nuxt-link>-->
+        <!--          <nuxt-link tag="a" to="/" class="sidebar__link" @click.native="closeSideBar">Наша команда</nuxt-link>-->
 
       </div>
       <Nuxt/>
@@ -32,6 +51,57 @@
 
 <script>
 export default {
+  data() {
+    return {
+      links: [
+        {
+          id: 1,
+          sectionId: "#about",
+          title: "О нас"
+        },
+        {
+          id: 2,
+          sectionId: "#community",
+          title: "Комьюнити"
+        },
+        {
+          id: 3,
+          sectionId: "#booking",
+          title: "Онлайн бронирование",
+        },
+        {
+          id: 4,
+          sectionId: "#rates",
+          title: "Тарифы"
+        },
+        {
+          id: 5,
+          sectionId: "#events",
+          title: "Мероприятия"
+        },
+        {
+          id: 6,
+          sectionId: "#space",
+          title: "Пространство"
+        },
+        {
+          id: 7,
+          sectionId: "#news",
+          title: "Новости"
+        },
+        {
+          id: 8,
+          sectionId: "#gallery",
+          title: "Наша галерея"
+        },
+        {
+          id: 9,
+          sectionId: "#team",
+          title: "Наша команда"
+        }
+      ]
+    };
+  },
   computed: {
     sideBarState() {
       return this.$store.state.sideBarState

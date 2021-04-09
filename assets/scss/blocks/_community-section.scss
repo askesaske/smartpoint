@@ -15,6 +15,7 @@
   }
 
   &__item {
+    cursor: pointer;
     &:nth-child(even) {
       padding-top: 58px;
     }

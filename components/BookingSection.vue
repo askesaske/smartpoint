@@ -1,5 +1,5 @@
 <template>
-  <section class="main__section online-booking">
+  <section class="main__section online-booking" id="booking">
     <h2 class="online-booking__heading heading-white">
       <div class="heading-white__bg">Онлайн бронирование</div>
       <div class="heading-white__text">Онлайн бронирование</div>

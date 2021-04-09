@@ -1,0 +1,50 @@
+.community {
+  position: relative;
+  padding-top: 70px;
+  padding-bottom: 120px;
+
+  &__heading {
+    position: relative;
+    z-index: 2;
+    margin-bottom: -30px;
+  }
+
+  &__container {
+    @extend %container;
+    position: relative;
+    z-index: 3;
+  }
+
+  &__row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  &__info {
+    width: 590px;
+    padding-top: 60px;
+  }
+
+  &__text {
+    @include text-style(1.6rem, 400, $primary-black);
+    line-height: 18.5px;
+
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+
+    &--bordered {
+      padding-left: 10px;
+      border-left: 2px solid $accent-color;
+    }
+  }
+
+  &__bg {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+  }
+}

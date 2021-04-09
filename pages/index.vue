@@ -2,6 +2,11 @@
   <div>
 
     <section class="main__section welcome-section">
+
+      <div class="welcome-section__video-wrapper">
+        <video src="../assets/videos/bg-video.mp4" autoplay muted loop class="welcome-section__video-bg"></video>
+      </div>
+
       <div class="welcome-section__container">
         <div class="welcome-section__pentagon">
           <svg width="300" height="320">
@@ -49,7 +54,7 @@
       </div>
     </section>
 
-    <section class="main__section about-section">
+    <section class="main__section about-section" id="about">
       <div class="about-section__container">
         <h2 class="about-section__heading heading-blue">
           <div class="heading-blue__bg">О нас</div>
@@ -72,9 +77,9 @@
               SmArt.Point.
             </div>
 
-            <button class="about-section__btn button">
+            <nuxt-link to="/About" tag="button" class="about-section__btn button">
               Подробнее
-            </button>
+            </nuxt-link>
 
             <div class="about-section__row">
               <div class="about-section__number-box">
@@ -182,7 +187,7 @@
       </div>
     </section>
 
-    <section class="main__section community-section">
+    <section class="main__section community-section" id="community">
       <div class="community-section__container">
         <h2 class="community-section__heading heading-blue">
           <div class="heading-blue__bg">Комьюнити</div>
@@ -192,12 +197,12 @@
         <div class="community-section__slider">
           <div class="swiper-container community-section__swiper-container">
             <div class="swiper-wrapper">
-              <div class="swiper-slide community-section__item">
+              <nuxt-link to="/Community" tag="div" class="swiper-slide community-section__item">
                 <img src="../assets/img/choco.png" alt="" class="community-section__img">
                 <div class="community-section__name">
                   Chocofamily Holding
                 </div>
-              </div>
+              </nuxt-link>
               <div class="swiper-slide community-section__item">
                 <img src="../assets/img/petrel-ai.png" alt="" class="community-section__img">
                 <div class="community-section__name">
@@ -235,22 +240,23 @@
 
     <rates-section></rates-section>
 
-    <section class="main__section events-section">
+    <section class="main__section events-section" id="events">
       <img src="../assets/img/events-bg.png" alt="" class="events-section__bg">
 
       <div class="events-section__container">
         <h2 class="events-section__heading heading-blue">
-          <div class="heading-blue__bg">Тарифы</div>
-          <div class="heading-blue__text">Тарифы</div>
+          <div class="heading-blue__bg">Мероприятия</div>
+          <div class="heading-blue__text">Мероприятия</div>
         </h2>
 
         <div class="events-section__btn-group">
-          <button class="events-section__btn button">Расписание событий</button>
-          <button class="events-section__btn button-white">Архив</button>
+          <nuxt-link to="/Events/Schedule/" tag="button" class="events-section__btn button">Расписание событий
+          </nuxt-link>
+          <nuxt-link to="/Events/Archive/" tag="button" class="events-section__btn button-white">Архив</nuxt-link>
         </div>
 
         <div class="events-section__list">
-          <div class="events-section__row">
+          <nuxt-link to="/Events/1" tag="div" class="events-section__row">
             <div class="events-section__date">МАРТ 5</div>
 
             <div class="events-section__main">
@@ -269,7 +275,7 @@
                 </div>
               </div>
             </div>
-          </div>
+          </nuxt-link>
 
           <div class="events-section__row">
             <div class="events-section__date">МАРТ 16</div>
@@ -318,7 +324,7 @@
 
     <space-section></space-section>
 
-    <section class="main__section news-section">
+    <section class="main__section news-section" id="news">
       <div class="news-section__container">
         <h2 class="news-section__heading heading-blue">
           <div class="heading-blue__bg">Новости</div>
@@ -327,7 +333,7 @@
 
         <div class="news-section__list">
 
-          <div class="news-section__item">
+          <nuxt-link to="/News/1" tag="div" class="news-section__item">
             <img src="../assets/img/news-1.png" alt="" class="news-section__img">
             <div class="news-section__date">2020-11-27</div>
             <div class="news-section__title">
@@ -343,9 +349,9 @@
                 <use href="../assets/img/icons.svg#arrow-sm"></use>
               </svg>
             </div>
-          </div>
+          </nuxt-link>
 
-          <div class="news-section__item">
+          <nuxt-link to="/News/1" tag="div" class="news-section__item">
             <img src="../assets/img/news-2.png" alt="" class="news-section__img">
             <div class="news-section__date">2020-11-27</div>
             <div class="news-section__title">
@@ -361,9 +367,9 @@
                 <use href="../assets/img/icons.svg#arrow-sm"></use>
               </svg>
             </div>
-          </div>
+          </nuxt-link>
 
-          <div class="news-section__item">
+          <nuxt-link to="/News/1" tag="div" class="news-section__item">
             <img src="../assets/img/news-3.png" alt="" class="news-section__img">
             <div class="news-section__date">2020-11-27</div>
             <div class="news-section__title">
@@ -379,9 +385,9 @@
                 <use href="../assets/img/icons.svg#arrow-sm"></use>
               </svg>
             </div>
-          </div>
+          </nuxt-link>
 
-          <div class="news-section__item">
+          <nuxt-link to="/News/1" tag="div" class="news-section__item">
             <img src="../assets/img/news-4.png" alt="" class="news-section__img">
             <div class="news-section__date">2020-11-27</div>
             <div class="news-section__title">
@@ -397,7 +403,7 @@
                 <use href="../assets/img/icons.svg#arrow-sm"></use>
               </svg>
             </div>
-          </div>
+          </nuxt-link>
 
         </div>
 
@@ -406,7 +412,7 @@
 
     <gallery-section></gallery-section>
 
-    <section class="main__section team-section">
+    <section class="main__section team-section" id="team">
       <h2 class="team-section__heading heading-white">
         <div class="heading-white__bg">Наша команда</div>
         <div class="heading-white__text">Наша команда</div>
@@ -525,16 +531,10 @@ export default {
     InstSection
   },
   data() {
-    return {
-
-    };
+    return {};
   },
-  computed: {
-
-  },
-  methods: {
-
-  },
+  computed: {},
+  methods: {},
   mounted() {
     var swiper1 = new Swiper('.community-section__swiper-container', {
       slidesPerView: 2,

@@ -1,0 +1,47 @@
+.news {
+  position: relative;
+  padding-top: 70px;
+  padding-bottom: 120px;
+
+  &__heading {
+    position: relative;
+    z-index: 2;
+    margin-bottom: -30px;
+  }
+
+  &__container {
+    width: 794px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 3;
+  }
+
+  &__img {
+    margin-bottom: 20px;
+  }
+
+  &__date {
+    @include text-style(1.6rem, 400, #ACACAC);
+    text-align: right;
+    margin-bottom: 18px;
+  }
+
+  &__title {
+    @include text-style(3.6rem, 600, $main-color);
+    line-height: 42.95px;
+    margin-bottom: 20px;
+  }
+
+  &__text {
+    @include text-style(1.6rem, 400, $primary-black);
+    line-height: 19px;
+  }
+
+  &__bg {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+}

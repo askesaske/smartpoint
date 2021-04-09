@@ -14,7 +14,7 @@
 
     <div class="schedule-page__container">
 
-      <button class="schedule-page__btn button-white">Расписание мероприятий</button>
+      <nuxt-link to="/Events/Schedule/" tag="button" class="schedule-page__btn button-white">Расписание мероприятий</nuxt-link>
 
       <div class="schedule-page__wrapper">
 
@@ -123,6 +123,6 @@
 
     </div>
 
-    <img src="../../assets/img/schedule-bg.png" alt="" class="schedule-page__bg">
+    <img src="../../assets/img/mountain-bg.png" alt="" class="schedule-page__bg">
   </div>
 </template>

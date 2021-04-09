@@ -1,5 +1,5 @@
 <template>
-  <section class="main__section gallery-section">
+  <section class="main__section gallery-section" id="gallery">
     <div class="gallery-section__container">
       <h2 class="news-section__heading heading-blue">
         <div class="heading-blue__bg">Галерея</div>
@@ -52,9 +52,9 @@
           <vue-gallery-slideshow :images="images" :index="index" @close="index = null"></vue-gallery-slideshow>
         </no-ssr>
 
-        <div class="gallery-section__more">
+        <nuxt-link to="/Gallery" tag="div" class="gallery-section__more">
           Смотреть все
-        </div>
+        </nuxt-link>
 
       </div>
     </div>
@@ -72,11 +72,15 @@ export default {
     return {
       index: null,
       images: [
-        "https://lh3.googleusercontent.com/proxy/hS--jR0idoxe9lIS20raqBsyNhgGMylnUmVdR9Cb7lf6E2lb9zdxJzGpw5tDFSNQ2u1IRrRR7NNvWuh767WgGuW0LP7NRQjcCBvXQdGWjEH0kl59DA",
         "https://gorillaict.com/wp-content/uploads/2018/04/abstract-business-code-270348-1100x500.jpg",
         "https://images.theconversation.com/files/304839/original/file-20191203-67002-chsvk1.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1200&h=675.0&fit=crop",
         "https://75276bc03af26d7c1f58-72b421883bb5b133f34e068afdd7cb11.ssl.cf3.rackcdn.com/2018/09/artificial-2970158_960_720.jpg",
-        "https://lh3.googleusercontent.com/proxy/hS--jR0idoxe9lIS20raqBsyNhgGMylnUmVdR9Cb7lf6E2lb9zdxJzGpw5tDFSNQ2u1IRrRR7NNvWuh767WgGuW0LP7NRQjcCBvXQdGWjEH0kl59DA",
+        "https://gorillaict.com/wp-content/uploads/2018/04/abstract-business-code-270348-1100x500.jpg",
+        "https://images.theconversation.com/files/304839/original/file-20191203-67002-chsvk1.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1200&h=675.0&fit=crop",
+        "https://75276bc03af26d7c1f58-72b421883bb5b133f34e068afdd7cb11.ssl.cf3.rackcdn.com/2018/09/artificial-2970158_960_720.jpg",
+        "https://gorillaict.com/wp-content/uploads/2018/04/abstract-business-code-270348-1100x500.jpg",
+        "https://images.theconversation.com/files/304839/original/file-20191203-67002-chsvk1.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1200&h=675.0&fit=crop",
+        "https://75276bc03af26d7c1f58-72b421883bb5b133f34e068afdd7cb11.ssl.cf3.rackcdn.com/2018/09/artificial-2970158_960_720.jpg",
         "https://gorillaict.com/wp-content/uploads/2018/04/abstract-business-code-270348-1100x500.jpg",
         "https://images.theconversation.com/files/304839/original/file-20191203-67002-chsvk1.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1200&h=675.0&fit=crop",
         "https://75276bc03af26d7c1f58-72b421883bb5b133f34e068afdd7cb11.ssl.cf3.rackcdn.com/2018/09/artificial-2970158_960_720.jpg",

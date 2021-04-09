@@ -1,5 +1,5 @@
 <template>
-  <section class="main__section rates-section">
+  <section class="main__section rates-section" id="rates">
     <div class="rates-section__container">
       <h2 class="rates-section__heading heading-blue">
         <div class="heading-blue__bg">Тарифы</div>

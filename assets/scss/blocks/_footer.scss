@@ -1,6 +1,7 @@
 .footer {
   $e: &;
   background-color: #1D1D1D;
+  overflow: hidden;
 
   &__container {
     @extend %container;
