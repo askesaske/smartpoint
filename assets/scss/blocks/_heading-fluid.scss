@@ -17,4 +17,17 @@
     text-transform: uppercase;
     text-align: center;
   }
+
+  @include respond(phone) {
+    padding-bottom: 30px;
+
+    &__path {
+      margin-bottom: 30px;
+    }
+
+    &__title {
+      font-size: 2.6rem;
+      line-height: 31.43px;
+    }
+  }
 }

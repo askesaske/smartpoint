@@ -118,4 +118,12 @@
       left: 168px;
     }
   }
+
+  @include respond(phone) {
+    padding: 90px 0;
+
+    &__heading {
+      margin-bottom: 43px;
+    }
+  }
 }

@@ -5,20 +5,30 @@
   position: relative;
   text-transform: uppercase;
   white-space: nowrap;
-  overflow: hidden;
 
   &__bg {
     @include text-style(13rem, 700, transparent);
     -webkit-text-stroke-width: 3px;
     -webkit-text-stroke-color: rgba(#343434, .05);
-  }
-
-  &__text {
-    @include text-style(6rem, 700, $main-color);
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+  }
+
+  &__text {
+    @include text-style(6rem, 700, $main-color);
+  }
+
+  @include respond(phone) {
+    &__bg {
+      font-size: 6rem;
+      -webkit-text-stroke-width: 1px;
+    }
+
+    &__text {
+      font-size: 2.6rem;
+    }
   }
 }
 
@@ -40,6 +50,16 @@
 
   &__text {
     @include text-style(6rem, 700, $white-color);
+  }
 
+  @include respond(phone) {
+    &__bg {
+      font-size: 6rem;
+      -webkit-text-stroke-width: 1px;
+    }
+
+    &__text {
+      font-size: 2.6rem;
+    }
   }
 }

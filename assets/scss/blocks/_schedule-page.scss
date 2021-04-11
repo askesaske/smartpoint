@@ -135,4 +135,76 @@
       filter: grayscale(100%);
     }
   }
+
+  @include respond(tab-land) {
+    &__row {
+      flex-direction: column;
+    }
+
+    &__list {
+      width: unset;
+      margin-bottom: 20px;
+      padding-right: 0;
+
+      &::-webkit-scrollbar-track {
+        -webkit-box-shadow: unset;
+        border-radius: unset;
+        background-color: unset;
+      }
+
+      &::-webkit-scrollbar {
+        width: unset;
+        background-color: unset;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        border-radius: unset;
+        background-color: unset;
+      }
+    }
+
+    &__month-box {
+      &:nth-child(even) {
+        #{$e}__row {
+          flex-direction: column;
+        }
+      }
+    }
+  }
+
+  @include respond(phone) {
+    padding-top: 60px;
+    padding-bottom: 90px;
+
+    &__btn {
+      margin: 20px 0 20px auto;
+    }
+
+    &__title {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      padding-bottom: 6px;
+    }
+
+    &__item {
+      padding-left: 32px;
+    }
+
+    &__date {
+      &::before {
+        width: 20px;
+      }
+
+      font-size: 1.4rem;
+    }
+
+    &__name {
+      font-size: 1.4rem;
+      margin-bottom: 6px;
+    }
+
+    &__desc {
+      font-size: 1.4rem;
+    }
+  }
 }

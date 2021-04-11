@@ -13,7 +13,7 @@
             <use href="../assets/img/icons.svg#map-pin"></use>
           </svg>
 
-          <p>{{ this.location }}</p>
+          <p class="header__location-title">{{ this.location }}</p>
 
           <div class="header__location-dropdown" v-if="locationToggle">
             <p @click="changeLocation(city)" v-for="city in cities" :key="city">{{ city }}</p>

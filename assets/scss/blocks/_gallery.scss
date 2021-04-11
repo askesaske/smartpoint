@@ -64,4 +64,36 @@
     height: 183px;
     cursor: zoom-in;
   }
+
+  @include respond(tab-land) {
+    &__container {
+      &--images {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+  }
+
+  @include respond(phone) {
+    padding-top: 60px;
+    padding-bottom: 90px;
+
+    &__heading {
+      margin-bottom: -10px;
+    }
+
+    &__container {
+      grid-template-columns: repeat(1, 1fr);
+
+      &--images {
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 8px;
+      }
+    }
+
+    &__category {
+      img {
+        width: 100%;
+      }
+    }
+  }
 }

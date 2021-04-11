@@ -9,11 +9,29 @@
 
   &__cards {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fill, 285px);
     grid-gap: 20px;
+    justify-content: center;
   }
 
   &__card {
 
+  }
+
+  @include respond(phone) {
+    &__title {
+      margin-bottom: 30px;
+      font-size: 2rem;
+    }
+
+    &__cards {
+      display: block;
+    }
+
+    &__card {
+      &:not(:last-child) {
+        margin-bottom: 20px;
+      }
+    }
   }
 }

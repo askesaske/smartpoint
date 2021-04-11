@@ -52,10 +52,43 @@
           <vue-gallery-slideshow :images="images" :index="index" @close="index = null"></vue-gallery-slideshow>
         </no-ssr>
 
+      </div>
+
+      <div class="gallery-section__wrapper">
+
+        <div class="gallery-section__row">
+          <div class="gallery-section__item">
+            <img src="../assets/img/gallery-long-sm.png" alt="" class="gallery-section__img">
+
+            <div class="gallery-section__magnifier" @click="onClick(0)">
+              <svg width="16" height="16">
+                <use href="../assets/img/icons.svg#magnifier"></use>
+              </svg>
+            </div>
+          </div>
+
+          <div class="gallery-section__item">
+            <img src="../assets/img/gallery-short-sm.png" alt="" class="gallery-section__img">
+          </div>
+        </div>
+
+        <div class="gallery-section__row">
+          <div class="gallery-section__item">
+            <img src="../assets/img/gallery-short-sm.png" alt="" class="gallery-section__img">
+          </div>
+
+          <div class="gallery-section__item">
+            <img src="../assets/img/gallery-long-sm.png" alt="" class="gallery-section__img">
+          </div>
+        </div>
+
         <nuxt-link to="/Gallery" tag="div" class="gallery-section__more">
           Смотреть все
         </nuxt-link>
 
+        <no-ssr>
+          <vue-gallery-slideshow :images="images" :index="index" @close="index = null"></vue-gallery-slideshow>
+        </no-ssr>
       </div>
     </div>
   </section>

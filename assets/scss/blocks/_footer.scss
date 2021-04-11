@@ -127,4 +127,93 @@
     @include text-style(1.6rem, 400, $primary-black);
     background-color: $accent-color;
   }
+
+  @include respond(tab-land) {
+    &__contacts {
+      margin-right: 60px;
+    }
+
+    &__pattern {
+      top: 160px;
+      right: -255px;
+
+      #{$e}__text {
+        margin-left: 0;
+        width: 200px;
+        br {
+          display: none;
+        }
+      }
+    }
+
+    &__logo {
+      width: 200px;
+    }
+  }
+
+  @include respond(phone) {
+    &__main {
+      padding: 40px 0 232px;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &__contacts {
+      margin-right: 0;
+      margin-bottom: 100px;
+
+      &:after {
+        transform: rotate(90deg) translateX(-50%);
+        right: unset;
+        bottom: -175px;
+        top: unset;
+        left: 50%;
+        height: 261px;
+      }
+    }
+
+    &__row {
+      justify-content: center;
+    }
+
+    &__pattern {
+      top: unset;
+      bottom: -90px;
+      width: 390px;
+      left: 0;
+      background-size: contain;
+      padding: 200px 0 0 25px;
+
+      #{$e}__text {
+        font-size: 1.2rem;
+        line-height: 14px;
+        margin-left: 91px;
+        width: unset;
+        br {
+          display: block;
+        }
+      }
+    }
+
+    &__logo {
+      width: 261px;
+      margin-bottom: -7px;
+    }
+
+    &__socials {
+      justify-content: center;
+    }
+
+    &__links {
+      #{$e}__text {
+        text-align: center;
+      }
+    }
+
+    &__copyrights {
+      padding: 12px 0;
+      font-size: 1.4rem;
+    }
+  }
 }

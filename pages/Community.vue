@@ -1,7 +1,7 @@
 <template>
   <div class="community">
 
-    <div class="event__heading heading-fluid">
+    <div class="community__heading heading-fluid">
       <div class="heading-fluid__container">
         <div class="heading-fluid__path path-box">
           <div class="path-box__link">Главная</div>

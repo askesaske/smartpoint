@@ -6,7 +6,7 @@
         <div class="heading-blue__text">Тарифы</div>
       </h2>
 
-      <div class="rates-section__row">
+      <div class="rates-section__row rates-section__row--d-none-md">
         <div class="rates-section__list">
           <div class="rates-section__item" v-for="(rate, i) in rates" :key="rate.id" @click="chooseRate(rate.id)">
             <div class="rates-section__row rates-section__row--mb8">
@@ -215,11 +215,171 @@
 
 
       </div>
+
+      <div class="rates-section__slider">
+        <div class="swiper-container rates-section__swiper-container">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide rates-section__slider-info">
+              <div class="rates-section__info-header">
+                <div class="rates-section__title rates-section__title--mb12">50 000 тг</div>
+                <div class="rates-section__text">
+                  Количество посещений: <span>Месяц</span>
+                </div>
+              </div>
+
+              <div class="rates-section__info-body">
+                <div class="rates-section__row rates-section__row--start">
+                  <svg class="rates-section__icon" width="20" height="20">
+                    <use href="../assets/img/icons.svg#gift"></use>
+                  </svg>
+                  <div class="rates-section__text rates-section__text--mr20">Бонус для бронирования</div>
+                  <div class="rates-section__text">6 000 KZT</div>
+                </div>
+
+                <div class="rates-section__row rates-section__row--start">
+                  <svg class="rates-section__icon" width="20" height="20">
+                    <use href="../assets/img/icons.svg#printer"></use>
+                  </svg>
+                  <div class="rates-section__text rates-section__text--mr20">Бонус для печати</div>
+                  <div class="rates-section__text">500 KZT</div>
+                </div>
+
+                <div class="rates-section__row rates-section__row--start">
+                  <svg class="rates-section__icon" width="20" height="20">
+                    <use href="../assets/img/icons.svg#dumbbell"></use>
+                  </svg>
+                  <div class="rates-section__text">Спортивная зона/Душевые</div>
+                </div>
+
+                <div class="rates-section__row rates-section__row--start">
+                  <svg class="rates-section__icon" width="20" height="20">
+                    <use href="../assets/img/icons.svg#home"></use>
+                  </svg>
+                  <div class="rates-section__text">Wi-Fi, ресепшн, мягкая зона, телефонные переговорки</div>
+                </div>
+
+                <div class="rates-section__row rates-section__row--start">
+                  <svg class="rates-section__icon" width="20" height="20">
+                    <use href="../assets/img/icons.svg#calendar"></use>
+                  </svg>
+                  <div class="rates-section__text">Бесплатное посещение мероприятий “SmArt.Point”</div>
+                </div>
+              </div>
+
+              <button class="rates-section__btn button">Купить</button>
+            </div>
+            <div class="swiper-slide rates-section__slider-info">
+              <div class="rates-section__info-header">
+                <div class="rates-section__title rates-section__title--mb12">50 000 тг</div>
+                <div class="rates-section__text">
+                  Количество посещений: <span>Месяц</span>
+                </div>
+              </div>
+
+              <div class="rates-section__info-body">
+                <div class="rates-section__row rates-section__row--start">
+                  <svg class="rates-section__icon" width="20" height="20">
+                    <use href="../assets/img/icons.svg#gift"></use>
+                  </svg>
+                  <div class="rates-section__text rates-section__text--mr20">Бонус для бронирования</div>
+                  <div class="rates-section__text">6 000 KZT</div>
+                </div>
+
+                <div class="rates-section__row rates-section__row--start">
+                  <svg class="rates-section__icon" width="20" height="20">
+                    <use href="../assets/img/icons.svg#printer"></use>
+                  </svg>
+                  <div class="rates-section__text rates-section__text--mr20">Бонус для печати</div>
+                  <div class="rates-section__text">500 KZT</div>
+                </div>
+
+                <div class="rates-section__row rates-section__row--start">
+                  <svg class="rates-section__icon" width="20" height="20">
+                    <use href="../assets/img/icons.svg#dumbbell"></use>
+                  </svg>
+                  <div class="rates-section__text">Спортивная зона/Душевые</div>
+                </div>
+
+                <div class="rates-section__row rates-section__row--start">
+                  <svg class="rates-section__icon" width="20" height="20">
+                    <use href="../assets/img/icons.svg#home"></use>
+                  </svg>
+                  <div class="rates-section__text">Wi-Fi, ресепшн, мягкая зона, телефонные переговорки</div>
+                </div>
+
+                <div class="rates-section__row rates-section__row--start">
+                  <svg class="rates-section__icon" width="20" height="20">
+                    <use href="../assets/img/icons.svg#calendar"></use>
+                  </svg>
+                  <div class="rates-section__text">Бесплатное посещение мероприятий “SmArt.Point”</div>
+                </div>
+              </div>
+
+              <button class="rates-section__btn button">Купить</button>
+            </div>
+            <div class="swiper-slide rates-section__slider-info">
+              <div class="rates-section__info-header">
+                <div class="rates-section__title rates-section__title--mb12">50 000 тг</div>
+                <div class="rates-section__text">
+                  Количество посещений: <span>Месяц</span>
+                </div>
+              </div>
+
+              <div class="rates-section__info-body">
+                <div class="rates-section__row rates-section__row--start">
+                  <svg class="rates-section__icon" width="20" height="20">
+                    <use href="../assets/img/icons.svg#gift"></use>
+                  </svg>
+                  <div class="rates-section__text rates-section__text--mr20">Бонус для бронирования</div>
+                  <div class="rates-section__text">6 000 KZT</div>
+                </div>
+
+                <div class="rates-section__row rates-section__row--start">
+                  <svg class="rates-section__icon" width="20" height="20">
+                    <use href="../assets/img/icons.svg#printer"></use>
+                  </svg>
+                  <div class="rates-section__text rates-section__text--mr20">Бонус для печати</div>
+                  <div class="rates-section__text">500 KZT</div>
+                </div>
+
+                <div class="rates-section__row rates-section__row--start">
+                  <svg class="rates-section__icon" width="20" height="20">
+                    <use href="../assets/img/icons.svg#dumbbell"></use>
+                  </svg>
+                  <div class="rates-section__text">Спортивная зона/Душевые</div>
+                </div>
+
+                <div class="rates-section__row rates-section__row--start">
+                  <svg class="rates-section__icon" width="20" height="20">
+                    <use href="../assets/img/icons.svg#home"></use>
+                  </svg>
+                  <div class="rates-section__text">Wi-Fi, ресепшн, мягкая зона, телефонные переговорки</div>
+                </div>
+
+                <div class="rates-section__row rates-section__row--start">
+                  <svg class="rates-section__icon" width="20" height="20">
+                    <use href="../assets/img/icons.svg#calendar"></use>
+                  </svg>
+                  <div class="rates-section__text">Бесплатное посещение мероприятий “SmArt.Point”</div>
+                </div>
+              </div>
+
+              <button class="rates-section__btn button">Купить</button>
+            </div>
+          </div>
+          <!-- Add Arrows -->
+          <div class="swiper-button-next rates-section__next"></div>
+          <div class="swiper-button-prev rates-section__prev"></div>
+        </div>
+      </div>
+
     </div>
   </section>
 </template>
 
 <script>
+import Swiper from "swiper";
+
 export default {
   data() {
     return {
@@ -278,6 +438,26 @@ export default {
         this.rates[3].checked = true;
       }
     },
+  },
+  mounted() {
+    var swiper1 = new Swiper('.rates-section__swiper-container', {
+      slidesPerView: 1,
+      spaceBetween: 8,
+      navigation: {
+        nextEl: '.rates-section__next',
+        prevEl: '.rates-section__prev',
+      },
+      // breakpoints: {
+      //   768: {
+      //     slidesPerView: 3,
+      //     spaceBetween: 20,
+      //   },
+      //   1200: {
+      //     slidesPerView: 4,
+      //     spaceBetween: 20,
+      //   }
+      // }
+    });
   }
 }
 </script>

@@ -1,6 +1,6 @@
 <template>
   <div class="about">
-    <div class="news__heading heading-fluid">
+    <div class="about__heading heading-fluid">
       <div class="heading-fluid__container">
         <div class="heading-fluid__path path-box">
           <div class="path-box__link">Главная</div>

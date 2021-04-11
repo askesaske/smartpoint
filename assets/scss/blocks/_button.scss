@@ -7,7 +7,7 @@
 
   @include text-style(1.6rem, 500, $accent-color);
 
-  transition: .1s;
+  transition: all .1s;
 
   &:hover {
     background-color: #354489;
@@ -20,5 +20,10 @@
 
   &:focus {
     background-color: #4256B0;
+  }
+
+  @include respond(phone) {
+    height: 46px;
+    font-size: 1.4rem;
   }
 }

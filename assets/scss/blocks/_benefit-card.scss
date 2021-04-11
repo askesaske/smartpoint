@@ -74,4 +74,56 @@
   &:hover &__side--back {
     transform: rotateY(0deg);
   }
+
+  @include respond(phone) {
+    width: unset;
+    height: unset;
+
+    perspective: unset;
+    -moz-perspective: unset;
+
+    &__icon {
+      margin-bottom: 12px;
+      width: 60px;
+      height: 60px;
+    }
+
+    &__name {
+      @include text-style(2rem, 600, $main-color);
+    }
+
+    &__title {
+      display: none;
+    }
+
+    &__desc {
+      @include text-style(1.4rem, 400, $primary-black);
+      line-height: 16.24px;
+    }
+
+    &__side {
+      height: unset;
+      backface-visibility: unset;
+      position: unset;
+
+      &--front {
+        padding: 24px 30px;
+        border-radius: 5px 5px 0 0;
+      }
+
+      &--back {
+        transform: unset;
+        padding: 24px 30px;
+        border-radius: 0 0 5px 5px;
+      }
+    }
+
+    &:hover &__side--front {
+      transform: unset;
+    }
+
+    &:hover &__side--back {
+      transform: unset;
+    }
+  }
 }

@@ -119,4 +119,38 @@
       }
     }
   }
+
+  @include respond(phone) {
+    height: 60px;
+
+    &__items {
+      font-size: 1.4rem;
+    }
+
+    &__location {
+      margin-right: 20px;
+
+      svg {
+        fill: $white-color;
+        margin-right: 0;
+      }
+    }
+
+    &__location-title {
+      display: none;
+    }
+
+    &__lang-box {
+      margin-right: 20px;
+    }
+
+    &__user-box {
+      margin-right: 20px;
+    }
+
+    &__location-dropdown {
+      top: 30px;
+      left: 0;
+    }
+  }
 }

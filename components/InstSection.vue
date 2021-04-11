@@ -34,11 +34,44 @@
         </div>
       </div>
 
+      <div class="inst-section__wrapper">
+        <img src="../assets/img/sm-inst-name.png" alt="" class="inst-section__inst-name">
+        <div class="inst-section__slider">
+          <div class="swiper-container inst-section__swiper-container">
+            <div class="swiper-wrapper">
+              <div class="swiper-item">
+                <img src="../assets/img/inst-1.png" alt="" class="inst-section__img">
+              </div>
+              <div class="swiper-slide">
+                <img src="../assets/img/inst-2.png" alt="" class="inst-section__img">
+              </div>
+              <div class="swiper-slide">
+                <img src="../assets/img/inst-1.png" alt="" class="inst-section__img">
+              </div>
+              <div class="swiper-slide">
+                <img src="../assets/img/inst-2.png" alt="" class="inst-section__img">
+              </div>
+              <div class="swiper-slide">
+                <img src="../assets/img/inst-1.png" alt="" class="inst-section__img">
+              </div>
+              <div class="swiper-slide">
+                <img src="../assets/img/inst-2.png" alt="" class="inst-section__img">
+              </div>
+            </div>
+            <!-- Add Arrows -->
+            <div class="swiper-button-next inst-section__next"></div>
+            <div class="swiper-button-prev inst-section__prev"></div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 </template>
 
 <script>
+import Swiper from "swiper";
+
 export default {
   data() {
     return {
@@ -46,8 +79,22 @@ export default {
       hoverOther: false
     };
   },
-  methods: {
-
+  methods: {},
+  mounted() {
+    var swiper4 = new Swiper('.inst-section__swiper-container', {
+      slidesPerView: 1,
+      spaceBetween: 8,
+      navigation: {
+        nextEl: '.inst-section__next',
+        prevEl: '.inst-section__prev',
+      },
+      breakpoints: {
+        768: {
+          slidesPerView: 3,
+          spaceBetween: 20,
+        },
+      }
+    });
   }
 }
 </script>

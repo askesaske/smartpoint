@@ -37,4 +37,26 @@
       margin-right: 20px;
     }
   }
+
+  @include respond(phone) {
+    &__heading {
+      margin-bottom: 44px;
+    }
+
+    &__tabs {
+      flex-direction: column;
+      margin-bottom: 30px;
+    }
+
+    &__tab {
+      width: 124px;
+      height: 46px;
+      font-size: 1.4rem;
+
+      &:not(:last-child) {
+        margin-right: 0;
+        margin-bottom: 24px;
+      }
+    }
+  }
 }

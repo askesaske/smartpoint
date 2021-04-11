@@ -7,7 +7,7 @@
   }
 
   &__heading {
-    margin-bottom: 60px;
+    margin-bottom: 94px;
   }
 
   &__row {
@@ -110,6 +110,13 @@
     //position: relative;
   }
 
+  &__slider-info {
+    background: $white-color;
+    box-shadow: 0 10px 20px rgba(138, 149, 158, 0.15);
+    border-radius: 5px;
+    padding: 50px 50px 120px;
+  }
+
   &__info-header {
     text-align: center;
     margin-bottom: 40px;
@@ -127,6 +134,7 @@
 
   &__icon {
     margin-right: 30px;
+    flex-shrink: 0;
   }
 
   &__btn {
@@ -134,5 +142,103 @@
     bottom: 50px;
     left: 50%;
     transform: translateX(-50%);
+  }
+
+  &__slider{
+    display: none;
+  }
+
+  &__swiper-container {
+    padding-bottom: 60px;
+  }
+
+  &__next {
+    right: 0px;
+    bottom: 0;
+    width: 40px;
+    height: 40px;
+    top: unset;
+    margin: unset;
+
+    &:after {
+      content: '';
+      width: 40px;
+      height: 40px;
+      background-image: url("../assets/img/icons/slider-arrow.svg");
+    }
+  }
+
+  &__prev {
+    left: unset;
+    right: 70px;
+    bottom: 0;
+    width: 40px;
+    height: 40px;
+    transform: rotate(180deg);
+    top: unset;
+    margin: unset;
+
+    &:after {
+      content: '';
+      width: 40px;
+      height: 40px;
+      background-image: url("../assets/img/icons/slider-arrow.svg");
+    }
+  }
+
+  @include respond(tab-land) {
+    &__row {
+      &--d-none-md {
+        display: none;
+      }
+    }
+
+    &__slider {
+      display: block;
+    }
+  }
+
+  @include respond(phone) {
+    padding: 90px 0;
+
+    &__heading {
+      margin-bottom: 43px;
+    }
+
+    &__slider-info {
+      padding: 24px 24px 100px;
+    }
+
+    &__title {
+      font-size: 2rem;
+    }
+
+    &__text {
+      font-size: 1.4rem;
+
+      &--mr20 {
+        margin-right: 16px;
+      }
+    }
+
+    &__info-header {
+      margin-bottom: 30px;
+    }
+
+    &__info-body {
+      & > * {
+        &:not(:last-child) {
+          margin-bottom: 16px;
+        }
+      }
+    }
+
+    &__icon {
+      margin-right: 12px;
+    }
+
+    &__btn {
+      bottom: 24px;
+    }
   }
 }

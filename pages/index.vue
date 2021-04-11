@@ -81,7 +81,7 @@
               Подробнее
             </nuxt-link>
 
-            <div class="about-section__row">
+            <div class="about-section__row about-section__row--tb-center">
               <div class="about-section__number-box">
                 <span>10 000 м²</span> <br>
                 Площадь коворкинга
@@ -407,6 +407,67 @@
 
         </div>
 
+        <div class="news-section__slider">
+          <div class="swiper-container news-section__swiper-container">
+            <div class="swiper-wrapper">
+              <nuxt-link to="/News/1" tag="div" class="swiper-slide news-section__item">
+                <img src="../assets/img/news-1.png" alt="" class="news-section__img">
+                <div class="news-section__date">2020-11-27</div>
+                <div class="news-section__title">
+                  Идейные соображения высшего порядка
+                </div>
+                <div class="news-section__desc">
+                  Повседневная практика показывает, что постоянный количественный рост и сфера нашей активности требуют
+                  определения и уточнения дальнейших направлений развития.
+                </div>
+                <div class="news-section__more">
+                  <p>Читать больше</p>
+                  <svg width="16" height="16">
+                    <use href="../assets/img/icons.svg#arrow-sm"></use>
+                  </svg>
+                </div>
+              </nuxt-link>
+              <nuxt-link to="/News/1" tag="div" class="swiper-slide news-section__item">
+                <img src="../assets/img/news-1.png" alt="" class="news-section__img">
+                <div class="news-section__date">2020-11-27</div>
+                <div class="news-section__title">
+                  Идейные соображения высшего порядка
+                </div>
+                <div class="news-section__desc">
+                  Повседневная практика показывает, что постоянный количественный рост и сфера нашей активности требуют
+                  определения и уточнения дальнейших направлений развития.
+                </div>
+                <div class="news-section__more">
+                  <p>Читать больше</p>
+                  <svg width="16" height="16">
+                    <use href="../assets/img/icons.svg#arrow-sm"></use>
+                  </svg>
+                </div>
+              </nuxt-link>
+              <nuxt-link to="/News/1" tag="div" class="swiper-slide news-section__item">
+                <img src="../assets/img/news-1.png" alt="" class="news-section__img">
+                <div class="news-section__date">2020-11-27</div>
+                <div class="news-section__title">
+                  Идейные соображения высшего порядка
+                </div>
+                <div class="news-section__desc">
+                  Повседневная практика показывает, что постоянный количественный рост и сфера нашей активности требуют
+                  определения и уточнения дальнейших направлений развития.
+                </div>
+                <div class="news-section__more">
+                  <p>Читать больше</p>
+                  <svg width="16" height="16">
+                    <use href="../assets/img/icons.svg#arrow-sm"></use>
+                  </svg>
+                </div>
+              </nuxt-link>
+            </div>
+            <!-- Add Arrows -->
+            <div class="swiper-button-next news-section__next"></div>
+            <div class="swiper-button-prev news-section__prev"></div>
+          </div>
+        </div>
+
       </div>
     </section>
 
@@ -537,7 +598,7 @@ export default {
   methods: {},
   mounted() {
     var swiper1 = new Swiper('.community-section__swiper-container', {
-      slidesPerView: 2,
+      slidesPerView: 1,
       spaceBetween: 8,
       navigation: {
         nextEl: '.community-section__next',
@@ -556,7 +617,7 @@ export default {
     });
 
     var swiper2 = new Swiper('.team-section__swiper-container', {
-      slidesPerView: 2,
+      slidesPerView: 1,
       spaceBetween: 8,
       navigation: {
         nextEl: '.team-section__next',
@@ -571,6 +632,21 @@ export default {
           slidesPerView: 3,
           spaceBetween: 20,
         }
+      }
+    });
+
+    var swiper3 = new Swiper('.news-section__swiper-container', {
+      slidesPerView: 1,
+      spaceBetween: 8,
+      navigation: {
+        nextEl: '.news-section__next',
+        prevEl: '.news-section__prev',
+      },
+      breakpoints: {
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 198,
+        },
       }
     });
   }

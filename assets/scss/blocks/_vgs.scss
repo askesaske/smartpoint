@@ -55,4 +55,84 @@
     transform: rotate(180deg);
     left: 100px !important;
   }
+
+  @include respond(tab-land) {
+    &__container {
+      margin-top: 150px !important;
+      width: 600px !important;
+      height: 300px !important;
+    }
+
+    &__gallery {
+      bottom: 255px !important;
+      width: 600px;
+
+      &__container {
+
+        &__img {
+          border-radius: 0 !important;
+        }
+      }
+    }
+
+    &__next,
+    &__prev {
+      width: 50px !important;
+      height: 50px !important;
+      margin-top: -150px !important;
+    }
+
+    &__next {
+      right: 10px !important;
+    }
+
+    &__prev {
+      left: 10px !important;
+    }
+  }
+
+  @include respond(phone) {
+    &__container {
+      margin-top: -270px !important;
+      width: 295px !important;
+      height: 180px !important;
+    }
+
+    &__gallery {
+      bottom: unset !important;
+      top: 350px !important;
+      width: 295px;
+      height: 42px !important;
+      display: flex !important;
+
+      &__container {
+        height: 42px !important;
+        &__img {
+          border-radius: 0 !important;
+          height: 42px !important;
+        }
+      }
+    }
+
+    &__next,
+    &__prev {
+      width: 16px !important;
+      height: 16px !important;
+      margin-top: -175px !important;
+      background-size: contain;
+    }
+
+    &__next {
+      right: 10px !important;
+    }
+
+    &__prev {
+      left: 10px !important;
+    }
+
+    &__close {
+      top: 10px !important;
+      right: 10px !important;
+    }
+  }
 }

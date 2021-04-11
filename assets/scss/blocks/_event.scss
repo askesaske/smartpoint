@@ -31,6 +31,9 @@
 
   &__desc {
 
+    &--d-none-lg {
+      display: none;
+    }
   }
 
   &__title {
@@ -103,5 +106,70 @@
     bottom: 0;
     left: 0;
     right: 0;
+  }
+
+  @include respond(tab-land) {
+    &__desc {
+      &--d-none-md {
+        display: none;
+      }
+
+      &--d-none-lg {
+        display: block;
+      }
+    }
+
+    &__row {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &__info {
+      width: unset;
+    }
+
+    &__date-box {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  }
+
+  @include respond(phone) {
+    padding-top: 60px;
+    padding-bottom: 90px;
+
+    &__heading {
+      margin-bottom: -10px;
+    }
+
+    &__date-box {
+      padding: 20px;
+    }
+
+    &__title {
+      font-size: 2.2rem;
+      line-height: 26.6px;
+    }
+
+    &__date {
+      & > * {
+        &:not(:last-child) {
+          margin-right: 48px;
+
+          &:after {
+            left: calc(100% + 24px);
+          }
+        }
+      }
+    }
+
+    &__item {
+      margin-bottom: 30px;
+    }
+
+    &__text {
+      font-size: 1.4rem;
+      line-height: 16.24px;
+    }
   }
 }

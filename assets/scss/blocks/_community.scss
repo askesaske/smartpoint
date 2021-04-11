@@ -47,4 +47,47 @@
     bottom: 0;
     width: 100%;
   }
+
+  @include respond(tab-land) {
+    &__row {
+      display: block;
+    }
+
+    &__img {
+      display: block;
+      margin: 0 auto;
+    }
+
+    &__info {
+      width: unset;
+      margin-bottom: 20px;
+    }
+  }
+
+  @include respond(phone) {
+    padding-top: 60px;
+    padding-bottom: 90px;
+
+    &__heading {
+      margin-bottom: 0;
+    }
+
+    &__info {
+      padding-top: 16px;
+    }
+
+    &__text {
+      font-size: 1.4rem;
+      line-height: 16.24px;
+
+      &:not(:last-child) {
+        margin-bottom: 20px;
+      }
+
+      &--bordered {
+        padding-left: 10px;
+        border-left: 2px solid $accent-color;
+      }
+    }
+  }
 }

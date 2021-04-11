@@ -84,4 +84,34 @@
       background-color: $accent-color;
     }
   }
+
+  @include respond(phone) {
+    padding-top: 60px;
+    padding-bottom: 90px;
+
+    &__heading {
+      margin-bottom: -10px;
+    }
+
+    &__container {
+      max-width: 375px;
+      padding: 0 15px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 3;
+    }
+
+    &__swiper-container {
+      margin: 0;
+    }
+
+    &__text {
+      font-size: 1.4rem;
+      line-height: 16.24px;
+    }
+
+    &__next, &__prev {
+      display: none;
+    }
+  }
 }
