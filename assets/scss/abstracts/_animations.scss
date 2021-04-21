@@ -22,6 +22,28 @@
   }
 }
 
+@keyframes teamItems {
+  0% {
+    transform: rotate(-5deg);
+  }
+
+  25% {
+    transform: rotate(0);
+  }
+
+  50% {
+    transform: rotate(5deg);
+  }
+
+  75% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(-5deg);
+  }
+}
+
 @keyframes scrollLine {
   0% {
     top: 4px;

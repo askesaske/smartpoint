@@ -48,6 +48,10 @@
           </div>
         </div>
 
+        <nuxt-link to="/Gallery" tag="div" class="gallery-section__more">
+          Смотреть все
+        </nuxt-link>
+
         <no-ssr>
           <vue-gallery-slideshow :images="images" :index="index" @close="index = null"></vue-gallery-slideshow>
         </no-ssr>

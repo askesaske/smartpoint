@@ -488,30 +488,6 @@
 
               <div class="swiper-slide team-section__item">
 
-                <svg class="team-section__icon team-section__icon--star1" width="23" height="23">
-                  <use href="../assets/img/icons.svg#star"></use>
-                </svg>
-
-                <svg class="team-section__icon team-section__icon--star2" width="23" height="23">
-                  <use href="../assets/img/icons.svg#star"></use>
-                </svg>
-
-                <svg class="team-section__icon team-section__icon--star3" width="23" height="23">
-                  <use href="../assets/img/icons.svg#star"></use>
-                </svg>
-
-                <svg class="team-section__icon team-section__icon--hexagon1" width="24" height="29">
-                  <use href="../assets/img/icons.svg#hexagon"></use>
-                </svg>
-
-                <svg class="team-section__icon team-section__icon--hexagon-lg" width="62" height="76">
-                  <use href="../assets/img/icons.svg#hexagon-lg"></use>
-                </svg>
-
-                <svg class="team-section__icon team-section__icon--lightning" width="47" height="102">
-                  <use href="../assets/img/icons.svg#lightning"></use>
-                </svg>
-
                 <svg class="team-section__icon team-section__icon--crown" width="60" height="60">
                   <use href="../assets/img/icons.svg#crown"></use>
                 </svg>
@@ -527,6 +503,10 @@
 
               <div class="swiper-slide team-section__item">
 
+                <svg class="team-section__icon team-section__icon--chat" width="52" height="52">
+                  <use href="../assets/img/icons.svg#chat"></use>
+                </svg>
+
                 <img src="../assets/img/member-2.png" alt="" class="team-section__img">
 
                 <div class="team-section__info">
@@ -538,6 +518,10 @@
 
               <div class="swiper-slide team-section__item">
 
+                <svg class="team-section__icon team-section__icon--glasses" width="90" height="90">
+                  <use href="../assets/img/icons.svg#glasses"></use>
+                </svg>
+
                 <img src="../assets/img/member-3.png" alt="" class="team-section__img">
 
                 <div class="team-section__info">
@@ -548,6 +532,10 @@
               </div>
 
               <div class="swiper-slide team-section__item">
+
+                <svg class="team-section__icon team-section__icon--crown" width="60" height="60">
+                  <use href="../assets/img/icons.svg#crown"></use>
+                </svg>
 
                 <img src="../assets/img/member-1.png" alt="" class="team-section__img">
 
@@ -565,7 +553,9 @@
           </div>
 
         </div>
+
       </div>
+
     </section>
 
     <inst-section></inst-section>

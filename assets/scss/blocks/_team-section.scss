@@ -16,6 +16,24 @@
     align-items: center;
     justify-content: center;
     padding-top: 35px;
+    background-size: contain;
+    background-position: center;
+
+    &:first-child {
+      background-image: url("~/assets/videos/animation-1.gif");
+    }
+
+    &:nth-child(2) {
+      background-image: url("~/assets/videos/animation-2.gif");
+    }
+
+    &:nth-child(3) {
+      background-image: url("~/assets/videos/animation-3.gif");
+    }
+
+    &:last-child {
+      background-image: url("~/assets/videos/animation-1.gif");
+    }
   }
 
   &__img {
@@ -81,41 +99,27 @@
 
   &__icon {
     position: absolute;
-
-    &--star1 {
-      top: 40px;
-      left: 75px;
-    }
-
-    &--star2 {
-      top: 0;
-      left: 125px;
-    }
-
-    &--star3 {
-      top: 235px;
-      right: 35px;
-    }
-
-    &--hexagon1 {
-      top: 215px;
-      left: 40px;
-    }
-
-    &--hexagon-lg {
-      top: 135px;
-      right: 60px;
-    }
-
-    &--lightning {
-      right: 38px;
-      top: 0;
-    }
+    animation-name: teamItems;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
 
     &--crown {
       z-index: 3;
       top: 0;
       left: 168px;
+    }
+
+    &--chat {
+      z-index: 3;
+      top: 30px;
+      left: 235px;
+    }
+
+    &--glasses {
+      z-index: 3;
+      top: 40px;
+      left: 155px;
     }
   }
 
