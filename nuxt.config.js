@@ -72,6 +72,10 @@ export default {
   /*
   ** Nuxt.js modules
   */
+  transition: {
+    name: 'fade',
+    mode: 'out-in'
+  },
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',

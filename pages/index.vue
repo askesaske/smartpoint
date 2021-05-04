@@ -69,12 +69,7 @@
 
           <div class="about-section__info">
             <div class="about-section__text">
-              МФК «Almaty Towers» с момента открытия ничем не привлекал жителей города. Хоть башни и позиционировались
-              как
-              место для работы и развлечений, все офисы и культурные мероприятия, проводившиеся там, не блистали высоким
-              уровнем организованности. Комплекс оживал раз в один или два года, когда проводились образовательные
-              выставки или один из проектов американского консульства. Ситуация изменилась с открытием нового коворкинга
-              SmArt.Point.
+              {{ loadedAboutUs.text }}
             </div>
 
             <nuxt-link to="/About" tag="button" class="about-section__btn button">
@@ -83,11 +78,11 @@
 
             <div class="about-section__row about-section__row--tb-center">
               <div class="about-section__number-box">
-                <span>10 000 м²</span> <br>
+                <span>{{ loadedAboutUs.coworking_area }} м²</span> <br>
                 Площадь коворкинга
               </div>
               <div class="about-section__number-box">
-                <span>900</span> <br>
+                <span>{{ loadedAboutUs.working_place }}</span> <br>
                 Рабочих мест
               </div>
             </div>
@@ -101,83 +96,18 @@
 
           <div class="benefits__cards">
 
-            <div class="benefits__card benefit-card">
+            <div class="benefits__card benefit-card" v-for="adv in advantages" :key="adv.id">
               <div class="benefit-card__side benefit-card__side--front">
-                <svg class="benefit-card__icon" width="80" height="80">
-                  <use href="../assets/img/icons.svg#community"></use>
-                </svg>
+                <img :src="adv.card_image" alt="" class="benefit-card__icon">
                 <div class="benefit-card__name">
-                  Сообщество
+                  {{ adv.card_title }}
                 </div>
               </div>
 
               <div class="benefit-card__side benefit-card__side--back">
-                <div class="benefit-card__title">Спорт и развитие</div>
+                <div class="benefit-card__title">{{ adv.inside_card_title }}</div>
                 <div class="benefit-card__desc">
-                  В SmArt.Point много креативных личностей, создающих деловые и культурные ценности для общества.
-                  Общение между резидентами, бесплатный доступ к библеотеке
-                  и игровой зоне
-                </div>
-              </div>
-            </div>
-
-            <div class="benefits__card benefit-card">
-              <div class="benefit-card__side benefit-card__side--front">
-                <svg class="benefit-card__icon" width="80" height="80">
-                  <use href="../assets/img/icons.svg#virtual-office"></use>
-                </svg>
-                <div class="benefit-card__name">
-                  Виртуальный офис
-                </div>
-              </div>
-
-              <div class="benefit-card__side benefit-card__side--back">
-                <div class="benefit-card__title">Виртуальный офис</div>
-                <div class="benefit-card__desc">
-                  Специальные пакеты для компаний и фрилансеров, которым не требуется постоянный офис, но в тоже время
-                  нужно презентабельное место для встреч
-                  и юридический адрес
-                </div>
-              </div>
-            </div>
-
-            <div class="benefits__card benefit-card">
-              <div class="benefit-card__side benefit-card__side--front">
-                <svg class="benefit-card__icon" width="80" height="80">
-                  <use href="../assets/img/icons.svg#clock-24"></use>
-                </svg>
-                <div class="benefit-card__name">
-                  Доступность 24/7
-                </div>
-              </div>
-
-              <div class="benefit-card__side benefit-card__side--back">
-                <div class="benefit-card__title">Доступность 24/7</div>
-                <div class="benefit-card__desc">
-                  Офисы, индивидуальное рабочее место, ресепшн, высокоскоростной интернет, принт-зона, специальные
-                  пакеты для сотрудников
-                  в командировке, включая размещение, длительное использование докеров и т.д.
-                </div>
-              </div>
-            </div>
-
-            <div class="benefits__card benefit-card">
-              <div class="benefit-card__side benefit-card__side--front">
-                <svg class="benefit-card__icon" width="80" height="80">
-                  <use href="../assets/img/icons.svg#sport"></use>
-                </svg>
-                <div class="benefit-card__name">
-                  Спорт и развитие
-                </div>
-              </div>
-
-              <div class="benefit-card__side benefit-card__side--back">
-                <div class="benefit-card__title">Спорт и развитие</div>
-                <div class="benefit-card__desc">
-                  Инвестируйте в здоровье
-                  и в профессиональное развитие. Возможность проведения спортивных тренировки, курсов по йоге
-                  и регулярные тренинги по повышению квалификации
-                  и мастер классы
+                  {{ adv.inside_card_text }}
                 </div>
               </div>
             </div>
@@ -197,36 +127,17 @@
         <div class="community-section__slider">
           <div class="swiper-container community-section__swiper-container">
             <div class="swiper-wrapper">
-              <nuxt-link to="/Community" tag="div" class="swiper-slide community-section__item">
-                <img src="../assets/img/choco.png" alt="" class="community-section__img">
+
+              <nuxt-link :to="'/Community/' + community.id"
+                         tag="div"
+                         class="swiper-slide community-section__item"
+                         v-for="community in loadedCommunities"
+                         :key="community.id">
+                <img :src="community.company_card_image" alt="" class="community-section__img">
                 <div class="community-section__name">
-                  Chocofamily Holding
+                  {{ community.company_name }}
                 </div>
               </nuxt-link>
-              <div class="swiper-slide community-section__item">
-                <img src="../assets/img/petrel-ai.png" alt="" class="community-section__img">
-                <div class="community-section__name">
-                  Petrel Ai
-                </div>
-              </div>
-              <div class="swiper-slide community-section__item">
-                <img src="../assets/img/beeline.png" alt="" class="community-section__img">
-                <div class="community-section__name">
-                  Beeline
-                </div>
-              </div>
-              <div class="swiper-slide community-section__item">
-                <img src="../assets/img/urbo.png" alt="" class="community-section__img">
-                <div class="community-section__name">
-                  Urbo
-                </div>
-              </div>
-              <div class="swiper-slide community-section__item">
-                <img src="../assets/img/choco.png" alt="" class="community-section__img">
-                <div class="community-section__name">
-                  Chocofamily Holding
-                </div>
-              </div>
             </div>
             <!-- Add Arrows -->
             <div class="swiper-button-next community-section__next"></div>
@@ -582,9 +493,18 @@ export default {
     InstSection
   },
   data() {
-    return {};
+    return {
+      advantages: {},
+    };
   },
-  computed: {},
+  computed: {
+    loadedAboutUs() {
+      return this.$store.getters.loadedAboutUs
+    },
+    loadedCommunities() {
+      return this.$store.getters.loadedCommunities
+    }
+  },
   methods: {},
   mounted() {
     var swiper1 = new Swiper('.community-section__swiper-container', {
@@ -639,6 +559,12 @@ export default {
         },
       }
     });
+
+    this.$axios.get('http://185.121.81.137/api/advantages/')
+      .then(response => {
+        this.advantages = response.data
+      })
+      .catch(e => console.log(e))
   }
 };
 </script>

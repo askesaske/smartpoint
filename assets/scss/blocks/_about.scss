@@ -43,6 +43,25 @@
     justify-content: center;
   }
 
+  &__slider-inner {
+    position: relative;
+    width: 794px;
+    height: 400px;
+    background-color: #1D1D1D;
+    border-radius: 5px;
+    overflow: hidden;
+
+    img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      height: 100%;
+      width: unset;
+      max-width: unset;
+    }
+  }
+
   &__next {
     width: 36px;
     height: 36px;

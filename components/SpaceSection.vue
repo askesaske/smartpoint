@@ -13,14 +13,14 @@
           <div class="space-section__info" :key="'info'">
 
             <transition-group name="fade" mode="out-in">
-              <div class="space-section__items" v-for="space in spaces" :key="space.id" v-show="space.id === count">
+              <div class="space-section__items" v-for="area in areas" :key="area.id" v-show="area.id === count">
 
                 <div class="space-section__item">
                   <div class="space-section__name">Название</div>
                   <div class="space-section__desc">
-                    <div class="space-section__title">{{ space.name }}</div>
+                    <div class="space-section__title">{{ area.area_name }}</div>
                     <div class="space-section__subtitle">
-                      {{ space.nameDesc }}
+                      {{ area.area_description }}
                     </div>
                   </div>
                 </div>
@@ -28,9 +28,9 @@
                 <div class="space-section__item">
                   <div class="space-section__name">Тип</div>
                   <div class="space-section__desc">
-                    <div class="space-section__title">{{ space.type }}</div>
+                    <div class="space-section__title">{{ area.type_name }}</div>
                     <div class="space-section__subtitle">
-                      {{ space.typeDesc }}
+                      {{ area.type_description }}
                     </div>
                   </div>
                 </div>
@@ -38,36 +38,47 @@
                 <div class="space-section__item">
                   <div class="space-section__name">Площадь</div>
                   <div class="space-section__desc">
-                    <div class="space-section__title">{{ space.area }}</div>
+                    <div class="space-section__title">{{ area.area }} м²</div>
                   </div>
                 </div>
 
                 <div class="space-section__item">
                   <div class="space-section__name">Оборудование</div>
                   <div class="space-section__desc">
-                    <div class="space-section__title">{{ space.equipment }}</div>
+                    <div class="space-section__title">{{ area.equipment }}</div>
                   </div>
                 </div>
 
                 <div class="space-section__item">
                   <div class="space-section__name">Вместимость</div>
                   <div class="space-section__desc">
-                    <div class="space-section__title" v-html="space.capacity"></div>
+                    <div class="space-section__title">
+                      Максимальная вместительность {{ area.maximum_capacity  }} чел. <br>
+                      Рекомендуем для встречи {{ area.recomended_capacity }} чел.
+                    </div>
                   </div>
                 </div>
 
                 <div class="space-section__item">
                   <div class="space-section__name">Цена</div>
                   <div class="space-section__desc">
-                    <div class="space-section__title">{{ space.price }}</div>
+                    <div class="space-section__title">{{ area.cost }} KZT/ч.</div>
                   </div>
                 </div>
 
               </div>
             </transition-group>
 
+          </div>
+
+          <div class="space-section__img-box">
+            <transition-group name="fade" mode="out-in">
+              <img :src="area.main_photo" alt="" class="space-section__img"
+                   v-for="area in areas" :key="area.id" v-show="area.id === count">
+            </transition-group>
+
             <div class="space-section__controls">
-              <div class="space-section__index">{{ this.count + ' / ' + this.spaces.length }}</div>
+              <div class="space-section__index">{{ this.count + ' / ' + this.areas.length }}</div>
               <svg class="space-section__prev" width="40" height="40" @click="prevSlide">
                 <use href="../assets/img/icons.svg#arrow-left"></use>
               </svg>
@@ -75,14 +86,6 @@
                 <use href="../assets/img/icons.svg#arrow-left"></use>
               </svg>
             </div>
-
-          </div>
-
-          <div class="space-section__img-box">
-            <transition-group name="fade" mode="out-in">
-              <img :src="require('../assets/img/' + space.img)" alt="" class="space-section__img"
-                   v-for="space in spaces" :key="space.id" v-show="space.id === count">
-            </transition-group>
           </div>
         </div>
 
@@ -95,40 +98,13 @@
 export default {
   data() {
     return {
+      areas: [],
       count: 1,
-      spaces: [
-        {
-          id: 1,
-          name: "Deep Purple",
-          nameDesc: "Конференц зал отлично подходит для деловых встреч, семинаров или конференций.",
-          type: "Конференц зал",
-          typeDesc: "Мебелированные конференц залы с возможностью почасовой аренды, прекрасно подходят для проведения деловых встреч и переговоров.",
-          area: "52 м²",
-          equipment: "Проектор, интерактивная доска",
-          capacity: "Максимальная вместительность 35 чел." + "<br>" +
-            "Рекомендуем для встречи 20 чел.",
-          price: "8 000 KZT/ч.",
-          img: "deep-purple.png"
-        },
-        {
-          id: 2,
-          name: "Амфитеатр",
-          nameDesc: "Новый формат сцены и зрительской посадки. Возможность видеоконференц связи. Разнообразные сидячие места: амфитеатр, рабочие столы и мягкие места. Удобный сервис онлайн бронирования и оплаты. Акустическая система, звукоизоляция. Постоянная уборка помещений.",
-          type: "Большой зал",
-          typeDesc: "Конференц залы, Expo-зона и амфитеатр для формата выступлений TED.",
-          area: "52 м²",
-          equipment: "Проектор, экран, колонки, радиомикрофоны",
-          capacity: "Максимальная вместительность 200 чел." + "<br>" +
-            "Рекомендуем для встречи 150 чел.",
-          price: "18 000 KZT/ч.",
-          img: "amphitheater.png"
-        }
-      ]
     };
   },
   methods: {
     nextSlide() {
-      var len = this.spaces.length;
+      var len = this.areas.length;
       if (this.count < len) {
         this.count++;
       } else {
@@ -142,6 +118,13 @@ export default {
         this.count = 1;
       }
     }
+  },
+  mounted() {
+    this.$axios.get('http://185.121.81.137/api/area/')
+      .then(response => {
+        this.areas = response.data
+      })
+      .catch(e => console.log(e))
   }
 }
 </script>

@@ -24,6 +24,7 @@
     width: 662px;
     height: 600px;
     position: relative;
+    overflow-y: auto;
   }
 
   &__item {
@@ -65,9 +66,13 @@
   &__controls {
     position: absolute;
     bottom: 0;
-    right: 0;
+    right: 588px;
     display: flex;
     align-items: center;
+
+    & > * {
+      flex-shrink: 0;
+    }
   }
 
   &__index {
@@ -89,12 +94,16 @@
     position: relative;
     height: 600px;
     width: 488px;
+    border-radius: 10px;
+    //overflow: hidden;
   }
 
   &__img {
     position: absolute;
     right: 0;
     top: 0;
+    width: 488px;
+    height: 600px;
   }
 
   @include respond(tab-land) {
@@ -106,12 +115,14 @@
 
     &__info {
       margin-top: 0;
-      height: 460px;
+      max-height: 460px;
+      margin-bottom: 30px;
     }
 
     &__controls {
       bottom: unset;
-      top: calc(100% + 635px);
+      right: 0;
+      top: calc(100% + 24px);
     }
   }
 
@@ -131,7 +142,9 @@
 
     &__info {
       width: 343px;
-      height: 645px;
+      height: unset;
+      max-height: 645px;
+      min-height: 565px;
     }
 
     &__name {
@@ -163,7 +176,8 @@
     }
 
     &__controls {
-      top: calc(100% + 343px);
+      right: 0;
+      top: calc(100% + 24px);
     }
   }
 }
