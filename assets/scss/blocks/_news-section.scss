@@ -50,14 +50,25 @@
   }
 
   &__title {
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    height: 52px;
     @include text-style(2.2rem, 600, $main-color);
     line-height: 26px;
     margin-bottom: 12px;
   }
 
   &__desc {
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
     @include text-style(1.6rem, 400, rgba($primary-black, .7));
     line-height: 18.5px;
+    height: 93px;
     margin-bottom: 20px;
   }
 
@@ -147,12 +158,15 @@
     &__title {
       font-size: 2rem;
       line-height: 23.86px;
+      height: 48px;
     }
 
     &__desc {
       font-size: 1.4rem;
       line-height: 16.24px;
       margin-bottom: 36px;
+      height: 64px;
+      -webkit-line-clamp: 4;
     }
 
     &__more {

@@ -7,15 +7,15 @@
           <div class="path-box__link">Главная</div>
           <div class="path-box__link">Галерея</div>
         </div>
-        <h1 class="heading-fluid__title">День открытых дверей | 20 октября</h1>
+        <h1 class="heading-fluid__title">{{ gallery.gallery_title }}</h1>
       </div>
     </div>
 
     <div class="gallery__container gallery__container--images">
-      <img src="../../assets/img/gallery-inside.png" alt="" class="gallery__img"
-           v-for="i in 12"
-           :key="i"
-           @click="onClick(i - 1)">
+      <img :src="g.image" alt="" class="gallery__img"
+           v-for="(g, i) in gallery.gallery_image"
+           :key="g.id"
+           @click="onClick(i)">
     </div>
 
     <no-ssr>
@@ -36,20 +36,8 @@ export default {
   data() {
     return {
       index: null,
-      images: [
-        "https://gorillaict.com/wp-content/uploads/2018/04/abstract-business-code-270348-1100x500.jpg",
-        "https://images.theconversation.com/files/304839/original/file-20191203-67002-chsvk1.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1200&h=675.0&fit=crop",
-        "https://75276bc03af26d7c1f58-72b421883bb5b133f34e068afdd7cb11.ssl.cf3.rackcdn.com/2018/09/artificial-2970158_960_720.jpg",
-        "https://gorillaict.com/wp-content/uploads/2018/04/abstract-business-code-270348-1100x500.jpg",
-        "https://images.theconversation.com/files/304839/original/file-20191203-67002-chsvk1.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1200&h=675.0&fit=crop",
-        "https://75276bc03af26d7c1f58-72b421883bb5b133f34e068afdd7cb11.ssl.cf3.rackcdn.com/2018/09/artificial-2970158_960_720.jpg",
-        "https://gorillaict.com/wp-content/uploads/2018/04/abstract-business-code-270348-1100x500.jpg",
-        "https://images.theconversation.com/files/304839/original/file-20191203-67002-chsvk1.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1200&h=675.0&fit=crop",
-        "https://75276bc03af26d7c1f58-72b421883bb5b133f34e068afdd7cb11.ssl.cf3.rackcdn.com/2018/09/artificial-2970158_960_720.jpg",
-        "https://gorillaict.com/wp-content/uploads/2018/04/abstract-business-code-270348-1100x500.jpg",
-        "https://images.theconversation.com/files/304839/original/file-20191203-67002-chsvk1.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1200&h=675.0&fit=crop",
-        "https://75276bc03af26d7c1f58-72b421883bb5b133f34e068afdd7cb11.ssl.cf3.rackcdn.com/2018/09/artificial-2970158_960_720.jpg",
-      ]
+      gallery: [],
+      images: []
     };
   },
   methods: {
@@ -57,5 +45,16 @@ export default {
       this.index = i;
     }
   },
+  mounted() {
+    this.$axios.get('http://185.121.81.137/api/gallery/' + this.$route.params.id)
+      .then(response => {
+        this.gallery = response.data
+        console.log(response.data.gallery_image)
+        for (var i = 0; i <= response.data.gallery_image.length; i++) {
+          this.images.push(response.data.gallery_image[i].image)
+        }
+      })
+      .catch(e => console.log(e))
+  }
 }
 </script>

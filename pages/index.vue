@@ -244,69 +244,18 @@
 
         <div class="news-section__list">
 
-          <nuxt-link to="/News/1" tag="div" class="news-section__item">
-            <img src="../assets/img/news-1.png" alt="" class="news-section__img">
-            <div class="news-section__date">2020-11-27</div>
+          <nuxt-link :to="'/News/' + n.id"
+                     tag="div"
+                     class="news-section__item"
+                     v-for="n in loadedNews"
+                     :key="n.id">
+            <img :src="n.main_photo" alt="" class="news-section__img">
+            <div class="news-section__date">{{ n.created_at }}</div>
             <div class="news-section__title">
-              Идейные соображения высшего порядка
+              {{ n.title }}
             </div>
             <div class="news-section__desc">
-              Повседневная практика показывает, что постоянный количественный рост и сфера нашей активности требуют
-              определения и уточнения дальнейших направлений развития.
-            </div>
-            <div class="news-section__more">
-              <p>Читать больше</p>
-              <svg width="16" height="16">
-                <use href="../assets/img/icons.svg#arrow-sm"></use>
-              </svg>
-            </div>
-          </nuxt-link>
-
-          <nuxt-link to="/News/1" tag="div" class="news-section__item">
-            <img src="../assets/img/news-2.png" alt="" class="news-section__img">
-            <div class="news-section__date">2020-11-27</div>
-            <div class="news-section__title">
-              Идейные соображения высшего порядка
-            </div>
-            <div class="news-section__desc">
-              Повседневная практика показывает, что постоянный количественный рост и сфера нашей активности требуют
-              определения и уточнения дальнейших направлений развития.
-            </div>
-            <div class="news-section__more">
-              <p>Читать больше</p>
-              <svg width="16" height="16">
-                <use href="../assets/img/icons.svg#arrow-sm"></use>
-              </svg>
-            </div>
-          </nuxt-link>
-
-          <nuxt-link to="/News/1" tag="div" class="news-section__item">
-            <img src="../assets/img/news-3.png" alt="" class="news-section__img">
-            <div class="news-section__date">2020-11-27</div>
-            <div class="news-section__title">
-              Идейные соображения высшего порядка
-            </div>
-            <div class="news-section__desc">
-              Повседневная практика показывает, что постоянный количественный рост и сфера нашей активности требуют
-              определения и уточнения дальнейших направлений развития.
-            </div>
-            <div class="news-section__more">
-              <p>Читать больше</p>
-              <svg width="16" height="16">
-                <use href="../assets/img/icons.svg#arrow-sm"></use>
-              </svg>
-            </div>
-          </nuxt-link>
-
-          <nuxt-link to="/News/1" tag="div" class="news-section__item">
-            <img src="../assets/img/news-4.png" alt="" class="news-section__img">
-            <div class="news-section__date">2020-11-27</div>
-            <div class="news-section__title">
-              Идейные соображения высшего порядка
-            </div>
-            <div class="news-section__desc">
-              Повседневная практика показывает, что постоянный количественный рост и сфера нашей активности требуют
-              определения и уточнения дальнейших направлений развития.
+              {{ n.text }}
             </div>
             <div class="news-section__more">
               <p>Читать больше</p>
@@ -321,49 +270,18 @@
         <div class="news-section__slider">
           <div class="swiper-container news-section__swiper-container">
             <div class="swiper-wrapper">
-              <nuxt-link to="/News/1" tag="div" class="swiper-slide news-section__item">
-                <img src="../assets/img/news-1.png" alt="" class="news-section__img">
-                <div class="news-section__date">2020-11-27</div>
+              <nuxt-link :to="'/News/' + n.id"
+                         tag="div"
+                         class="swiper-slide news-section__item"
+                         v-for="n in loadedNews"
+                         :key="n.id">
+                <img :src="n.main_photo" alt="" class="news-section__img">
+                <div class="news-section__date">{{ n.created_at }}</div>
                 <div class="news-section__title">
-                  Идейные соображения высшего порядка
+                  {{ n.title }}
                 </div>
                 <div class="news-section__desc">
-                  Повседневная практика показывает, что постоянный количественный рост и сфера нашей активности требуют
-                  определения и уточнения дальнейших направлений развития.
-                </div>
-                <div class="news-section__more">
-                  <p>Читать больше</p>
-                  <svg width="16" height="16">
-                    <use href="../assets/img/icons.svg#arrow-sm"></use>
-                  </svg>
-                </div>
-              </nuxt-link>
-              <nuxt-link to="/News/1" tag="div" class="swiper-slide news-section__item">
-                <img src="../assets/img/news-1.png" alt="" class="news-section__img">
-                <div class="news-section__date">2020-11-27</div>
-                <div class="news-section__title">
-                  Идейные соображения высшего порядка
-                </div>
-                <div class="news-section__desc">
-                  Повседневная практика показывает, что постоянный количественный рост и сфера нашей активности требуют
-                  определения и уточнения дальнейших направлений развития.
-                </div>
-                <div class="news-section__more">
-                  <p>Читать больше</p>
-                  <svg width="16" height="16">
-                    <use href="../assets/img/icons.svg#arrow-sm"></use>
-                  </svg>
-                </div>
-              </nuxt-link>
-              <nuxt-link to="/News/1" tag="div" class="swiper-slide news-section__item">
-                <img src="../assets/img/news-1.png" alt="" class="news-section__img">
-                <div class="news-section__date">2020-11-27</div>
-                <div class="news-section__title">
-                  Идейные соображения высшего порядка
-                </div>
-                <div class="news-section__desc">
-                  Повседневная практика показывает, что постоянный количественный рост и сфера нашей активности требуют
-                  определения и уточнения дальнейших направлений развития.
+                  {{ n.text }}
                 </div>
                 <div class="news-section__more">
                   <p>Читать больше</p>
@@ -495,6 +413,7 @@ export default {
   data() {
     return {
       advantages: {},
+      // news: []
     };
   },
   computed: {
@@ -503,6 +422,9 @@ export default {
     },
     loadedCommunities() {
       return this.$store.getters.loadedCommunities
+    },
+    loadedNews() {
+      return this.$store.getters.loadedNews
     }
   },
   methods: {},
@@ -565,6 +487,13 @@ export default {
         this.advantages = response.data
       })
       .catch(e => console.log(e))
+
+    // this.$axios.get('http://185.121.81.137/api/news/')
+    //   .then(response => {
+    //     this.news = response.data
+    //     console.log(response.data)
+    //   })
+    //   .catch(e => console.log(e))
   }
 };
 </script>

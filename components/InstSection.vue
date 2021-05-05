@@ -2,35 +2,20 @@
   <section class="main__section inst-section">
     <div class="inst-section__container">
 
+<!--      <p style="font-size: 16px; margin-bottom: 30px">-->
+<!--        {{ loadedInstImages }}-->
+<!--      </p>-->
       <div class="inst-section__list">
         <div class="inst-section__item"
              :class="{ 'inst-section__item--first': hoverFirst }">
           <img src="../assets/img/inst-1.png" alt="" class="inst-section__img">
         </div>
         <div class="inst-section__item"
+             v-for="(img, i) in loadedInstImages"
+             v-if="i < 5"
              @mouseenter="hoverFirst = true"
              @mouseleave="hoverFirst = false">
-          <img src="../assets/img/inst-2.png" alt="" class="inst-section__img">
-        </div>
-        <div class="inst-section__item"
-             @mouseenter="hoverFirst = true"
-             @mouseleave="hoverFirst = false">
-          <img src="../assets/img/inst-1.png" alt="" class="inst-section__img">
-        </div>
-        <div class="inst-section__item"
-             @mouseenter="hoverFirst = true"
-             @mouseleave="hoverFirst = false">
-          <img src="../assets/img/inst-2.png" alt="" class="inst-section__img">
-        </div>
-        <div class="inst-section__item"
-             @mouseenter="hoverFirst = true"
-             @mouseleave="hoverFirst = false">
-          <img src="../assets/img/inst-1.png" alt="" class="inst-section__img">
-        </div>
-        <div class="inst-section__item"
-             @mouseenter="hoverFirst = true"
-             @mouseleave="hoverFirst = false">
-          <img src="../assets/img/inst-2.png" alt="" class="inst-section__img">
+          <img :src="img.media_url" alt="" class="inst-section__img">
         </div>
       </div>
 
@@ -39,23 +24,8 @@
         <div class="inst-section__slider">
           <div class="swiper-container inst-section__swiper-container">
             <div class="swiper-wrapper">
-              <div class="swiper-item">
-                <img src="../assets/img/inst-1.png" alt="" class="inst-section__img">
-              </div>
-              <div class="swiper-slide">
-                <img src="../assets/img/inst-2.png" alt="" class="inst-section__img">
-              </div>
-              <div class="swiper-slide">
-                <img src="../assets/img/inst-1.png" alt="" class="inst-section__img">
-              </div>
-              <div class="swiper-slide">
-                <img src="../assets/img/inst-2.png" alt="" class="inst-section__img">
-              </div>
-              <div class="swiper-slide">
-                <img src="../assets/img/inst-1.png" alt="" class="inst-section__img">
-              </div>
-              <div class="swiper-slide">
-                <img src="../assets/img/inst-2.png" alt="" class="inst-section__img">
+              <div class="swiper-item" v-for="img in loadedInstImages">
+                <img :src="img.media_url" alt="" class="inst-section__img">
               </div>
             </div>
             <!-- Add Arrows -->
@@ -76,8 +46,14 @@ export default {
   data() {
     return {
       hoverFirst: false,
-      hoverOther: false
+      hoverOther: false,
+      instImages: []
     };
+  },
+  computed: {
+    loadedInstImages() {
+      return this.$store.getters.loadedInstImages
+    }
   },
   methods: {},
   mounted() {
@@ -95,6 +71,15 @@ export default {
         },
       }
     });
+
+    console.log(this.loadedInstImages)
+
+    // this.$axios.get('')
+    //   .then(response => {
+    //     console.log(response.data.data)
+    //     this.instImages = response.data.data.filter(images => images.media_type !== 'VIDEO')
+    //   })
+    //   .catch(e => console.log(e))
   }
 }
 </script>
