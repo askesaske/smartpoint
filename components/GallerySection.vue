@@ -132,7 +132,6 @@ export default {
   mounted() {
     this.$axios.get('http://185.121.81.137/api/gallery/')
       .then(response => {
-        console.log(response.data[0].gallery_image)
         for (let i in response.data[0].gallery_image) {
           this.images.push(response.data[0].gallery_image[i].image)
         }

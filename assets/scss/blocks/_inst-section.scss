@@ -87,6 +87,15 @@
     margin-bottom: 30px;
   }
 
+  &__swiper-wrapper {
+    align-items: center;
+  }
+
+  &__swiper-item {
+    img {
+    }
+  }
+
   @include respond(tab-land) {
     &__list {
       display: none;

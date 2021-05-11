@@ -167,68 +167,30 @@
         </div>
 
         <div class="events-section__list">
-          <nuxt-link to="/Events/1" tag="div" class="events-section__row">
-            <div class="events-section__date">МАРТ 5</div>
+          <nuxt-link to="/Events/1" tag="div" class="events-section__row"
+                     v-for="(e, i) in events"
+                     :key="e.id"
+                     v-if="i < 3">
+            <div class="events-section__date">{{ e.start_date | moment("d, MMMM, YYYY") }}</div>
 
             <div class="events-section__main">
               <div class="events-section__img-box">
-                <img src="../assets/img/event-1.png" alt="" class="events-section__img">
-                <div class="events-section__tag">Платно</div>
+                <img :src="e.main_photo" alt="" class="events-section__img">
+                <div class="events-section__tag" v-if="e.is_for_free">Бесплатно</div>
+                <div class="events-section__tag" v-else>Платно</div>
               </div>
 
               <div class="events-section__info">
                 <div class="events-section__title">
-                  путь становление личности
+                  {{ e.title }}
                 </div>
 
                 <div class="events-section__subtitle">
-                  <span>Спикер:</span> Карина Сыздыкова
+                  <span>Спикер:</span> {{ e.speaker }}
                 </div>
               </div>
             </div>
           </nuxt-link>
-
-          <div class="events-section__row">
-            <div class="events-section__date">МАРТ 16</div>
-
-            <div class="events-section__main">
-              <div class="events-section__img-box">
-                <img src="../assets/img/event-2.png" alt="" class="events-section__img">
-                <div class="events-section__tag">Бесплатно</div>
-              </div>
-
-              <div class="events-section__info">
-                <div class="events-section__title">
-                  Челлендж 17/17/17. Мотивация, трудности, поддержание формы, восстановление
-                </div>
-
-                <div class="events-section__subtitle">
-                  <span>Спикер:</span> Виктор Мальчиков
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="events-section__row">
-            <div class="events-section__date">МАРТ 25</div>
-
-            <div class="events-section__main">
-              <div class="events-section__img-box">
-                <img src="../assets/img/event-3.png" alt="" class="events-section__img">
-                <div class="events-section__tag">Бесплатно</div>
-              </div>
-
-              <div class="events-section__info">
-                <div class="events-section__title">
-                  Осознанно о красоте и здоровье
-                </div>
-
-                <div class="events-section__subtitle">
-                  <span>Спикер:</span> Хади Шишкаева
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </section>
@@ -388,7 +350,6 @@
     </section>
 
     <inst-section></inst-section>
-
   </div>
 </template>
 
@@ -399,6 +360,7 @@ import BookingSection from "@/components/BookingSection";
 import RatesSection from "@/components/RatesSection";
 import GallerySection from "@/components/GallerySection";
 import InstSection from "@/components/InstSection";
+import VueMoment, {moment} from 'vue-moment';
 
 Swiper.use([Navigation]);
 
@@ -413,7 +375,7 @@ export default {
   data() {
     return {
       advantages: {},
-      // news: []
+      events: []
     };
   },
   computed: {
@@ -425,9 +387,11 @@ export default {
     },
     loadedNews() {
       return this.$store.getters.loadedNews
-    }
+    },
   },
   methods: {},
+  created() {
+  },
   mounted() {
     var swiper1 = new Swiper('.community-section__swiper-container', {
       slidesPerView: 1,
@@ -488,12 +452,12 @@ export default {
       })
       .catch(e => console.log(e))
 
-    // this.$axios.get('http://185.121.81.137/api/news/')
-    //   .then(response => {
-    //     this.news = response.data
-    //     console.log(response.data)
-    //   })
-    //   .catch(e => console.log(e))
+    this.$axios.get('http://185.121.81.137/api/event/')
+      .then(response => {
+        this.events = response.data.filter(e => e.is_active === true)
+        console.log(response.data)
+      })
+      .catch(e => console.log(e))
   }
 };
 </script>

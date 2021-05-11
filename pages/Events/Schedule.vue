@@ -18,102 +18,35 @@
 
       <div class="schedule-page__wrapper">
 
-        <div class="schedule-page__month-box" v-for="i in 3">
+        <div class="schedule-page__month-box" v-for="(e, i) in events" :key="e.id">
 
-          <div class="schedule-page__title">Март 2021</div>
+          <div class="schedule-page__title">{{ e.month + ' ' + e.year}}</div>
 
           <div class="schedule-page__row">
 
             <div class="schedule-page__list">
 
-              <nuxt-link to="/Events/1" tag="div" class="schedule-page__item">
+              <nuxt-link :to="'/Events/' + event.id" tag="div" class="schedule-page__item" v-for="(event, k) in e.events" :key="event.id">
 
                 <div class="schedule-page__date">
-                  <p>март 5</p>
-                  <span>19:00 - 20:00</span>
+                  <p>{{ event.start_date | moment("D, MMMM")}}</p>
+                  <span>{{ event.start_date | moment("HH:MM") }} - {{ event.end_date | moment("HH:MM") }}</span>
                 </div>
 
                 <div class="schedule-page__name">
-                  путь становление личности
+                  {{ event.title }}
                 </div>
 
                 <div class="schedule-page__desc">
-                  Спикер: Карина Сыздыкова
+                  Спикер: {{ event.speaker }}
                 </div>
 
               </nuxt-link>
 
-              <div class="schedule-page__item">
-
-                <div class="schedule-page__date">
-                  <p>март 16</p>
-                  <span>19:00 - 20:00</span>
-                </div>
-
-                <div class="schedule-page__name">
-                  Челлендж 17/17/17. Мотивация, трудности, поддержание формы, восстановление
-                </div>
-
-                <div class="schedule-page__desc">
-                  Спикер: Виктор Мальчиков
-                </div>
-
-              </div>
-
-              <div class="schedule-page__item">
-
-                <div class="schedule-page__date">
-                  <p>март 25</p>
-                  <span>19:00 - 20:00</span>
-                </div>
-
-                <div class="schedule-page__name">
-                  Осознанно о красоте и здоровье
-                </div>
-
-                <div class="schedule-page__desc">
-                  Спикер: Хади Саид
-                </div>
-
-              </div>
-
-              <div class="schedule-page__item">
-
-                <div class="schedule-page__date">
-                  <p>март 25</p>
-                  <span>19:00 - 20:00</span>
-                </div>
-
-                <div class="schedule-page__name">
-                  Осознанно о красоте и здоровье
-                </div>
-
-                <div class="schedule-page__desc">
-                  Спикер: Хади Саид
-                </div>
-
-              </div>
-
-              <div class="schedule-page__item">
-
-                <div class="schedule-page__date">
-                  <p>март 25</p>
-                  <span>19:00 - 20:00</span>
-                </div>
-
-                <div class="schedule-page__name">
-                  Осознанно о красоте и здоровье
-                </div>
-
-                <div class="schedule-page__desc">
-                  Спикер: Хади Саид
-                </div>
-
-              </div>
 
             </div>
 
-            <img src="../../assets/img/schedule-1.png" alt="" class="schedule-page__img">
+            <img :src="e.event_photo" alt="" class="schedule-page__img">
 
           </div>
 
@@ -126,3 +59,21 @@
     <img src="../../assets/img/mountain-bg.png" alt="" class="schedule-page__bg">
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      events: []
+    }
+  },
+  mounted() {
+    this.$axios.get('http://185.121.81.137/api/month/')
+      .then(response => {
+        this.events = response.data
+        console.log(response.data)
+      })
+      .catch(e => console.log(e))
+  }
+}
+</script>
