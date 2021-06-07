@@ -1,12 +1,12 @@
 <template>
-  <section class="main__section rates-section" id="rates">
+  <section class="main__section rates-section rates-section--white" id="rates">
     <div class="rates-section__container">
       <h2 class="rates-section__heading heading-blue">
-        <div class="heading-blue__bg">Коворкинг пакеты</div>
-        <div class="heading-blue__text">Коворкинг пакеты</div>
+        <div class="heading-blue__bg">Сервисные офисы</div>
+        <div class="heading-blue__text">Сервисные офисы</div>
       </h2>
 
-      <div class="rates-section__row rates-section__row--d-none-md">
+      <div class="rates-section__row rates-section__row--d-none-md rates-section__row--reverse">
         <div class="rates-section__list">
           <div class="rates-section__item" v-for="(rate, i) in rates" :key="rate.id" @click="chooseRate(rate.id)">
             <div class="rates-section__row rates-section__row--mb8">
@@ -18,7 +18,7 @@
               {{ rate.text }}
             </div>
           </div>
-          <img src="../assets/img/about-section-bg.png" alt="" class="rates-section__bg">
+          <img src="../assets/img/about-section-bg.png" alt="" class="rates-section__bg rates-section__bg--reverse">
         </div>
 
 

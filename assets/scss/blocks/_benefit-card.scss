@@ -1,5 +1,5 @@
 .benefit-card {
-  width: 285px;
+  //width: 285px;
   height: 285px;
 
   perspective: 150rem;
@@ -38,7 +38,22 @@
   &__desc {
     @include text-style(1.6rem, 400, $primary-black);
     line-height: 18.5px;
+    text-align: left;
+    padding-left: 60px;
+
+    li {
+      position: relative;
+      list-style-type: disc;
+
+      &:not(:last-child) {
+        margin-bottom: 5px;
+      }
+
+
+    }
   }
+
+
 
   &__side {
     border-radius: 5px;

@@ -15,6 +15,15 @@
     align-items: flex-start;
   }
 
+  &__stat-row {
+    display: flex;
+    align-items: flex-start;
+
+    &:not(:last-child) {
+      margin-bottom: 50px;
+    }
+  }
+
   &__title {
     @include text-style(2.2rem, 500, $primary-black);
     line-height: 25.89px;
@@ -77,10 +86,10 @@
       flex-direction: column;
       align-items: flex-start;
       justify-content: center;
+    }
 
-      &--tb-center {
-        align-items: center;
-      }
+    &__stat-row {
+      justify-content: space-around;
     }
 
     &__bg {
@@ -112,6 +121,11 @@
 
   @include respond(phone) {
     padding: 90px 0;
+
+    &__stat-row {
+      flex-direction: column;
+      align-items: center;
+    }
 
     &__heading {
       margin-bottom: 43px;

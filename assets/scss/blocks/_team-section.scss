@@ -11,33 +11,35 @@
   }
 
   &__item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding-top: 35px;
-    background-size: contain;
-    background-position: center;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    //display: flex;
+    //flex-direction: column;
+    //align-items: center;
+    //justify-content: center;
+    //padding-top: 35px;
+    //background-size: contain;
+    //background-position: center;
 
-    &:first-child {
-      background-image: url("~/assets/videos/animation-1.gif");
-    }
-
-    &:nth-child(2) {
-      background-image: url("~/assets/videos/animation-2.gif");
-    }
-
-    &:nth-child(3) {
-      background-image: url("~/assets/videos/animation-3.gif");
-    }
-
-    &:last-child {
-      background-image: url("~/assets/videos/animation-1.gif");
-    }
+    //&:first-child {
+    //  background-image: url("~/assets/videos/animation-1.gif");
+    //}
+    //
+    //&:nth-child(2) {
+    //  background-image: url("~/assets/videos/animation-2.gif");
+    //}
+    //
+    //&:nth-child(3) {
+    //  background-image: url("~/assets/videos/animation-3.gif");
+    //}
+    //
+    //&:last-child {
+    //  background-image: url("~/assets/videos/animation-1.gif");
+    //}
   }
 
   &__img {
-    height: 277px;
     position: relative;
     z-index: 2;
   }
@@ -48,6 +50,10 @@
     border-radius: 10px;
     background-color: $accent-color;
     text-align: center;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 3;
   }
 
   &__name {

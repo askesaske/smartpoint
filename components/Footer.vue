@@ -50,7 +50,7 @@
           <div class="footer__socials">
             <a href="#" class="footer__social"><img src="../assets/img/icons/insta.png" alt=""></a>
             <a href="#" class="footer__social"><img src="../assets/img/icons/facebook.png" alt=""></a>
-            <a href="#" class="footer__social"><img src="../assets/img/icons/telegram.png" alt=""></a>
+<!--            <a href="#" class="footer__social"><img src="../assets/img/icons/telegram.png" alt=""></a>-->
           </div>
 
         </div>
