@@ -9,7 +9,7 @@
   &__container {
     @extend %container;
     display: grid;
-    grid-template-columns: repeat(auto-fill, 224px);
+    grid-template-columns: repeat(3, 224px);
     grid-row-gap: 90px;
     justify-content: space-between;
   }
@@ -42,6 +42,7 @@
     &__container {
       justify-content: center;
       grid-row-gap: 60px;
+      grid-template-columns: repeat(1, 224px);
     }
 
     &__title {

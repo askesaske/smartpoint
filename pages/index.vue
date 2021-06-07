@@ -183,8 +183,8 @@
 
     <section class="main__section additional-services">
       <h2 class="additional-services__heading heading-white">
-        <div class="heading-white__bg">Пространство</div>
-        <div class="heading-white__text">Пространство</div>
+        <div class="heading-white__bg">Дополнительные услуги</div>
+        <div class="heading-white__text">Дополнительные услуги</div>
       </h2>
 
       <div class="additional-services__container">
