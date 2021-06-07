@@ -460,6 +460,7 @@
                   <div class="team-section__occupation">Проектный менеджер</div>
                 </div>
 
+
               </div>
 
               <div class="swiper-slide team-section__item">
