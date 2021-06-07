@@ -22,7 +22,6 @@
 
         <img src="../assets/img/smartpoint-heading.png" alt="" class="welcome-section__heading">
 
-
         <div class="welcome-section__scroll-box" v-scroll-to="{el:'#tagline', duration: 700,}">
           <svg class="welcome-section__scroll" width="14" height="34">
             <use href="../assets/img/icons.svg#scroll"></use>
@@ -49,7 +48,7 @@
         </div>
 
         <button class="tagline-section__btn button">
-          Опробовать бесплатно
+          Тест драйв SmArt.Point
         </button>
       </div>
     </section>
@@ -63,27 +62,48 @@
 
         <div class="about-section__row">
           <div class="about-section__title">
-            Добро пожаловать в коворкинг <br>
+            Добро пожаловать в пространство <br>
+            разумных технологий и креативных <br>
+            решений – <br>
             <span>SmArt.Point</span>
           </div>
 
           <div class="about-section__info">
             <div class="about-section__text">
-              {{ loadedAboutUs.text }}
+              <!--              {{ loadedAboutUs.text }}-->
+              В коворкинге работают более 70 успешных компаний в сфере IT, финтех, онлайн-торговли, разработки ПО,
+              кибербезопасности, блокчейн, ИТ-образования, онлайн-образования, медиа, автоматизированной логистики,
+              искусственного интеллекта, робототехники, телекоммуникации, digital-маркетинга и дизайна, с совокупным
+              количеством сотрудников более 800 человек.
             </div>
 
             <nuxt-link to="/About" tag="button" class="about-section__btn button">
               Подробнее
             </nuxt-link>
 
-            <div class="about-section__row about-section__row--tb-center">
+            <div class="about-section__stat-row">
               <div class="about-section__number-box">
-                <span>{{ loadedAboutUs.coworking_area }} м²</span> <br>
+                <!--                <span>{{ loadedAboutUs.coworking_area }} м²</span> <br>-->
+                <span>12 000 м²</span> <br>
                 Площадь коворкинга
               </div>
               <div class="about-section__number-box">
-                <span>{{ loadedAboutUs.working_place }}</span> <br>
+                <!--                <span>{{ loadedAboutUs.working_place }}</span> <br>-->
+                <span>1 000</span> <br>
                 Рабочих мест
+              </div>
+            </div>
+
+            <div class="about-section__stat-row">
+              <div class="about-section__number-box">
+                <!--                <span>{{ loadedAboutUs.coworking_area }} м²</span> <br>-->
+                <span>500 мб/с</span> <br>
+                Интернет Wi-Fi
+              </div>
+              <div class="about-section__number-box">
+                <!--                <span>{{ loadedAboutUs.working_place }}</span> <br>-->
+                <span>24/7</span> <br>
+                Доступ
               </div>
             </div>
 
@@ -96,7 +116,8 @@
 
           <div class="benefits__cards">
 
-            <div class="benefits__card benefit-card" v-for="adv in advantages" :key="adv.id">
+            <!--            <div class="benefits__card benefit-card" v-for="adv in advantages" :key="adv.id">-->
+            <div class="benefits__card benefit-card" v-for="adv in 3" :key="adv.id">
               <div class="benefit-card__side benefit-card__side--front">
                 <img :src="adv.card_image" alt="" class="benefit-card__icon">
                 <div class="benefit-card__name">
@@ -105,10 +126,17 @@
               </div>
 
               <div class="benefit-card__side benefit-card__side--back">
-                <div class="benefit-card__title">{{ adv.inside_card_title }}</div>
-                <div class="benefit-card__desc">
-                  {{ adv.inside_card_text }}
-                </div>
+                <!--                <div class="benefit-card__title">{{ adv.inside_card_title }}</div>-->
+                <div class="benefit-card__title">Инфраструктура</div>
+                <ul class="benefit-card__desc">
+                  <li>Кафетерии и зоны питания</li>
+                  <li>Библиотека</li>
+                  <li>Коллаборационные зоны</li>
+                  <li>Лаундж зоны</li>
+                  <li>Брейншторминг споты</li>
+                  <li>Аптека</li>
+                  <li>Нотариус</li>
+                </ul>
               </div>
             </div>
 
@@ -149,7 +177,104 @@
 
     <booking-section></booking-section>
 
+    <service-offices></service-offices>
+
     <rates-section></rates-section>
+
+    <section class="main__section additional-services">
+      <h2 class="additional-services__heading heading-white">
+        <div class="heading-white__bg">Пространство</div>
+        <div class="heading-white__text">Пространство</div>
+      </h2>
+
+      <div class="additional-services__container">
+
+        <div class="additional-services__item">
+          <svg class="additional-services__icon" width="60" height="60">
+            <use href="../assets/img/icons.svg#suitcase-2"></use>
+          </svg>
+
+          <div class="additional-services__title">
+            Аренда юридического адреса
+          </div>
+
+          <div class="additional-services__price">
+            25 000 тг/месяц
+          </div>
+        </div>
+
+        <div class="additional-services__item">
+          <svg class="additional-services__icon" width="60" height="60">
+            <use href="../assets/img/icons.svg#parking"></use>
+          </svg>
+
+          <div class="additional-services__title">
+            Аренда парковочных мест
+          </div>
+
+          <div class="additional-services__price">
+            25 000 тг/месяц
+          </div>
+        </div>
+
+        <div class="additional-services__item">
+          <svg class="additional-services__icon" width="60" height="60">
+            <use href="../assets/img/icons.svg#key"></use>
+          </svg>
+
+          <div class="additional-services__title">
+            Аренда складского помещения
+          </div>
+
+          <div class="additional-services__price">
+            25 000 тг/месяц
+          </div>
+        </div>
+
+        <div class="additional-services__item">
+          <svg class="additional-services__icon" width="60" height="60">
+            <use href="../assets/img/icons.svg#printer-2"></use>
+          </svg>
+
+          <div class="additional-services__title">
+            Услуги принтинга
+          </div>
+
+          <div class="additional-services__price">
+            25 000 тг/месяц
+          </div>
+        </div>
+
+        <div class="additional-services__item">
+          <svg class="additional-services__icon" width="60" height="60">
+            <use href="../assets/img/icons.svg#shout"></use>
+          </svg>
+
+          <div class="additional-services__title">
+            Рекламные площади
+          </div>
+
+          <div class="additional-services__price">
+            25 000 тг/месяц
+          </div>
+        </div>
+
+        <div class="additional-services__item">
+          <svg class="additional-services__icon" width="60" height="60">
+            <use href="../assets/img/icons.svg#camera"></use>
+          </svg>
+
+          <div class="additional-services__title">
+            Локации для съемок
+          </div>
+
+          <div class="additional-services__price">
+            25 000 тг/месяц
+          </div>
+        </div>
+      </div>
+
+    </section>
 
     <section class="main__section events-section" id="events">
       <img src="../assets/img/events-bg.png" alt="" class="events-section__bg">
@@ -279,9 +404,9 @@
 
               <div class="swiper-slide team-section__item">
 
-                <svg class="team-section__icon team-section__icon--crown" width="60" height="60">
-                  <use href="../assets/img/icons.svg#crown"></use>
-                </svg>
+<!--                <svg class="team-section__icon team-section__icon&#45;&#45;crown" width="60" height="60">-->
+<!--                  <use href="../assets/img/icons.svg#crown"></use>-->
+<!--                </svg>-->
 
                 <img src="../assets/img/member-1.png" alt="" class="team-section__img">
 
@@ -294,9 +419,9 @@
 
               <div class="swiper-slide team-section__item">
 
-                <svg class="team-section__icon team-section__icon--chat" width="52" height="52">
-                  <use href="../assets/img/icons.svg#chat"></use>
-                </svg>
+<!--                <svg class="team-section__icon team-section__icon&#45;&#45;chat" width="52" height="52">-->
+<!--                  <use href="../assets/img/icons.svg#chat"></use>-->
+<!--                </svg>-->
 
                 <img src="../assets/img/member-2.png" alt="" class="team-section__img">
 
@@ -309,9 +434,9 @@
 
               <div class="swiper-slide team-section__item">
 
-                <svg class="team-section__icon team-section__icon--glasses" width="90" height="90">
-                  <use href="../assets/img/icons.svg#glasses"></use>
-                </svg>
+<!--                <svg class="team-section__icon team-section__icon&#45;&#45;glasses" width="90" height="90">-->
+<!--                  <use href="../assets/img/icons.svg#glasses"></use>-->
+<!--                </svg>-->
 
                 <img src="../assets/img/member-3.png" alt="" class="team-section__img">
 
@@ -324,11 +449,41 @@
 
               <div class="swiper-slide team-section__item">
 
-                <svg class="team-section__icon team-section__icon--crown" width="60" height="60">
-                  <use href="../assets/img/icons.svg#crown"></use>
-                </svg>
+<!--                <svg class="team-section__icon team-section__icon&#45;&#45;crown" width="60" height="60">-->
+<!--                  <use href="../assets/img/icons.svg#crown"></use>-->
+<!--                </svg>-->
 
-                <img src="../assets/img/member-1.png" alt="" class="team-section__img">
+                <img src="../assets/img/member-4.png" alt="" class="team-section__img">
+
+                <div class="team-section__info">
+                  <div class="team-section__name">Алия Турдиева</div>
+                  <div class="team-section__occupation">Проектный менеджер</div>
+                </div>
+
+              </div>
+
+              <div class="swiper-slide team-section__item">
+
+                <!--                <svg class="team-section__icon team-section__icon&#45;&#45;crown" width="60" height="60">-->
+                <!--                  <use href="../assets/img/icons.svg#crown"></use>-->
+                <!--                </svg>-->
+
+                <img src="../assets/img/member-5.png" alt="" class="team-section__img">
+
+                <div class="team-section__info">
+                  <div class="team-section__name">Алия Турдиева</div>
+                  <div class="team-section__occupation">Проектный менеджер</div>
+                </div>
+
+              </div>
+
+              <div class="swiper-slide team-section__item">
+
+                <!--                <svg class="team-section__icon team-section__icon&#45;&#45;crown" width="60" height="60">-->
+                <!--                  <use href="../assets/img/icons.svg#crown"></use>-->
+                <!--                </svg>-->
+
+                <img src="../assets/img/member-6.png" alt="" class="team-section__img">
 
                 <div class="team-section__info">
                   <div class="team-section__name">Алия Турдиева</div>
@@ -349,7 +504,7 @@
 
     </section>
 
-    <inst-section></inst-section>
+    <!--    <inst-section></inst-section>-->
   </div>
 </template>
 
@@ -360,6 +515,7 @@ import BookingSection from "@/components/BookingSection";
 import RatesSection from "@/components/RatesSection";
 import GallerySection from "@/components/GallerySection";
 import InstSection from "@/components/InstSection";
+import ServiceOffices from "~/components/ServiceOffices";
 import VueMoment, {moment} from 'vue-moment';
 
 Swiper.use([Navigation]);
@@ -370,7 +526,8 @@ export default {
     BookingSection,
     RatesSection,
     GallerySection,
-    InstSection
+    InstSection,
+    ServiceOffices
   },
   data() {
     return {

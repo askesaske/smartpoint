@@ -1,0 +1,57 @@
+.additional-services {
+  padding: 120px 0;
+  background-color: #1D1D1D;
+
+  &__heading {
+    margin-bottom: 82px;
+  }
+
+  &__container {
+    @extend %container;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 224px);
+    grid-row-gap: 90px;
+    justify-content: space-between;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  &__icon {
+    margin-bottom: 25px;
+  }
+
+  &__title {
+    @include text-style(1.6rem, 600, $white-color);
+    line-height: 19px;
+    height: 38px;
+    margin-bottom: 15px;
+  }
+
+  &__price {
+    @include text-style(2.2rem, 600, $white-color);
+    line-height: 26.25px;
+  }
+
+  @include respond(phone) {
+    &__container {
+      justify-content: center;
+      grid-row-gap: 60px;
+    }
+
+    &__title {
+      @include text-style(1.4rem, 600, $white-color);
+      line-height: 16px;
+      height: unset;
+    }
+
+    &__price {
+      @include text-style(1.8rem, 600, $white-color);
+    }
+  }
+}

@@ -34,6 +34,59 @@
           </nuxt-link>
         </div>
 
+        <div class="sidebar__footer">
+          <div class="sidebar__row">
+
+            <svg class="sidebar__icon" width="20" height="20">
+              <use href="../assets/img/icons.svg#phone"></use>
+            </svg>
+
+            <div class="sidebar__phones">
+              <div class="sidebar__phone-box">
+                <a href="tel: +7 (778) 200 20 50" class="sidebar__text">+7 (778) 200 20 50</a>
+                <span>Аренда залов</span>
+              </div>
+
+              <div class="sidebar__phone-box">
+                <a href="tel: +7 (777) 078 87 78" class="sidebar__text">+7 (777) 078 87 78</a>
+                <span>Аренда рабочего места </span>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="sidebar__row">
+
+            <svg class="sidebar__icon" width="20" height="20">
+              <use href="../assets/img/icons.svg#mail"></use>
+            </svg>
+
+            <div class="sidebar__text">
+              hello@smartpoint.me
+            </div>
+
+          </div>
+
+          <div class="sidebar__row">
+
+            <svg class="sidebar__icon" width="20" height="20">
+              <use href="../assets/img/icons.svg#map-pin"></use>
+            </svg>
+
+            <div class="sidebar__text">
+              г. Алматы, ул. Байзакова, 280
+            </div>
+
+          </div>
+
+          <div class="sidebar__socials">
+            <a href="#" class="sidebar__social"><img src="../assets/img/icons/insta-2.png" alt=""></a>
+            <a href="#" class="sidebar__social"><img src="../assets/img/icons/facebook-2.png" alt=""></a>
+            <!--            <a href="#" class="footer__social"><img src="../assets/img/icons/telegram.png" alt=""></a>-->
+          </div>
+
+        </div>
+
         <!--          <nuxt-link tag="a" to="/" class="sidebar__link" @click.native="closeSideBar">Онлайн бронирование</nuxt-link>-->
         <!--          <nuxt-link tag="a" to="/" class="sidebar__link" @click.native="closeSideBar">Тарифы</nuxt-link>-->
         <!--          <nuxt-link tag="a" to="/" class="sidebar__link" @click.native="closeSideBar">Мероприятия</nuxt-link>-->

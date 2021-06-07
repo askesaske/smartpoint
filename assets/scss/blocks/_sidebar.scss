@@ -6,7 +6,7 @@
   top: 0;
   background-color: $white-color;
   z-index: 1000;
-  padding: 86px 54px 20px 46px;
+  padding: 86px 40px 20px 46px;
   transition: all .2s;
 
   &--open {
@@ -35,6 +35,9 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
+    padding-bottom: 30px;
+    border-bottom: 1px solid $main-color;
+    margin-bottom: 30px;
   }
 
   &__link:link,
@@ -65,9 +68,55 @@
 
     &:hover {
       font-weight: 600;
+
       &:before {
         width: 110%;
       }
+    }
+  }
+
+  &__footer {
+
+  }
+
+  &__row {
+    display: flex;
+    align-items: flex-start;
+
+    margin-bottom: 20px;
+  }
+
+  &__icon {
+    fill: $main-color;
+    margin-right: 12px;
+  }
+
+  &__text {
+    @include text-style(1.6rem, 500, $main-color);
+  }
+
+  &__phone-box {
+    &:not(:last-child) {
+      margin-bottom: 12px;
+    }
+
+    a {
+      margin-right: 12px;
+    }
+
+    span {
+      @include text-style(1.2rem, 500, #9A9A9A);
+    }
+  }
+
+  &__socials {
+    display: flex;
+    align-items: center;
+  }
+
+  &__social {
+    &:not(:last-child) {
+      margin-right: 30px;
     }
   }
 }
