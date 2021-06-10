@@ -35,11 +35,11 @@
             </div>
 
             <div class="event__date">
-              <div class="event__text">
+              <div class="event__text event__text--upperLetter">
                 {{ dateC }}
               </div>
               <div class="event__text">
-                {{ event.start_date | moment("HH:MM") }} - {{ event.end_date | moment("HH:MM") }}
+                {{ startDate | moment("HH:MM") }} - {{ endDate | moment("HH:MM") }}
               </div>
             </div>
           </div>
@@ -82,22 +82,27 @@ export default {
   data() {
     return {
       event: {},
-      date: ""
+      startDate: "",
+      endDate: ""
     }
   },
   computed: {
     dateC() {
-      const year = this.date.split('-')[0]
-      const month = this.date.split('-')[1]
-      const day = this.date.split('-')[2]
+      // const year = this.date.split('-')[0]
+      // const month = this.date.split('-')[1]
+      // const day = this.date.split('-')[2]
+      //
+      // let monthText = ""
+      //
+      // if(month === '05') {
+      //   monthText = "Май"
+      // }
+      //
+      // return monthText + ' ' + day + ', ' + year
 
-      let monthText = ""
-
-      if(month === '05') {
-        monthText = "Май"
-      }
-
-      return monthText + ' ' + day + ', ' + year
+      let ruDate = moment(this.startDate)
+      ruDate.locale('ru')
+      return ruDate.format('MMMM DD, YYYY')
     }
   },
   methods: {
@@ -106,7 +111,8 @@ export default {
     this.$axios.get('http://185.121.81.137/api/event/' + this.$route.params.id)
     .then(response => {
       this.event = response.data
-      this.date = response.data.start_date.toString().substr(0, 10)
+      this.startDate = new Date(response.data.start_date * 1000).toISOString()
+      this.endDate = new Date(response.data.end_date * 1000).toISOString()
       console.log(response.data)
     })
     .catch(e => console.log(e))

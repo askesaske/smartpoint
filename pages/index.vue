@@ -61,20 +61,12 @@
         </h2>
 
         <div class="about-section__row">
-          <div class="about-section__title">
-            Добро пожаловать в пространство <br>
-            разумных технологий и креативных <br>
-            решений – <br>
-            <span>SmArt.Point</span>
+          <div class="about-section__title" v-html="loadedAboutUs.title">
           </div>
 
           <div class="about-section__info">
             <div class="about-section__text">
-              <!--              {{ loadedAboutUs.text }}-->
-              В коворкинге работают более 70 успешных компаний в сфере IT, финтех, онлайн-торговли, разработки ПО,
-              кибербезопасности, блокчейн, ИТ-образования, онлайн-образования, медиа, автоматизированной логистики,
-              искусственного интеллекта, робототехники, телекоммуникации, digital-маркетинга и дизайна, с совокупным
-              количеством сотрудников более 800 человек.
+              {{ loadedAboutUs.outside_text }}
             </div>
 
             <nuxt-link to="/About" tag="button" class="about-section__btn button">
@@ -83,26 +75,24 @@
 
             <div class="about-section__stat-row">
               <div class="about-section__number-box">
-                <!--                <span>{{ loadedAboutUs.coworking_area }} м²</span> <br>-->
-                <span>12 000 м²</span> <br>
+                <span>{{ loadedAboutUs.coworking_area }} м²</span> <br>
                 Площадь коворкинга
               </div>
               <div class="about-section__number-box">
-                <!--                <span>{{ loadedAboutUs.working_place }}</span> <br>-->
-                <span>1 000</span> <br>
+                <span>{{ loadedAboutUs.working_place }}</span> <br>
                 Рабочих мест
               </div>
             </div>
 
             <div class="about-section__stat-row">
               <div class="about-section__number-box">
-                <!--                <span>{{ loadedAboutUs.coworking_area }} м²</span> <br>-->
-                <span>500 мб/с</span> <br>
+                <span>{{ loadedAboutUs.internet_speed }}</span> <br>
+                <!--                <span>500 мб/с</span> <br>-->
                 Интернет Wi-Fi
               </div>
               <div class="about-section__number-box">
-                <!--                <span>{{ loadedAboutUs.working_place }}</span> <br>-->
-                <span>24/7</span> <br>
+                <span>{{ loadedAboutUs.availability }}</span> <br>
+                <!--                <span>24/7</span> <br>-->
                 Доступ
               </div>
             </div>
@@ -116,8 +106,7 @@
 
           <div class="benefits__cards">
 
-            <!--            <div class="benefits__card benefit-card" v-for="adv in advantages" :key="adv.id">-->
-            <div class="benefits__card benefit-card" v-for="adv in 3" :key="adv.id">
+            <div class="benefits__card benefit-card" v-for="adv in loadedAdvantages" :key="adv.id">
               <div class="benefit-card__side benefit-card__side--front">
                 <img :src="adv.card_image" alt="" class="benefit-card__icon">
                 <div class="benefit-card__name">
@@ -126,16 +115,9 @@
               </div>
 
               <div class="benefit-card__side benefit-card__side--back">
-                <!--                <div class="benefit-card__title">{{ adv.inside_card_title }}</div>-->
-                <div class="benefit-card__title">Инфраструктура</div>
+                <div class="benefit-card__title">{{ adv.card_title }}</div>
                 <ul class="benefit-card__desc">
-                  <li>Кафетерии и зоны питания</li>
-                  <li>Библиотека</li>
-                  <li>Коллаборационные зоны</li>
-                  <li>Лаундж зоны</li>
-                  <li>Брейншторминг споты</li>
-                  <li>Аптека</li>
-                  <li>Нотариус</li>
+                  <li v-for="l in adv.inside_card_text">{{ l.inside_card_text }}</li>
                 </ul>
               </div>
             </div>
@@ -189,89 +171,20 @@
 
       <div class="additional-services__container">
 
-        <div class="additional-services__item">
-          <svg class="additional-services__icon" width="60" height="60">
-            <use href="../assets/img/icons.svg#suitcase-2"></use>
-          </svg>
+        <div class="additional-services__item" v-for="s in loadedAdditionalServices" :key="s.id">
+
+          <img :src="s.card_image" alt="" class="additional-services__icon">
 
           <div class="additional-services__title">
-            Аренда юридического адреса
+            {{ s.title }}
           </div>
 
           <div class="additional-services__price">
-            25 000 тг/месяц
+            {{ s.price }} тг/месяц
           </div>
+
         </div>
 
-        <div class="additional-services__item">
-          <svg class="additional-services__icon" width="60" height="60">
-            <use href="../assets/img/icons.svg#parking"></use>
-          </svg>
-
-          <div class="additional-services__title">
-            Аренда парковочных мест
-          </div>
-
-          <div class="additional-services__price">
-            25 000 тг/месяц
-          </div>
-        </div>
-
-        <div class="additional-services__item">
-          <svg class="additional-services__icon" width="60" height="60">
-            <use href="../assets/img/icons.svg#key"></use>
-          </svg>
-
-          <div class="additional-services__title">
-            Аренда складского помещения
-          </div>
-
-          <div class="additional-services__price">
-            25 000 тг/месяц
-          </div>
-        </div>
-
-        <div class="additional-services__item">
-          <svg class="additional-services__icon" width="60" height="60">
-            <use href="../assets/img/icons.svg#printer-2"></use>
-          </svg>
-
-          <div class="additional-services__title">
-            Услуги принтинга
-          </div>
-
-          <div class="additional-services__price">
-            25 000 тг/месяц
-          </div>
-        </div>
-
-        <div class="additional-services__item">
-          <svg class="additional-services__icon" width="60" height="60">
-            <use href="../assets/img/icons.svg#shout"></use>
-          </svg>
-
-          <div class="additional-services__title">
-            Рекламные площади
-          </div>
-
-          <div class="additional-services__price">
-            25 000 тг/месяц
-          </div>
-        </div>
-
-        <div class="additional-services__item">
-          <svg class="additional-services__icon" width="60" height="60">
-            <use href="../assets/img/icons.svg#camera"></use>
-          </svg>
-
-          <div class="additional-services__title">
-            Локации для съемок
-          </div>
-
-          <div class="additional-services__price">
-            25 000 тг/месяц
-          </div>
-        </div>
       </div>
 
     </section>
@@ -293,10 +206,12 @@
 
         <div class="events-section__list">
           <nuxt-link to="/Events/1" tag="div" class="events-section__row"
-                     v-for="(e, i) in events"
+                     v-for="(e, i) in loadedEvents"
                      :key="e.id"
                      v-if="i < 3">
-            <div class="events-section__date">{{ e.start_date | moment("d, MMMM, YYYY") }}</div>
+            <div class="events-section__date">
+              {{ e.start_date | moment('MMMM, DD') }}
+            </div>
 
             <div class="events-section__main">
               <div class="events-section__img-box">
@@ -404,9 +319,9 @@
 
               <div class="swiper-slide team-section__item">
 
-<!--                <svg class="team-section__icon team-section__icon&#45;&#45;crown" width="60" height="60">-->
-<!--                  <use href="../assets/img/icons.svg#crown"></use>-->
-<!--                </svg>-->
+                <!--                <svg class="team-section__icon team-section__icon&#45;&#45;crown" width="60" height="60">-->
+                <!--                  <use href="../assets/img/icons.svg#crown"></use>-->
+                <!--                </svg>-->
 
                 <img src="../assets/img/member-1.png" alt="" class="team-section__img">
 
@@ -419,9 +334,9 @@
 
               <div class="swiper-slide team-section__item">
 
-<!--                <svg class="team-section__icon team-section__icon&#45;&#45;chat" width="52" height="52">-->
-<!--                  <use href="../assets/img/icons.svg#chat"></use>-->
-<!--                </svg>-->
+                <!--                <svg class="team-section__icon team-section__icon&#45;&#45;chat" width="52" height="52">-->
+                <!--                  <use href="../assets/img/icons.svg#chat"></use>-->
+                <!--                </svg>-->
 
                 <img src="../assets/img/member-2.png" alt="" class="team-section__img">
 
@@ -434,9 +349,9 @@
 
               <div class="swiper-slide team-section__item">
 
-<!--                <svg class="team-section__icon team-section__icon&#45;&#45;glasses" width="90" height="90">-->
-<!--                  <use href="../assets/img/icons.svg#glasses"></use>-->
-<!--                </svg>-->
+                <!--                <svg class="team-section__icon team-section__icon&#45;&#45;glasses" width="90" height="90">-->
+                <!--                  <use href="../assets/img/icons.svg#glasses"></use>-->
+                <!--                </svg>-->
 
                 <img src="../assets/img/member-3.png" alt="" class="team-section__img">
 
@@ -449,9 +364,9 @@
 
               <div class="swiper-slide team-section__item">
 
-<!--                <svg class="team-section__icon team-section__icon&#45;&#45;crown" width="60" height="60">-->
-<!--                  <use href="../assets/img/icons.svg#crown"></use>-->
-<!--                </svg>-->
+                <!--                <svg class="team-section__icon team-section__icon&#45;&#45;crown" width="60" height="60">-->
+                <!--                  <use href="../assets/img/icons.svg#crown"></use>-->
+                <!--                </svg>-->
 
                 <img src="../assets/img/member-4.png" alt="" class="team-section__img">
 
@@ -505,7 +420,7 @@
 
     </section>
 
-    <!--    <inst-section></inst-section>-->
+    <inst-section></inst-section>
   </div>
 </template>
 
@@ -517,7 +432,8 @@ import RatesSection from "@/components/RatesSection";
 import GallerySection from "@/components/GallerySection";
 import InstSection from "@/components/InstSection";
 import ServiceOffices from "~/components/ServiceOffices";
-import VueMoment, {moment} from 'vue-moment';
+// import VueMoment, {moment} from 'vue-moment';
+import moment from 'moment'
 
 Swiper.use([Navigation]);
 
@@ -531,14 +447,17 @@ export default {
     ServiceOffices
   },
   data() {
-    return {
-      advantages: {},
-      events: []
-    };
+    return {};
   },
   computed: {
     loadedAboutUs() {
       return this.$store.getters.loadedAboutUs
+    },
+    loadedAdvantages() {
+      return this.$store.getters.loadedAdvantages
+    },
+    loadedAdditionalServices() {
+      return this.$store.getters.loadedAdditionalServices
     },
     loadedCommunities() {
       return this.$store.getters.loadedCommunities
@@ -546,11 +465,24 @@ export default {
     loadedNews() {
       return this.$store.getters.loadedNews
     },
+    loadedEvents() {
+      let events = this.$store.getters.loadedEvents
+
+      for (let i = 0; i < events.length; i++) {
+        events[i].start_date = moment(events[i])
+        events[i].start_date.locale('ru')
+      }
+
+      return events
+    }
   },
   methods: {},
   created() {
+
   },
   mounted() {
+
+
     var swiper1 = new Swiper('.community-section__swiper-container', {
       slidesPerView: 1,
       spaceBetween: 8,
@@ -604,18 +536,6 @@ export default {
       }
     });
 
-    this.$axios.get('http://185.121.81.137/api/advantages/')
-      .then(response => {
-        this.advantages = response.data
-      })
-      .catch(e => console.log(e))
-
-    this.$axios.get('http://185.121.81.137/api/event/')
-      .then(response => {
-        this.events = response.data.filter(e => e.is_active === true)
-        console.log(response.data)
-      })
-      .catch(e => console.log(e))
   }
 };
 </script>

@@ -46,6 +46,13 @@
   &__text {
     @include text-style(1.6rem, 400, $primary-black);
     line-height: 18.5px;
+
+    &--upperLetter {
+      &:first-letter {
+        text-transform: uppercase;
+      }
+    }
+
   }
 
   &__date-box {

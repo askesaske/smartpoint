@@ -81,6 +81,11 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
   ],
+
+  env: {
+    API_URL: 'http://185.121.81.137/api/',
+    INST_TOKEN: 'IGQVJWU2tGeXN6U2lNd1QtQ3BBTHhQQ3poY0N2T3lrSkxRaEdOZAHRreFdRZAmNxY2hSTndldFV5VnQtRElsRTJzSkw0cG5hTnFoc2tTSUl1Nng2M0RURmdYOFl5SEc3cEJUZAHlxWXY0Y2ZA6X1BFcC1DcgZDZD'
+  },
   /*
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options

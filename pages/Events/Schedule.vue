@@ -20,17 +20,22 @@
 
         <div class="schedule-page__month-box" v-for="(e, i) in events" :key="e.id">
 
-          <div class="schedule-page__title">{{ e.month + ' ' + e.year}}</div>
+          <div class="schedule-page__title">{{ e.month + '.' + e.year }}</div>
 
           <div class="schedule-page__row">
 
             <div class="schedule-page__list">
 
-              <nuxt-link :to="'/Events/' + event.id" tag="div" class="schedule-page__item" v-for="(event, k) in e.events" :key="event.id">
+              <nuxt-link :to="'/Events/' + event.id" tag="div" class="schedule-page__item"
+                         v-for="(event, k) in e.events" :key="event.id">
 
                 <div class="schedule-page__date">
-                  <p>{{ event.start_date | moment("D, MMMM")}}</p>
-                  <span>{{ event.start_date | moment("HH:MM") }} - {{ event.end_date | moment("HH:MM") }}</span>
+                  <p>{{ new Date(event.start_date * 1000).toISOString() | moment("D.MM") }}</p>
+                  <span>
+                    {{ new Date(event.start_date * 1000).toISOString() | moment("HH:MM") }}
+                    -
+                    {{ new Date(event.end_date * 1000).toISOString() | moment("HH:MM") }}
+                  </span>
                 </div>
 
                 <div class="schedule-page__name">
@@ -61,6 +66,11 @@
 </template>
 
 <script>
+import moment from "moment";
+import 'moment/locale/ru'
+
+moment.locale('ru')
+
 export default {
   data() {
     return {
@@ -71,9 +81,12 @@ export default {
     this.$axios.get('http://185.121.81.137/api/month/')
       .then(response => {
         this.events = response.data
+
         console.log(response.data)
       })
       .catch(e => console.log(e))
+
+    console.log(moment.locale())
   }
 }
 </script>

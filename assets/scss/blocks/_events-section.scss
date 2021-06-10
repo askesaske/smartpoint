@@ -63,6 +63,7 @@
     @include text-style(3.6rem, 700, transparent);
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: $main-color;
+    text-transform: uppercase;
     transition: all .2s;
   }
 
