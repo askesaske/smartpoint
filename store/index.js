@@ -12,7 +12,8 @@ const createStore = () => {
       loadedNews: [],
       loadedInstImages: [],
       loadedCoworking: [],
-      loadedEvent: []
+      loadedEvent: [],
+      loadedTeam: []
     },
     mutations: {
       setAboutUs(state, info) {
@@ -38,6 +39,9 @@ const createStore = () => {
       },
       setEvents(state, info) {
         state.loadedEvent = info
+      },
+      setTeam(state, info) {
+        state.loadedTeam = info
       },
       openSideBar(state) {
         state.sideBarState = true;
@@ -77,6 +81,9 @@ const createStore = () => {
         const eventResponse = await context.$axios.get(process.env.API_URL + 'event/')
         VuexContext.commit('setEvents', eventResponse.data.filter(e => e.is_active === true))
 
+        const teamResponse = await context.$axios.get(process.env.API_URL + 'our-team/')
+        VuexContext.commit('setTeam', teamResponse.data)
+
         const instImagesResponse = await context.$axios.get('https://graph.instagram.com/me/media?access_token=' + process.env.INST_TOKEN + '&fields=media_url,media_type,caption,permalink')
         VuexContext.commit('setInstImages', instImagesResponse.data.data.filter(images => images.media_type !== 'VIDEO'))
 
@@ -103,6 +110,9 @@ const createStore = () => {
       setEvents(vuexContext, eventsInfo) {
         vuexContext.commit('setEvents', eventsInfo)
       },
+      setTeam(vuexContext, teamInfo) {
+        vuexContext.commit('setTeam', teamInfo)
+      },
       setInstImages(vuexContext, instImagesInfo) {
         vuexContext.commit('setInstImages', instImagesInfo)
       }
@@ -128,6 +138,9 @@ const createStore = () => {
       },
       loadedEvents(state) {
         return state.loadedEvent
+      },
+      loadedTeam(state) {
+        return state.loadedTeam
       },
       loadedInstImages(state) {
         return state.loadedInstImages

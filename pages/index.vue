@@ -317,93 +317,17 @@
           <div class="swiper-container team-section__swiper-container">
             <div class="swiper-wrapper">
 
-              <div class="swiper-slide team-section__item">
+              <div class="swiper-slide team-section__item" v-for="t in loadedTeam" :key="t.id">
 
                 <!--                <svg class="team-section__icon team-section__icon&#45;&#45;crown" width="60" height="60">-->
                 <!--                  <use href="../assets/img/icons.svg#crown"></use>-->
                 <!--                </svg>-->
 
-                <img src="../assets/img/member-1.png" alt="" class="team-section__img">
+                <img :src="t.card_image" alt="" class="team-section__img">
 
                 <div class="team-section__info">
-                  <div class="team-section__name">Алия Турдиева</div>
-                  <div class="team-section__occupation">Проектный менеджер</div>
-                </div>
-
-              </div>
-
-              <div class="swiper-slide team-section__item">
-
-                <!--                <svg class="team-section__icon team-section__icon&#45;&#45;chat" width="52" height="52">-->
-                <!--                  <use href="../assets/img/icons.svg#chat"></use>-->
-                <!--                </svg>-->
-
-                <img src="../assets/img/member-2.png" alt="" class="team-section__img">
-
-                <div class="team-section__info">
-                  <div class="team-section__name">Сабина Юрченко</div>
-                  <div class="team-section__occupation">Проектный менеджер</div>
-                </div>
-
-              </div>
-
-              <div class="swiper-slide team-section__item">
-
-                <!--                <svg class="team-section__icon team-section__icon&#45;&#45;glasses" width="90" height="90">-->
-                <!--                  <use href="../assets/img/icons.svg#glasses"></use>-->
-                <!--                </svg>-->
-
-                <img src="../assets/img/member-3.png" alt="" class="team-section__img">
-
-                <div class="team-section__info">
-                  <div class="team-section__name">Аслан Карим</div>
-                  <div class="team-section__occupation">Проектный менеджер</div>
-                </div>
-
-              </div>
-
-              <div class="swiper-slide team-section__item">
-
-                <!--                <svg class="team-section__icon team-section__icon&#45;&#45;crown" width="60" height="60">-->
-                <!--                  <use href="../assets/img/icons.svg#crown"></use>-->
-                <!--                </svg>-->
-
-                <img src="../assets/img/member-4.png" alt="" class="team-section__img">
-
-                <div class="team-section__info">
-                  <div class="team-section__name">Алия Турдиева</div>
-                  <div class="team-section__occupation">Проектный менеджер</div>
-                </div>
-
-
-              </div>
-
-              <div class="swiper-slide team-section__item">
-
-                <!--                <svg class="team-section__icon team-section__icon&#45;&#45;crown" width="60" height="60">-->
-                <!--                  <use href="../assets/img/icons.svg#crown"></use>-->
-                <!--                </svg>-->
-
-                <img src="../assets/img/member-5.png" alt="" class="team-section__img">
-
-                <div class="team-section__info">
-                  <div class="team-section__name">Алия Турдиева</div>
-                  <div class="team-section__occupation">Проектный менеджер</div>
-                </div>
-
-              </div>
-
-              <div class="swiper-slide team-section__item">
-
-                <!--                <svg class="team-section__icon team-section__icon&#45;&#45;crown" width="60" height="60">-->
-                <!--                  <use href="../assets/img/icons.svg#crown"></use>-->
-                <!--                </svg>-->
-
-                <img src="../assets/img/member-6.png" alt="" class="team-section__img">
-
-                <div class="team-section__info">
-                  <div class="team-section__name">Алия Турдиева</div>
-                  <div class="team-section__occupation">Проектный менеджер</div>
+                  <div class="team-section__name">{{ t.name }}</div>
+                  <div class="team-section__occupation">{{ t.role }}</div>
                 </div>
 
               </div>
@@ -464,6 +388,9 @@ export default {
     },
     loadedNews() {
       return this.$store.getters.loadedNews
+    },
+    loadedTeam() {
+      return this.$store.getters.loadedTeam
     },
     loadedEvents() {
       let events = this.$store.getters.loadedEvents
