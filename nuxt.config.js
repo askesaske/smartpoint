@@ -16,6 +16,7 @@ export default {
   ** See https://nuxtjs.org/api/configuration-head
   */
   head: {
+    __dangerouslyDisableSanitizers: ['script'],
     title: 'SmartPoint',
     meta: [
       {charset: 'utf-8'},
@@ -25,6 +26,30 @@ export default {
     // link: [
     //   {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'}
     // ]
+    script: [
+      {
+        hid: 'SpaceinWidget',
+        innerHTML: `
+          (function (d, w, c) {
+            (w[c] = w[c] || []).push(function () {
+              try {
+                w.SpaceinWidget = Spacein.init(1);
+              } catch (e) {
+              }
+            });
+            var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () {
+              n.parentNode.insertBefore(s, n)
+            };
+            s.type = "text/javascript";
+            s.async = true;
+            s.src = "https://smartpoint.spacepass.pro/js/widget.js";
+            (w.opera === "[object Opera]") ? d.addEventListener("DOMContentLoaded", f, false) : f();
+          })(document, window, "spacein_cb");
+        `,
+        type: 'text/javascript',
+        charset: 'utf-8'
+      }
+    ]
   },
   /*
   ** Global CSS

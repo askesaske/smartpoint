@@ -38,6 +38,267 @@
     }
   }
 
+  &__item {
+    position: relative;
+  }
+
+  &__img {
+    display: block;
+    margin: 0 auto;
+  }
+
+  &__overlay {
+    position: absolute;
+    background-color: rgba(36, 130, 96, 0.5);
+    opacity: 1;
+    //transition: all .4s;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 1;
+    }
+
+    &--1 {
+      width: 82px;
+      height: 73px;
+      clip-path: polygon(100% 0, 0 100%, 94% 100%);
+      top: 24px;
+      left: 51px;
+    }
+
+    &--2 {
+      width: 59px;
+      height: 55px;
+      clip-path: polygon(7% 0, 100% 0, 93% 100%, 0 100%);
+      top: 101px;
+      left: 45px;
+    }
+
+    &--3 {
+      width: 59px;
+      height: 51px;
+      clip-path: polygon(7% 0, 100% 0, 93% 100%, 0 100%);
+      top: 158px;
+      left: 41px;
+    }
+
+    &--4 {
+      width: 63px;
+      height: 95px;
+      clip-path: polygon(11% 0, 100% 0, 89% 100%, 0 100%);
+      top: 213px;
+      left: 33px;
+    }
+
+    &--5 {
+      width: 62px;
+      height: 63px;
+      clip-path: polygon(7% 0, 100% 0, 93% 100%, 0 100%);
+      top: 334px;
+      left: 25px;
+    }
+
+    &--6 {
+      width: 63px;
+      height: 64px;
+      clip-path: polygon(7% 0, 100% 0, 93% 100%, 0 100%);
+      top: 400px;
+      left: 20px;
+    }
+
+    &--7 {
+      width: 64px;
+      height: 66px;
+      clip-path: polygon(7% 0, 100% 0, 93% 100%, 0 100%);
+      top: 468px;
+      left: 13px;
+    }
+
+    &--8 {
+      width: 64px;
+      height: 64px;
+      clip-path: polygon(7% 0, 100% 0, 93% 100%, 0 100%);
+      top: 536px;
+      left: 9px;
+    }
+
+    &--9 {
+      width: 180px;
+      height: 89px;
+      clip-path: polygon(6% 0%, 25% 0%, 25% 4%, 33% 3%, 25% -35%, 95% 1%, 168% 64%, 92% 100%, 91% 94%, 78% 95%, 77% 100%, 14% 100%, 15% 94%, 3% 96%);
+      top: 376px;
+      left: 99px;
+    }
+
+    &--10 {
+      width: 63px;
+      height: 59px;
+      clip-path: polygon(5% 0, 100% 0, 98% 152%, 0 100%);
+      top: 21px;
+      left: 264px;
+    }
+
+    &--11 {
+      width: 61px;
+      height: 59px;
+      clip-path: polygon(5% 0, 100% 0, 98% 152%, 0 100%);
+      top: 21px;
+      left: 327px;
+    }
+
+    &--12 {
+      width: 128px;
+      height: 138px;
+      clip-path: polygon(5% 0, 100% 0, 105% 90%, 0% 102%);
+      top: 21px;
+      left: 388px;
+    }
+
+    &--13 {
+      width: 126px;
+      height: 123px;
+      clip-path: polygon(5% 0%, 100% 0%, 101% 95%, 65% 93%, 1% 102%);
+      top: 21px;
+      left: 516px;
+    }
+
+    &--14 {
+      width: 127px;
+      height: 116px;
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+      top: 21px;
+      left: 647px;
+    }
+
+    &--15 {
+      width: 53px;
+      height: 237px;
+      clip-path: polygon(14% 0%, 100% 0%, 94% 60%, 75% 100%, -8% 99%);
+      top: 212px;
+      left: 299px;
+    }
+
+    &--16 {
+      width: 170px;
+      height: 274px;
+      clip-path: polygon(16% 6%, 89% 0%, 98% 41%, 81% 41%, 80% 54%, 99% 54%, 77% 101%, -3% 91%, 12% 53%, 20% 53%);
+      top: 192px;
+      left: 357px;
+    }
+
+    &--17 {
+      width: 161px;
+      height: 311px;
+      clip-path: polygon(27% 2%, 80% 0%, 88% 19%, 62% 57%, 89% 62%, 166% 155%, 111% 94%, 102% 100%, 8% 92%, 32% 45%);
+      top: 182px;
+      left: 481px;
+    }
+
+    &--18 {
+      width: 64px;
+      height: 56px;
+      clip-path: polygon(0% 12%, 89% 0, 97% 88%, 10% 99%);
+      top: 163px;
+      left: 617px;
+    }
+
+    &--19 {
+      width: 69px;
+      height: 60px;
+      clip-path: polygon(22% 0%, 100% 31%, 79% 100%, 0% 63%);
+      top: 241px;
+      left: 612px;
+    }
+
+    &--20 {
+      width: 55px;
+      height: 70px;
+      clip-path: polygon(30% 0%, 91% 19%, 89% 55%, 68% 100%, -3% 77%);
+      top: 305px;
+      left: 586px;
+    }
+
+    &--21 {
+      width: 63px;
+      height: 65px;
+      clip-path: polygon(-2% 29%, 96% 6%, 98% 105%, 18% 100%);
+      top: 168px;
+      left: 715px;
+    }
+
+    &--22 {
+      width: 60px;
+      height: 60px;
+      clip-path: polygon(9% 0, 95% 3%, 100% 90%, 0 98%);
+      top: 234px;
+      left: 720px;
+    }
+
+    &--23 {
+      width: 57px;
+      height: 50px;
+      clip-path: polygon(0 16%, 97% 4%, 99% 92%, 24% 105%);
+      top: 289px;
+      left: 719px;
+    }
+
+    &--24 {
+      width: 98px;
+      height: 51px;
+      clip-path: polygon(0 0, 98% 0, 100% 100%, 2% 100%);
+      top: 173px;
+      left: 777px;
+    }
+
+    &--25 {
+      width: 98px;
+      height: 51px;
+      clip-path: polygon(0 0, 98% 0, 100% 100%, 2% 100%);
+      top: 226px;
+      left: 779px;
+    }
+
+    &--26 {
+      width: 47px;
+      height: 57px;
+      clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 13% 98%, 11% 45%, 2% 45%);
+      top: 279px;
+      left: 780px;
+    }
+
+    &--27 {
+      width: 51px;
+      height: 57px;
+      clip-path: polygon(0 0, 96% 0, 100% 100%, 3% 100%);
+      top: 279px;
+      left: 828px;
+    }
+
+    &--28 {
+      width: 134px;
+      height: 90px;
+      clip-path: polygon(2% 0%, 96% 0%, 100% 93%, 90% 93%, 90% 100%, 1% 100%, 0% 65%, 3% 66%);
+      top: 247px;
+      left: 908px;
+    }
+
+    &--29 {
+      width: 67px;
+      height: 89px;
+      clip-path: polygon(0 0, 90% 0, 100% 100%, 10% 98%);
+      top: 247px;
+      left: 1046px;
+    }
+
+    &--30 {
+      width: 69px;
+      height: 89px;
+      clip-path: polygon(0% 0%, 92% 0%, 100% 66%, 93% 65%, 97% 99%, 9% 100%);
+      top: 247px;
+      left: 1108px;
+    }
+  }
+
   @include respond(phone) {
     &__heading {
       margin-bottom: 44px;
