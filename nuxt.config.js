@@ -42,7 +42,7 @@ export default {
             };
             s.type = "text/javascript";
             s.async = true;
-            s.src = "https://smartpoint.spacepass.pro/js/widget.js";
+            s.src = "//smartpoint.spacepass.pro/js/widget.js";
             (w.opera === "[object Opera]") ? d.addEventListener("DOMContentLoaded", f, false) : f();
           })(document, window, "spacein_cb");
         `,

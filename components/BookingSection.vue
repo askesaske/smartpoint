@@ -61,6 +61,35 @@
 
         <div class="online-booking__item" v-show="chosenTab === 'sm2'">
           <img src="../assets/img/sm2.png" alt="" class="online-booking__img">
+          <div class="online-booking__overlay online-booking__overlay--31"></div>
+          <div class="online-booking__overlay online-booking__overlay--32"></div>
+          <div class="online-booking__overlay online-booking__overlay--33"></div>
+          <div class="online-booking__overlay online-booking__overlay--34"></div>
+          <div class="online-booking__overlay online-booking__overlay--35"></div>
+          <div class="online-booking__overlay online-booking__overlay--36"></div>
+          <div class="online-booking__overlay online-booking__overlay--37"></div>
+          <div class="online-booking__overlay online-booking__overlay--38"></div>
+          <div class="online-booking__overlay online-booking__overlay--39"></div>
+          <div class="online-booking__overlay online-booking__overlay--40"></div>
+          <div class="online-booking__overlay online-booking__overlay--41"></div>
+          <div class="online-booking__overlay online-booking__overlay--42"></div>
+          <div class="online-booking__overlay online-booking__overlay--43"></div>
+          <div class="online-booking__overlay online-booking__overlay--44"></div>
+          <div class="online-booking__overlay online-booking__overlay--45"></div>
+          <div class="online-booking__overlay online-booking__overlay--46"></div>
+          <div class="online-booking__overlay online-booking__overlay--47"></div>
+          <div class="online-booking__overlay online-booking__overlay--48"></div>
+          <div class="online-booking__overlay online-booking__overlay--49"></div>
+          <div class="online-booking__overlay online-booking__overlay--50"></div>
+          <div class="online-booking__overlay online-booking__overlay--51"></div>
+          <div class="online-booking__overlay online-booking__overlay--52"></div>
+          <div class="online-booking__overlay online-booking__overlay--53"></div>
+          <div class="online-booking__overlay online-booking__overlay--54"></div>
+          <div class="online-booking__overlay online-booking__overlay--55"></div>
+          <div class="online-booking__overlay online-booking__overlay--56"></div>
+          <div class="online-booking__overlay online-booking__overlay--57"></div>
+          <div class="online-booking__overlay online-booking__overlay--58"></div>
+          <div class="online-booking__overlay online-booking__overlay--59"></div>
         </div>
 
         <div class="online-booking__item" v-show="chosenTab === 'sm3'">
@@ -68,6 +97,10 @@
         </div>
 
       </div>
+
+      <a href="javascript:void(0)" onClick="SpaceinWidget.run('74f4d464-17b7-460a-be2e-7f7eee2193d8');">Отправить запрос</a>
+
+      <div class="SpaceinWidget" id="SpaceinWidget"></div>
 
     </div>
   </section>
@@ -77,7 +110,7 @@
 export default {
   data() {
     return {
-      chosenTab: 'sm1'
+      chosenTab: 'sm2'
     };
   },
   methods: {
