@@ -94,6 +94,40 @@
 
         <div class="online-booking__item" v-show="chosenTab === 'sm3'">
           <img src="../assets/img/sm3.png" alt="" class="online-booking__img">
+          <div class="online-booking__overlay online-booking__overlay--60"></div>
+          <div class="online-booking__overlay online-booking__overlay--61"></div>
+          <div class="online-booking__overlay online-booking__overlay--62"></div>
+          <div class="online-booking__overlay online-booking__overlay--63"></div>
+          <div class="online-booking__overlay online-booking__overlay--64"></div>
+          <div class="online-booking__overlay online-booking__overlay--65"></div>
+          <div class="online-booking__overlay online-booking__overlay--66"></div>
+          <div class="online-booking__overlay online-booking__overlay--67"></div>
+          <div class="online-booking__overlay online-booking__overlay--68"></div>
+          <div class="online-booking__overlay online-booking__overlay--69"></div>
+          <div class="online-booking__overlay online-booking__overlay--70"></div>
+          <div class="online-booking__overlay online-booking__overlay--71"></div>
+          <div class="online-booking__overlay online-booking__overlay--72"></div>
+          <div class="online-booking__overlay online-booking__overlay--73"></div>
+          <div class="online-booking__overlay online-booking__overlay--74"></div>
+          <div class="online-booking__overlay online-booking__overlay--75"></div>
+          <div class="online-booking__overlay online-booking__overlay--76"></div>
+          <div class="online-booking__overlay online-booking__overlay--77"></div>
+          <div class="online-booking__overlay online-booking__overlay--78"></div>
+          <div class="online-booking__overlay online-booking__overlay--79"></div>
+          <div class="online-booking__overlay online-booking__overlay--80"></div>
+          <div class="online-booking__overlay online-booking__overlay--81"></div>
+          <div class="online-booking__overlay online-booking__overlay--82"></div>
+          <div class="online-booking__overlay online-booking__overlay--83"></div>
+          <div class="online-booking__overlay online-booking__overlay--84"></div>
+          <div class="online-booking__overlay online-booking__overlay--85"></div>
+          <div class="online-booking__overlay online-booking__overlay--86"></div>
+          <div class="online-booking__overlay online-booking__overlay--87"></div>
+          <div class="online-booking__overlay online-booking__overlay--88"></div>
+          <div class="online-booking__overlay online-booking__overlay--89"></div>
+          <div class="online-booking__overlay online-booking__overlay--90"></div>
+          <div class="online-booking__overlay online-booking__overlay--91"></div>
+          <div class="online-booking__overlay online-booking__overlay--92"></div>
+          <div class="online-booking__overlay online-booking__overlay--93"></div>
         </div>
 
       </div>
@@ -110,7 +144,7 @@
 export default {
   data() {
     return {
-      chosenTab: 'sm2'
+      chosenTab: 'sm1'
     };
   },
   methods: {
