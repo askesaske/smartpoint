@@ -4,7 +4,7 @@
     <div class="schedule-page__heading heading-fluid">
       <div class="heading-fluid__container">
         <div class="heading-fluid__path path-box">
-          <div class="path-box__link">Главная</div>
+          <nuxt-link tag="div" to="/" class="path-box__link">Главная</nuxt-link>
           <div class="path-box__link">Расписание событий</div>
         </div>
 
@@ -18,7 +18,7 @@
 
       <div class="schedule-page__wrapper">
 
-        <div class="schedule-page__month-box" v-for="(e, i) in events" :key="e.id">
+        <div class="schedule-page__month-box" v-for="(e, i) in loadedSchedule" :key="e.id">
 
           <div class="schedule-page__title">{{ e.month + '.' + e.year }}</div>
 
@@ -74,19 +74,16 @@ moment.locale('ru')
 export default {
   data() {
     return {
-      events: []
+
+    }
+  },
+  computed: {
+    loadedSchedule() {
+      return this.$store.getters.loadedSchedule
     }
   },
   mounted() {
-    this.$axios.get('http://185.121.81.137/api/month/')
-      .then(response => {
-        this.events = response.data
 
-        console.log(response.data)
-      })
-      .catch(e => console.log(e))
-
-    console.log(moment.locale())
   }
 }
 </script>

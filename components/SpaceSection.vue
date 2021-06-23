@@ -13,7 +13,7 @@
           <div class="space-section__info" :key="'info'">
 
             <transition-group name="fade" mode="out-in">
-              <div class="space-section__items" v-for="area in areas" :key="area.id" v-show="area.id === count">
+              <div class="space-section__items" v-for="area in loadedArea" :key="area.id" v-show="area.id === count">
 
                 <div class="space-section__item">
                   <div class="space-section__name">Название</div>
@@ -74,11 +74,11 @@
           <div class="space-section__img-box">
             <transition-group name="fade" mode="out-in">
               <img :src="area.main_photo" alt="" class="space-section__img"
-                   v-for="area in areas" :key="area.id" v-show="area.id === count">
+                   v-for="area in loadedArea" :key="area.id" v-show="area.id === count">
             </transition-group>
 
             <div class="space-section__controls">
-              <div class="space-section__index">{{ this.count + ' / ' + this.areas.length }}</div>
+              <div class="space-section__index">{{ this.count + ' / ' + this.loadedArea.length }}</div>
               <svg class="space-section__prev" width="40" height="40" @click="prevSlide">
                 <use href="../assets/img/icons.svg#arrow-left"></use>
               </svg>
@@ -98,13 +98,12 @@
 export default {
   data() {
     return {
-      areas: [],
       count: 1,
     };
   },
   methods: {
     nextSlide() {
-      var len = this.areas.length;
+      let len = this.loadedArea.length;
       if (this.count < len) {
         this.count++;
       } else {
@@ -119,12 +118,13 @@ export default {
       }
     }
   },
+  computed: {
+    loadedArea() {
+      return this.$store.getters.loadedArea
+    }
+  },
   mounted() {
-    this.$axios.get('http://185.121.81.137/api/area/')
-      .then(response => {
-        this.areas = response.data
-      })
-      .catch(e => console.log(e))
+
   }
 }
 </script>

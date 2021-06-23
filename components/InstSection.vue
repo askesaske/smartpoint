@@ -72,15 +72,6 @@ export default {
         },
       }
     });
-
-    // console.log(this.loadedInstImages)
-
-    // this.$axios.get('')
-    //   .then(response => {
-    //     console.log(response.data.data)
-    //     this.instImages = response.data.data.filter(images => images.media_type !== 'VIDEO')
-    //   })
-    //   .catch(e => console.log(e))
   }
 }
 </script>

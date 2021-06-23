@@ -1,32 +1,38 @@
 <template>
-  <div class="news">
+  <div>
+    <div class="loader" v-if="!isLoaded">
+      <img src="../../assets/img/icons/loader.svg" alt="">
+    </div>
 
-    <div class="news__heading heading-fluid">
-      <div class="heading-fluid__container">
-        <div class="heading-fluid__path path-box">
-          <div class="path-box__link">Главная</div>
-          <div class="path-box__link">Новости</div>
+    <div class="news" v-else>
+
+      <div class="news__heading heading-fluid">
+        <div class="heading-fluid__container">
+          <div class="heading-fluid__path path-box">
+            <nuxt-link tag="div" to="/" class="path-box__link">Главная</nuxt-link>
+            <div class="path-box__link">Новости</div>
+          </div>
+          <h1 class="heading-fluid__title">новости</h1>
         </div>
-        <h1 class="heading-fluid__title">новости</h1>
       </div>
-    </div>
 
-    <div class="news__container">
+      <div class="news__container">
 
-      <img :src="singleNew.main_photo" alt="" class="news__img">
+        <img :src="singleNew.main_photo" alt="" class="news__img">
 
-      <p class="news__date">{{ singleNew.created_at }}</p>
+        <p class="news__date">{{ singleNew.created_at }}</p>
 
-      <h4 class="news__title">
-        {{ singleNew.title }}
-      </h4>
+        <h4 class="news__title">
+          {{ singleNew.title }}
+        </h4>
 
-      <div class="news__text">
-        {{ singleNew.text }}
+        <div class="news__text">
+          {{ singleNew.text }}
+        </div>
       </div>
-    </div>
 
-    <img src="../../assets/img/mountain-bg.png" alt="" class="news__bg">
+      <img src="../../assets/img/mountain-bg.png" alt="" class="news__bg">
+    </div>
   </div>
 </template>
 
@@ -34,14 +40,15 @@
 export default {
   data() {
     return {
-      singleNew: {}
+      singleNew: {},
+      isLoaded: false
     }
   },
   mounted() {
-    this.$axios.get('http://185.121.81.137/api/news/' + this.$route.params.id)
+    this.$axios.get(process.env.API_URL + 'news/' + this.$route.params.id)
       .then(response => {
         this.singleNew = response.data
-        console.log(response.data)
+        this.isLoaded = true
       })
       .catch(e => console.log(e))
   }

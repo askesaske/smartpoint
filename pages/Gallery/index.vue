@@ -4,15 +4,15 @@
     <div class="gallery__heading heading-fluid">
       <div class="heading-fluid__container">
         <div class="heading-fluid__path path-box">
-          <div class="path-box__link">Главная</div>
+          <nuxt-link tag="div" to="/" class="path-box__link">Главная</nuxt-link>
           <div class="path-box__link">Галерея</div>
         </div>
-        <h1 class="heading-fluid__title">фотогалерея</h1>
+        <h1 class="heading-fluid__title">Фотогалерея</h1>
       </div>
     </div>
 
     <div class="gallery__container">
-      <nuxt-link tag="div" :to="'/Gallery/' + g.id" class="gallery__category" v-for="g in galleries" :key="g.id">
+      <nuxt-link tag="div" :to="'/Gallery/' + g.id" class="gallery__category" v-for="g in loadedGallery" :key="g.id">
         <img :src="g.gallery_card_image" alt="">
 
         <div class="gallery__category-name">
@@ -31,15 +31,17 @@
 export default {
   data() {
     return {
-      galleries: []
+
+    }
+  },
+
+  computed: {
+    loadedGallery() {
+      return this.$store.getters.loadedGallery
     }
   },
   mounted() {
-    this.$axios.get('http://185.121.81.137/api/gallery/')
-      .then(response => {
-        this.galleries = response.data
-      })
-      .catch(e => console.log(e))
+
   }
 }
 </script>

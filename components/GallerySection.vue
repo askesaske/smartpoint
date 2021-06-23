@@ -129,14 +129,15 @@ export default {
       this.index = i;
     }
   },
+  computed: {
+    loadedGallery() {
+      return this.$store.getters.loadedGallery
+    }
+  },
   mounted() {
-    this.$axios.get('http://185.121.81.137/api/gallery/')
-      .then(response => {
-        for (let i in response.data[0].gallery_image) {
-          this.images.push(response.data[0].gallery_image[i].image)
-        }
-      })
-      .catch(e => console.log(e))
+    for (let i in this.loadedGallery[0].gallery_image) {
+      this.images.push(this.loadedGallery[0].gallery_image[i].image)
+    }
   }
 }
 </script>

@@ -122,8 +122,6 @@ export default {
       //   }
       // }
     });
-
-    console.log(this.loadedCoworking)
   }
 }
 </script>

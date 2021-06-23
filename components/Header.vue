@@ -69,11 +69,7 @@ export default {
       return this.$store.state.sideBarState
     },
     headerStatic() {
-      if(this.$route.path !== '/') {
-        return true
-      } else {
-        return false
-      }
+      return this.$route.path !== '/';
     }
   },
   methods: {

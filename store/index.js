@@ -1,5 +1,6 @@
 import Vuex from 'vuex'
 import axios from 'axios'
+import Vue from "vue";
 
 const createStore = () => {
   return new Vuex.Store({
@@ -13,7 +14,11 @@ const createStore = () => {
       loadedInstImages: [],
       loadedCoworking: [],
       loadedEvent: [],
-      loadedTeam: []
+      loadedTeam: [],
+      loadedGallery: [],
+      loadedSchedule: [],
+      loadedArchive: [],
+      loadedArea: []
     },
     mutations: {
       setAboutUs(state, info) {
@@ -43,6 +48,18 @@ const createStore = () => {
       setTeam(state, info) {
         state.loadedTeam = info
       },
+      setGallery(state, info) {
+        state.loadedGallery = info
+      },
+      setSchedule(state, info) {
+        state.loadedSchedule = info
+      },
+      setArchive(state, info) {
+        state.loadedArchive = info
+      },
+      setArea(state, info) {
+        state.loadedArea = info
+      },
       openSideBar(state) {
         state.sideBarState = true;
       },
@@ -52,13 +69,6 @@ const createStore = () => {
     },
     actions: {
       async nuxtServerInit(VuexContext, context) {
-        // return function () {
-        //   context.app.$axios.$get('http://185.121.81.137/api/about-us/')
-        //     .then(data => {
-        //       VuexContext.commit('setAboutUs', data[0])
-        //     })
-        //     .catch(e => context.error(e))
-        // }
 
         const aboutUsResponse = await context.$axios.get(process.env.API_URL + 'about-us/')
         VuexContext.commit('setAboutUs', aboutUsResponse.data[0])
@@ -83,6 +93,18 @@ const createStore = () => {
 
         const teamResponse = await context.$axios.get(process.env.API_URL + 'our-team/')
         VuexContext.commit('setTeam', teamResponse.data)
+
+        const galleryResponse = await context.$axios.get(process.env.API_URL + 'gallery/')
+        VuexContext.commit('setGallery', galleryResponse.data)
+
+        const scheduleResponse = await context.$axios.get(process.env.API_URL + 'month/')
+        VuexContext.commit('setSchedule', scheduleResponse.data)
+
+        const archiveResponse = await context.$axios.get(process.env.API_URL + 'archieve/')
+        VuexContext.commit('setArchive', archiveResponse.data)
+
+        const areaResponse = await context.$axios.get(process.env.API_URL + 'area/')
+        VuexContext.commit('setArea', areaResponse.data)
 
         const instImagesResponse = await context.$axios.get('https://graph.instagram.com/me/media?access_token=' + process.env.INST_TOKEN + '&fields=media_url,media_type,caption,permalink')
         VuexContext.commit('setInstImages', instImagesResponse.data.data.filter(images => images.media_type !== 'VIDEO'))
@@ -113,6 +135,18 @@ const createStore = () => {
       setTeam(vuexContext, teamInfo) {
         vuexContext.commit('setTeam', teamInfo)
       },
+      setGallery(vuexContext, galleryInfo) {
+        vuexContext.commit('setGallery', galleryInfo)
+      },
+      setSchedule(vuexContext, scheduleInfo) {
+        vuexContext.commit('setSchedule', scheduleInfo)
+      },
+      setArchive(vuexContext, archiveInfo) {
+        vuexContext.commit('setArchive', archiveInfo)
+      },
+      setArea(vuexContext, areaInfo) {
+        vuexContext.commit('setArea', areaInfo)
+      },
       setInstImages(vuexContext, instImagesInfo) {
         vuexContext.commit('setInstImages', instImagesInfo)
       }
@@ -141,6 +175,18 @@ const createStore = () => {
       },
       loadedTeam(state) {
         return state.loadedTeam
+      },
+      loadedGallery(state) {
+        return state.loadedGallery
+      },
+      loadedSchedule(state) {
+        return state.loadedSchedule
+      },
+      loadedArchive(state) {
+        return state.loadedArchive
+      },
+      loadedArea(state) {
+        return state.loadedArea
       },
       loadedInstImages(state) {
         return state.loadedInstImages

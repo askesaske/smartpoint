@@ -132,7 +132,9 @@
 
       </div>
 
-      <a href="javascript:void(0)" onClick="SpaceinWidget.run('74f4d464-17b7-460a-be2e-7f7eee2193d8');">Отправить запрос</a>
+      <a href="javascript:void(0)"
+         onClick="SpaceinWidget.run('74f4d464-17b7-460a-be2e-7f7eee2193d8');"
+         style="margin: 30px 0; display: block; font-size: 20px; color: #FFFFFF">Отправить запрос</a>
 
       <div class="SpaceinWidget" id="SpaceinWidget"></div>
 

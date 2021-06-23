@@ -3,7 +3,7 @@
       <div class="about__heading heading-fluid">
         <div class="heading-fluid__container">
           <div class="heading-fluid__path path-box">
-            <div class="path-box__link">Главная</div>
+            <nuxt-link tag="div" to="/" class="path-box__link">Главная</nuxt-link>
             <div class="path-box__link">О нас</div>
           </div>
           <h1 class="heading-fluid__title">О нас</h1>
@@ -35,7 +35,7 @@
         </div>
 
         <div class="about__text">
-          {{ loadedAboutUs.text }}
+          {{ loadedAboutUs.inside_text }}
         </div>
       </div>
 

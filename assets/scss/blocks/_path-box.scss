@@ -5,6 +5,7 @@
   &__link {
     @include text-style(1.4rem, 600, $main-color);
     position: relative;
+    cursor: pointer;
 
     &:not(:last-child) {
       color: #9A9A9A;
